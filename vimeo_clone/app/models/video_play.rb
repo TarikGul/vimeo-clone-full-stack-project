@@ -1,0 +1,2 @@
+class VideoPlay < ApplicationRecord
+end

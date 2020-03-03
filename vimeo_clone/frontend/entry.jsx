@@ -1,28 +1,28 @@
-const path = require('path');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import configureStore from './store/store';
+import Root from './components/root'
+// import * as APIUtil from './util/session_api_util'
+import { login } from './actions/session_actions'
 
-module.exports = {
-    context: __dirname,
-    entry: './frontend/entry.jsx',
-    output: {
-        path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-        filename: 'bundle.js'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.jsx?$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    query: {
-                        presets: ['@babel/env', '@babel/react']
-                    }
-                },
-            }
-        ]
-    },
-    devtool: 'inline-source-map',
-    resolve: {
-        extensions: [".js", ".jsx", "*"]
+
+document.addEventListener('DOMContentLoaded', () => {
+    let store;
+
+    if (window.currentUser) {
+        const preloadedState = {
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            },
+            session: { id: window.currentUser.id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
     }
-};
+
+
+    const root = document.getElementById('root')
+    ReactDOM.render(<Root store={store} />, root)
+})
