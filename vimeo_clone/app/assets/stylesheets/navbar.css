@@ -1,0 +1,68 @@
+h1 {
+    font-size: 80px;
+}
+#navbar-container-1 {
+   background-color: #f1f8ff; 
+   width: 100%;
+   height: 90px;
+
+}
+
+#navbar-container-2 {
+    background-color: #f1f8ff;
+    display: flex;
+    width: 60%;
+    height: 90px;
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+}
+
+.nav-button-list {
+    display:flex;
+}
+
+.navbar-name {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    size: 80px;
+    line-height: normal;
+    text-align: start;
+    letter-spacing: normal;
+    color: #000000;
+    padding-right: 10px;
+}
+
+
+
+.join-box {
+    display: flex;
+    height: 10em;
+    position: relative;
+    border: 1.5px solid grey;
+    border-radius: 0.5rem;
+    width: 72px;
+    height: 40px;
+    bottom: 5px;
+    
+}
+.join {
+    display: flex;
+    text-decoration: none;
+    vertical-align: center;
+    width: 72px;
+    height: 40px;
+    text-align: center;
+    /* margin: auto 0; */
+    font-family: HelveticaNeue;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.login {
+    display:flex;
+    right: 10px;
+    justify-content: center;
+    align-items: center;
+}

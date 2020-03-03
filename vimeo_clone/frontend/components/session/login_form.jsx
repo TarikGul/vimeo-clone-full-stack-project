@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
     }
 
     renderErrors() {
-        debugger
+    
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
@@ -45,7 +45,7 @@ class LoginForm extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <h3 id='navbar-name'>Bimeo</h3>
+                    <h3 className='navbar-name'>Bimeo</h3>
                     <br/>
                     {this.props.formType}
                     {/* Please {this.props.formType} or {this.props.navLink} */}
