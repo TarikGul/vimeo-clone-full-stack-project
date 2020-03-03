@@ -49,30 +49,31 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="login-container">
-                <h2>Sign Up</h2>
-                <form onSubmit={this.handleSubmit}>
-                    Welcome to The Bench
-                    Please {this.props.formType} or {this.props.navLink}
-                    {this.renderErrors()}
-                    <label>Username:
-                        <input type="text"
-                            value={this.state.username}
-                            onChange={this.handleInput('username')}
-                        />
-                    </label>Email:
-                        <input type="text"
-                        value={this.state.email}
-                        onChange={this.handleInput('email')}
-                    />
-                    <label>Password:
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput('password')}
-                        />
-                    </label>
-                    <input type="text" type="submit" value={this.props.formType} />
-                </form>
+            <div>
+                <div className='modal-title'> Join Vimeo </div>
+                <div className="login-container">
+                    <h2>Sign Up</h2>
+                    <form onSubmit={this.handleSubmit}>
+                        {this.renderErrors()}
+                        <label>Username:
+                            <input type="text"
+                                value={this.state.username}
+                                onChange={this.handleInput('username')}
+                                />
+                        </label>Email:
+                            <input type="text"
+                            value={this.state.email}
+                            onChange={this.handleInput('email')}
+                            />
+                        <label>Password:
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.handleInput('password')}
+                                />
+                        </label>
+                        <input type="text" type="submit" value={this.props.formType} />
+                    </form>
+                </div>
             </div>
         )
     }

@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 //Synonymous with NavBar
 
-const Greeting = ({ currentUser, logout }) => {
-    // debugger
+const Greeting = ({ currentUser, logout, openModal}) => {
     const sessionLinks = () => (
         <div id="navbar-container-1">
             <div id="navbar-container-2">
@@ -13,12 +11,12 @@ const Greeting = ({ currentUser, logout }) => {
                         <div className="navbar-name">Bimeo</div>
                         <div className="join-box">
                             <div className='join'>
-                                <Link to='/signup'>Join</Link>
+                                <button onClick={() => openModal('signup')}>Join</button>
                             </div>
                         </div>
                         &nbsp;&nbsp;
                         <div className="login">
-                            <Link to='/login'>Login</Link>
+                            <button onClick={() => openModal('login')}>Login</button>
                         </div>
                     </div>
                     <div className="nav-button-list-right">

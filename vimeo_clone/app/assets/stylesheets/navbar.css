@@ -1,14 +1,15 @@
 
 
 #navbar-container-1 {
-   background-color: #f1f8ff; 
-   width: 100vw;
-   height: 90px;
-
+    background-color: #fbf2f6; 
+    width: 100vw;
+    height: 90px;
+    position: fixed;
+    overflow: hidden;
 }
 
 #navbar-container-2 {
-    background-color: #f1f8ff;
+    background-color: #fbf2f6;
     display: flex;
     width: 90%;
     height: 90px;

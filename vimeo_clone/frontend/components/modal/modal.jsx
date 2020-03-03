@@ -30,13 +30,13 @@ const Modal = ({modal, closeModal}) => {
     )
 }
 
-const msp = () => {
+const msp = (state) => {
     return {
-        modal: StaticRange.ui.modal
+        modal: state.ui.modal
     }
 }
 
-const mdtp = (closeModal) => {
+const mdtp = dispatch => {
     return {
         closeModal: () => dispatch(closeModal())
     }
