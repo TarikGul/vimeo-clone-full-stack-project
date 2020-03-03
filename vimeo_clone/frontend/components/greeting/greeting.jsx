@@ -5,6 +5,7 @@ const Greeting = ({ currentUser, logout }) => {
     // debugger
     const sessionLinks = () => (
         <div className='nav-button-list'>
+            <h1 className="navbar-name">Bimeo</h1>
             <div className="join-box">
                 <div className='join'>
                     <Link to='/signup'>Join</Link>

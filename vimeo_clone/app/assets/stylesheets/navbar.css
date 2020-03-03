@@ -1,6 +1,7 @@
 h1 {
     font-size: 80px;
 }
+
 #navbar-container-1 {
    background-color: #f1f8ff; 
    width: 100%;
@@ -32,8 +33,6 @@ h1 {
     padding-right: 10px;
 }
 
-
-
 .join-box {
     display: flex;
     height: 10em;
@@ -43,8 +42,8 @@ h1 {
     width: 72px;
     height: 40px;
     bottom: 5px;
-    
 }
+
 .join {
     display: flex;
     text-decoration: none;
@@ -58,7 +57,6 @@ h1 {
     align-items: center;
 
 }
-
 
 .login {
     display:flex;
