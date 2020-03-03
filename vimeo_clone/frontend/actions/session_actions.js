@@ -12,14 +12,12 @@ const receiveCurrentUser = user => {
 };
 
 const logoutCurrentUser = () => {
-    debugger
     return {
         type: LOGOUT_CURRENT_USER
     }
 };
 
 const receiveErrors = (errors) => {
-    debugger
     return {
         type: RECEIVE_SESSION_ERRORS,
         errors
