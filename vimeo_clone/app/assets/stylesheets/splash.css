@@ -40,6 +40,11 @@
     height: 50px;
     color: white;
     outline: none;
+    cursor: pointer;
+}
+.demo-user-button:hover {
+    transition-duration: 1s;
+    background-color: #af4f75;
 }
 
 .image-1-left-column {
@@ -122,4 +127,25 @@
 .image-4 {
     width: 895px;
     padding-top: 130px;
+}
+
+.footer-join-community {
+    text-align: center;
+    font-size: 50px;
+    line-height: 55px;
+    letter-spacing: -1.02px;
+    color: #1a2e3b;
+    font-weight: bold;
+}
+
+.come-join {
+    line-height: 24px;
+    letter-spacing: normal;
+    color: #1a2e3b;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.footer-join-container {
+    text-align: center;
 }

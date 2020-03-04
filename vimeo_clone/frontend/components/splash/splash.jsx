@@ -109,7 +109,7 @@ const Splash = () => {
                     and brands love our <br/>
                     community
                 </div>
-                <button className='come-on-in'>Come on in</button>
+                <button className='come-join'>Come on in</button>
             </div>
         </div>
     )

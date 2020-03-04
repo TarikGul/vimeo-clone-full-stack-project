@@ -48,6 +48,9 @@
     border: 1px solid grey;
     border-radius: 2px;
 }
+.join:hover {
+    border: 1px solid black;
+}
 
 .login {
     background-color: transparent;

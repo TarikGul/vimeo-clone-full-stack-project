@@ -50,28 +50,38 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div>
-                <div className='modal-title'> Join Vimeo </div>
-                <div className="login-container">
-                    <h2>Sign Up</h2>
-                    <form onSubmit={this.handleSubmit}>
+                <div className="signup-container">
+                    <div className='modal-title'> Join Vimeo </div>
+                    <form onSubmit={this.handleSubmit} className='modal-form'>
                         {this.renderErrors()}
-                        <label>Username:
-                            <input type="text"
+                        <div className='input-wrapper'>
+                            <input
+                                placeholder='Username' 
+                                className="join-input"
+                                type="text"
                                 value={this.state.username}
                                 onChange={this.handleInput('username')}
                                 />
-                        </label>Email:
-                            <input type="text"
-                            value={this.state.email}
-                            onChange={this.handleInput('email')}
-                            />
-                        <label>Password:
-                            <input type="password"
+                        </div>
+                        <div className='input-wrapper'>
+                            <input
+                                placeholder='Email'
+                                className="join-input" 
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.handleInput('email')}
+                                />
+                        </div>
+                        <div className='input-wrapper'>
+                            <input 
+                                placeholder='Password'
+                                className="join-input" 
+                                type="password"
                                 value={this.state.password}
                                 onChange={this.handleInput('password')}
                                 />
-                        </label>
-                        <input type="text" type="submit" value={this.props.formType} />
+                        </div>
+                        <input className="modal-button" type="text" type="submit" value={this.props.formType} />
                     </form>
                 </div>
             </div>

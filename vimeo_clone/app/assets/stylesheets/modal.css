@@ -14,10 +14,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  width: 300px;
-  height: 350px;
+  width: 400px;
+  height: 520px;
   max-width: 100%;
+  border-radius: 3px;
 }
+
 
 
 /* .modal-username {
@@ -27,12 +29,54 @@
 .modal-password {
 
 } */
-
+/* 
 .modal-form {
  display: flex;
-}
+} */
 
 .modal-title {
     text-align: center;
-    padding: 15px;
+    padding: 25px;
+    font-size: 20px;
+    background-color: #f1f8ff;
+    border-radius: 3px;
+    border: 1px solid rgb(240, 240, 240);
+    font-weight: bold;
+}
+
+.login-input {
+    width: 350px;
+    height: 50px;
+    font-size: 25px;
+    outline: none;
+    border-radius: 3px;
+    /* border-style: solid; */
+}
+.join-input {
+    width: 350px;
+    height: 50px;
+    font-size: 17px;
+    outline: none;
+    border-radius: 3px;
+}
+
+.input-wrapper {
+    padding: 7px;
+    text-align: center;
+}
+
+.modal-form {
+    padding-top: 15px;
+    text-align: center;
+}
+
+.modal-button {
+    text-align: center;
+    width: 350px;
+    height: 50px;
+    background-color: #7fc400;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 3px;
 }

@@ -44,23 +44,32 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div>
-                <div className='modal-title'> Log in to Vimeo </div>
+                <div className='modal-ti'>
+                    <div className='modal-title'> Log in to Vimeo </div>
+
+                    {/* <button> X </button> */}
+                </div>
                 <form onSubmit={this.handleSubmit} className='modal-form'>
-                    {this.props.formType}
                     {this.renderErrors()}
-                    <label className='modal-username'>Username:
-                        <input type="text"
+                    <div className='input-wrapper'>
+                        <input 
+                            placeholder='Username'
+                            className="login-input"
+                            type="text"
                             value={this.state.username}
                             onChange={this.handleInput('username')}
                         />
-                    </label>
-                    <label className="modal-password">Password:
-                        <input type="password"
+                    </div>
+                    <div className='input-wrapper'>
+                        <input
+                            placeholder='Password'
+                            className="login-input" 
+                            type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
                         />
-                    </label>
-                    <input className="session-submit" type="submit" value={this.props.formType} />
+                    </div>
+                    <input className="modal-button" type="submit" value='Login' />
                 </form>
             </div>
         )
