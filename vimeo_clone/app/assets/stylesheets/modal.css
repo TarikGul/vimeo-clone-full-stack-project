@@ -71,6 +71,7 @@
 }
 
 .modal-button {
+    box-sizing: border-box;
     text-align: center;
     width: 350px;
     height: 50px;
