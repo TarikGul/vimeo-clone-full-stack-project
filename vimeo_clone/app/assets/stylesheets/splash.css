@@ -75,10 +75,10 @@
     text-align: left;
     font-size: 20px;
     line-height: 25px;
-    letter-spacing: normal;
+    letter-spacing: 0.5px;
     padding-bottom: 15px;
     padding-top: 35px;
-    font-weight: 350;
+    font-weight: 300;
 }
 
 .image-1-button {
@@ -86,6 +86,8 @@
     outline: none;
     cursor: pointer;
     font-size: 20px;
+    outline: none;
+    background-color: transparent;
 }
 
 
@@ -115,4 +117,9 @@
     width: 50% ;
     padding-top: 90px;
     padding-left: 200px;
+}
+
+.image-4 {
+    width: 895px;
+    padding-top: 130px;
 }

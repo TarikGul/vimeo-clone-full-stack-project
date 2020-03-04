@@ -44,15 +44,15 @@ const Splash = () => {
                         Publish anywhere, <br /> grow everywhere.
                     </div>
                     <div className="image-1-column-description">
-                        publish videos to any channel, customize <br /> 
-                        the player and add powerful marketing tools <br/>
+                        publish videos to any channel, customize <br />
+                        the player and add powerful marketing tools <br />
                         to bump up engagement.
                     </div>
                     <div className='image-1-button-div'>
                         <button className='image-1-button'> Grow your audience </button>
                     </div>
                     <div className="image-1-column-description">
-                        See how your videos are performing with <br/>
+                        See how your videos are performing with <br />
                         advanced analytics.
                     </div>
                     <div className='image-1-button-div'>
@@ -80,6 +80,36 @@ const Splash = () => {
                     </div>
                 </div>
                 <img className='image-3' src="assets/953.jpg" alt="" />
+            </div>
+            <div className="image-2-container">
+                <img className='image-4' src="assets/950.jpg" alt="" />
+                <div className="image-2-left-column">
+                    <div className="image-1-column-header">
+                        Just add Live.
+                    </div>
+                    <div className="image-1-column-description">
+                        Capture any moment with reliable, professional live <br />
+                        streaming.
+                    </div>
+                    <div className='image-1-button-div'>
+                        <button className='image-1-button'> Go live </button>
+                    </div>
+                    <div className="image-1-column-description">
+                        Connect your entire team on one secure, enterprise- <br />
+                        level video platform.
+                    </div>
+                    <div className='image-1-button-div'>
+                        <button className='image-1-button'> Start uploading </button>
+                    </div>
+                </div>
+            </div>
+            <div className='footer-join-container'>
+                <div className='footer-join-community'>
+                    Over 150 million creators <br/>
+                    and brands love our <br/>
+                    community
+                </div>
+                <button className='come-on-in'>Come on in</button>
             </div>
         </div>
     )

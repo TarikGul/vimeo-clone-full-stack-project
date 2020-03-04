@@ -38,6 +38,23 @@
 .navbar-name {
     font-size: 1.5rem;
 }
+
+.join {
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    width: 71px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+
+.login {
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
 /* 
 .navbar-name {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

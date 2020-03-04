@@ -10,13 +10,13 @@ const Greeting = ({ currentUser, logout, openModal}) => {
                     <div className='nav-button-list-left'>
                         <div className="navbar-name">Bimeo</div>
                         <div className="join-box">
-                            <div className='join'>
-                                <button onClick={() => openModal('signup')}>Join</button>
+                            <div className='join-container'>
+                                <button className='join success' onClick={() => openModal('signup')}>Join</button>
                             </div>
                         </div>
                         &nbsp;&nbsp;
-                        <div className="login">
-                            <button onClick={() => openModal('login')}>Login</button>
+                        <div className="login-container">
+                            <button className='login success' onClick={() => openModal('login')}>Login</button>
                         </div>
                     </div>
                     <div className="nav-button-list-right">
