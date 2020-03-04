@@ -49,7 +49,7 @@ class LoginForm extends React.Component {
 
                     {/* <button> X </button> */}
                 </div>
-                <form onSubmit={this.handleSubmit} className='modal-form'>
+                <form onSubmit={this.handleSubmit} className='modal-form' >
                     {this.renderErrors()}
                     <div className='input-wrapper'>
                         <input 

@@ -52,7 +52,7 @@ class SignupForm extends React.Component {
             <div>
                 <div className="signup-container">
                     <div className='modal-title'> Join Vimeo </div>
-                    <form onSubmit={this.handleSubmit} className='modal-form'>
+                    <form onSubmit={this.handleSubmit} className='modal-form' >
                         {this.renderErrors()}
                         <div className='input-wrapper'>
                             <input

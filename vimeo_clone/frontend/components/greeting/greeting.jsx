@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DropdownNav from './dropdown'
+import SearchBar from '../search/search'
 //Synonymous with NavBar
 
 const Greeting = ({ currentUser, logout, openModal}) => {
@@ -20,12 +22,8 @@ const Greeting = ({ currentUser, logout, openModal}) => {
                         </div>
                     </div>
                     <div className="nav-button-list-right">
-                        <div className='search-greeting'>
-                            Search
-                        </div>
-                        <div className="dropdown-greeting">
-                            new
-                        </div>
+                        <SearchBar />
+                        <DropdownNav openModal={openModal}/>
                     </div>
                 </div>
             </div>
