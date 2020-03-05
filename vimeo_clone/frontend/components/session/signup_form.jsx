@@ -31,7 +31,7 @@ class SignupForm extends React.Component {
         const user = Object.assign({}, this.state)
         this.props.processForm(user)
             .then(() => (
-                this.props.history.push('/')
+                this.props.history.push('/home')
             ))
             .then(() => (
                 this.props.closeModal()

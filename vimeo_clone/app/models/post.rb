@@ -14,11 +14,11 @@
 #
 class Post < ApplicationRecord
 
-    validates :description, presence: true
+    validates :title, presence: true
 
     belongs_to :user, 
         foreign_key: :user_id,
-        class_name: :user
+        class_name: :User
     
     belongs_to :category,
         foreign_key: :category_id,
@@ -31,4 +31,6 @@ class Post < ApplicationRecord
     has_many :plays,
         foreign_key: :post_id,
         class_name: :Post
+
+    has_one_attached :video
 end

@@ -12,6 +12,12 @@ User.destroy_all
 # This is the user sections of the seed file
 
 User.create({ username: 'guest', email: 'guest@gmail.com', password: 'password' })
+User.create({ username: 'tarikOutDoors', email: 'tarik@gmail.com', password: 'password' })
+User.create({ username: 'puppies', email: 'dogs@gmail.com', password: 'password' })
+User.create({ username: 'kitties', email: 'kitty@gmail.com', password: 'password' })
+User.create({ username: 'outoftown', email: 'outoftown@gmail.com', password: 'password' })
+
+#This is the post sections of the seed file
 
 
 def generate_random_string(n)
@@ -50,5 +56,4 @@ def generate_hashed_name(rand_string = generate_random_string(7))
   return hashed_username.join('')
 end
 
-puts generate_hashed_name
 #______________________________________________
