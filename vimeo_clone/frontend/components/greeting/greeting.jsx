@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import DropdownNav from './dropdown'
 import SearchBar from '../search/search'
+
 //Synonymous with NavBar
 
 const Greeting = ({ currentUser, logout, openModal}) => {
@@ -29,14 +30,14 @@ const Greeting = ({ currentUser, logout, openModal}) => {
             </div>
         </div>
     );
-    const greetUser = () => (
-        <div className="welcome">
-            <h2 className="header-greeting">Hi, {currentUser.username}</h2>
-            <button className="header-logout" onClick={logout}>Log Out</button>
-        </div>
-    )
+    // const greetUser = () => (
+    //     <div>
+    //         <HomeNavbarContainer />
+    //     </div>
+    // )
 
-    return currentUser ? greetUser() : sessionLinks()
+    // return currentUser ? greetUser() : sessionLinks()
+    return sessionLinks()
 }
 
 export default Greeting;

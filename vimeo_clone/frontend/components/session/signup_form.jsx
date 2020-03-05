@@ -35,7 +35,6 @@ class SignupForm extends React.Component {
     }
 
     renderErrors() {
-        // debugger
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
@@ -56,6 +55,7 @@ class SignupForm extends React.Component {
                         {this.renderErrors()}
                         <div className='input-wrapper'>
                             <input
+                                required
                                 placeholder='Username' 
                                 className="join-input"
                                 type="text"
@@ -81,7 +81,7 @@ class SignupForm extends React.Component {
                                 onChange={this.handleInput('password')}
                                 />
                         </div>
-                        <input className="modal-button" type="text" type="submit" value={this.props.formType} />
+                        <Link to='/home'><input className="modal-button" type="text" type="submit" value={this.props.formType} /></Link>
                     </form>
                 </div>
             </div>

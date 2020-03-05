@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -41,12 +42,13 @@ class LoginForm extends React.Component {
         )
     }
 
+    // Need to add the X button and more styling to this section.
     render() {
         return (
             <div>
                 <div className='modal-ti'>
                     <div className='modal-title'> Log in to Vimeo </div>
-
+                    
                     {/* <button> X </button> */}
                 </div>
                 <form onSubmit={this.handleSubmit} className='modal-form' >
@@ -69,7 +71,7 @@ class LoginForm extends React.Component {
                             onChange={this.handleInput('password')}
                         />
                     </div>
-                    <input className="modal-button" type="submit" value='Login' />
+                    <Link to='/home'><input className="modal-button" type="submit" value='Login' /></Link>
                 </form>
             </div>
         )

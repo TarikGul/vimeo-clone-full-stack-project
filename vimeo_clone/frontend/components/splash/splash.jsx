@@ -1,14 +1,11 @@
 import React from 'react'
-import { login } from '../../actions/session_actions'
+import { Link, Redirect } from 'react-router-dom'
+
 
 class Splash extends React.Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-            username: '',
-            password: ''
-        }
+        console.log(props);
         this.handleClick = this.handleClick.bind(this)
     }
 
@@ -16,10 +13,11 @@ class Splash extends React.Component {
     handleClick(e) {
         e.preventDefault();
         const demoUser = { username: 'guest', password: 'password' }
-        console.log('the dolphin has landed')
-        console.log(this.state)
-        console.log(this.props)
-        login(demoUser)
+        this.props.processForm(demoUser)
+            .then(() => (
+                this.props.history.push('/home')
+            ))
+            
     }
 
 

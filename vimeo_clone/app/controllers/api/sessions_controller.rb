@@ -15,7 +15,6 @@ class Api::SessionsController < ApplicationController
 
     def destroy
       @user = current_user
-      # debugger
       if @user
         log_out!
         render json: [ 'You Logged out successfully' ]

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 import Splash from './splash'
-import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state = {}) => {
     return { 
@@ -11,7 +10,6 @@ const mapStateToProps = (state = {}) => {
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
     return {
         processForm: user => dispatch(login(user))
     }
