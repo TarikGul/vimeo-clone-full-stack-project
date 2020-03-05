@@ -5,9 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+VideoPlay.destroy_all
+Follower.destroy_all
+Like.destroy_all
+Comment.destroy_all
+Post.destroy_all
+VideoCategory.destroy_all
 User.destroy_all
-
 
 # This is the user sections of the seed file
 
@@ -17,8 +21,43 @@ User.create({ username: 'puppies', email: 'dogs@gmail.com', password: 'password'
 User.create({ username: 'kitties', email: 'kitty@gmail.com', password: 'password' })
 User.create({ username: 'outoftown', email: 'outoftown@gmail.com', password: 'password' })
 
+#This is the categories section of the seeds file
+
+VideoCategory.create({ name: 'Adventure' })
+VideoCategory.create({ name: 'DYI' })
+VideoCategory.create({ name: 'Educational' })
+
 #This is the post sections of the seed file
 
+Post.create({ title: "Walking across America", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
+Post.create({ title: "Enjoying a sandwhich", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
+Post.create({ title: "Playing games", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
+Post.create({ title: "Coding is fun", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
+Post.create({ title: "Basic", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
+Post.create({ title: "basiccccc", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false })
+
+#This is the comments sections of the seeds file
+
+Comment.create({ user_id: User.first.id, parent_comment_id: nil, child_comment_id: nil, post_id: Post.first.id, body: "it was a beautiful video! Good Job" })
+
+#This is the likes section of the seeds file
+
+Like.create({ user_id: User.first.id, comment_id: Comment.first.id })
+
+#This is the Follows section of the seeds file
+
+Follower.create({ user_id: User.first.id, follower_id: User.first.id + 1 })
+
+#This is the video_play section of the seeds file
+
+# VideoPlay.create({ user_id: 1, post_id: 1 })
+
+
+
+
+
+
+VideoCategory.create({ name: 'Sports' })
 
 def generate_random_string(n)
   alpha = ("a".."z").to_a

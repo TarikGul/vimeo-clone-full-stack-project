@@ -6,7 +6,7 @@
 #  user_id           :integer          not null
 #  parent_comment_id :integer
 #  post_id           :integer          not null
-#  child_comment_id  :integer          not null
+#  child_comment_id  :integer
 #  body              :text             not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
