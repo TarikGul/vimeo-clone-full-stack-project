@@ -21,12 +21,12 @@ class Comment < ApplicationRecord
 
     has_many :child_comments,
         foreign_key: :child_comment_id,
-        class_name: :Comment,
-        optional: true
+        class_name: :Comment
 
     belongs_to :parent_comment,
         foreign_key: :parent_comment_id,
-        class_name: :Comment
+        class_name: :Comment,
+        optional: true
 
     belongs_to :post,
         foreign_key: :post_id,
