@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy_all
+User.destroy_all
 
 
-# # This is the user sections of the seed file
+# This is the user sections of the seed file
 
-# User.create({ username: 'guest', email: 'guest@gmail.com', password: 'password' })
+User.create({ username: 'guest', email: 'guest@gmail.com', password: 'password' })
 
 
 def generate_random_string(n)

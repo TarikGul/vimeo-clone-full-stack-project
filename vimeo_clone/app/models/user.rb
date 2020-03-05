@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
 
     validates :username, presence: true, uniqueness: true
@@ -23,6 +35,12 @@ class User < ApplicationRecord
     
     has_many :followers,
       foreign_key: :follower_id,
+      class_name: :Follower
+    
+
+    # change to leaders.
+    has_many :leaders,
+      foreign_key: :user_id,
       class_name: :Follower
     
     #I am a little iffy on this one, unclear what association i am looking for.

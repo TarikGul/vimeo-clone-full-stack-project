@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id                :bigint           not null, primary key
+#  user_id           :integer          not null
+#  parent_comment_id :integer
+#  post_id           :integer          not null
+#  child_comment_id  :integer          not null
+#  body              :text             not null
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
 class Comment < ApplicationRecord
 
     validates :body, presence: true
@@ -9,12 +22,11 @@ class Comment < ApplicationRecord
     has_many :child_comments,
         foreign_key: :child_comment_id,
         class_name: :Comment,
-        optional: :true
+        optional: true
 
     belongs_to :parent_comment,
         foreign_key: :parent_comment_id,
-        class_name: :Comment,
-        optional: :true
+        class_name: :Comment
 
     belongs_to :post,
         foreign_key: :post_id,
