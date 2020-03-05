@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -23,7 +22,14 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
+        debugger
         this.props.processForm(user)
+            .then(() => (
+                this.props.history.push('/home')
+            ))
+            .then(() => (
+                this.props.closeModal()
+            ))
         // on a successful Submit you can actually push the information from a 
         // link to your history in order to grab remaining information
         // .then(() => this.props.history.push('/chirps'));
@@ -71,7 +77,7 @@ class LoginForm extends React.Component {
                             onChange={this.handleInput('password')}
                         />
                     </div>
-                    <Link to='/home'><input className="modal-button" type="submit" value='Login' /></Link>
+                    <input className="modal-button" type="submit" value='Login' />
                 </form>
             </div>
         )

@@ -2,13 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 import LoginForm from './login_form';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions'
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors }, ownProps) => {
     return {
         errors: errors.session,
-        formType: 'login'
+        formType: 'login',
+        ownProps
     }
 }
 
@@ -24,7 +25,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(LoginForm);
+)(LoginForm));

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class SignupForm extends React.Component {
     constructor(props) {
         super(props)
@@ -29,6 +30,12 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state)
         this.props.processForm(user)
+            .then(() => (
+                this.props.history.push('/')
+            ))
+            .then(() => (
+                this.props.closeModal()
+            ))
         // on a successful Submit you can actually push the information from a 
         // link to your history in order to grab remaining information
         //.then(() => this.props.history.push('/chirps'));
@@ -81,7 +88,7 @@ class SignupForm extends React.Component {
                                 onChange={this.handleInput('password')}
                                 />
                         </div>
-                        <Link to='/home'><input className="modal-button" type="text" type="submit" value={this.props.formType} /></Link>
+                        <input className="modal-button" type="text" type="submit" value={this.props.formType} />
                     </form>
                 </div>
             </div>

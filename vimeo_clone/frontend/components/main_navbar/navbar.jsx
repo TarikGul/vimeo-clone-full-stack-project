@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-
 
 class HomeNavbar extends React.Component {
     constructor(props) {
@@ -22,7 +20,7 @@ class HomeNavbar extends React.Component {
         <div className='navbar-container'>
                 
             Your navbar is working <br/>
-            <Link to='/'><button className='home-navbar-logout' onClick={this.handleProcess}> nav form</button></Link>
+            <button className='home-navbar-logout' onClick={this.handleProcess}> nav form</button>
         </div>
         )
     }
