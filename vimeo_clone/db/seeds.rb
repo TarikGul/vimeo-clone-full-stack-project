@@ -6,7 +6,49 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+# User.destroy_all
 
 
-User.create({ username: 'guest', email: 'guest@gmail.com', password: 'password' })
+# # This is the user sections of the seed file
+
+# User.create({ username: 'guest', email: 'guest@gmail.com', password: 'password' })
+
+
+def generate_random_string(n)
+  alpha = ("a".."z").to_a
+  sample = []
+
+  (1..n).each do |i|
+    rand_num = rand(0...27)
+    sample << alpha[rand_num]
+  end
+
+  sample.join('')
+end
+
+def generate_hashed_name(rand_string = generate_random_string(7))
+  puts rand_string
+  alpha = ("a".."z").to_a
+  sample = rand_string.split('')
+  hashed_username = []
+  i = 0
+  sample.each_with_index do |char, i|
+    mod = sample.length - 1 
+    modded = alpha.length % mod
+    if modded.odd?
+      hashed_username << alpha[modded * 2 + i]
+    else 
+      num = modded * 3 + i
+      if num > 10
+        hashed_username << num.to_s + alpha[num % 10]
+      else 
+        hashed_username << alpha[num]
+      end
+      i += 1 
+    end
+  end
+  return hashed_username.join('')
+end
+
+puts generate_hashed_name
+#______________________________________________
