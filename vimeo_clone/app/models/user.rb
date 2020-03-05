@@ -6,13 +6,34 @@ class User < ApplicationRecord
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
 
-
-
     attr_reader :password
     before_validation :ensure_session_token
 
-    
+    has_many :comments,
+      foreign_key: :user_id,
+      class_name: :Comment 
 
+    has_many :likes, 
+      foreign_key: :user_id,
+      class_name: :Like
+
+    has_many :posts,
+      foreign_key: :user_id,
+      class_name: :User
+    
+    has_many :followers,
+      foreign_key: :follower_id,
+      class_name: :Follower
+    
+    #I am a little iffy on this one, unclear what association i am looking for.
+    #I am pretty sure i dont need another key so im going to get rid of the user_id assocaition in follower
+    #________________ASSOCIATION HAS BEEN ROMVED_________________________
+
+    has_many :plays,
+      foreign_key: :user_id,
+      class_name: :VideoPlay
+
+    
     def self.find_by_credentials(username, password)
       user = User.find_by(username: username)
 
