@@ -14,7 +14,7 @@ class Follower < ApplicationRecord
         foreign_key: :follower_id,
         class_name: :User
     
-    belong_to :leader,
+    belongs_to :leader,
         foreign_key: :user_id,
         class_name: :User
 end
