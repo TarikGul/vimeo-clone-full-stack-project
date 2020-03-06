@@ -42,6 +42,9 @@ end
 VideoCategory.create({ name: 'Adventure' })
 VideoCategory.create({ name: 'DYI' })
 VideoCategory.create({ name: 'Educational' })
+VideoCategory.create({ name: 'Outdoors' })
+VideoCategory.create({ name: 'Creator' })
+VideoCategory.create({ name: 'Easter Egg' })
 
 #This is the post sections of the seed file
 (0..20).each do |i|

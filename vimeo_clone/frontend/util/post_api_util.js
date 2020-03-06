@@ -1,8 +1,7 @@
-export const fetchPosts = post => {
+export const fetchPosts = () => {
     return $.ajax({
         url: 'api/posts',
-        method: 'GET',
-        post
+        method: 'GET'
     })
 }
 
@@ -12,9 +11,11 @@ export const fetchPost = id =>  {
         method: 'GET'
     })
 }
-export const fetchComment = id => {
+
+export const createPost = post => {
     return $.ajax({
-        url: `api/comments/${id}`,
-        method: 'GET'
+        url: 'api/posts',
+        method: 'POST',
+        data: { post }
     })
 }

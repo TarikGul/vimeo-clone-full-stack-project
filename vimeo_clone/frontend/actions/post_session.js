@@ -1,8 +1,8 @@
 import * as APIUTIL from '../util/post_api_util'
 
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
-export const RECEIVE_POSTS = 'RECEIVE_POSTS';
-export const RECEIVE_COMMENT = 'RECEIVE_COMMENT'
+export const RECEIVE_POST = 'RECEIVE_POST';
+
 
 //-----------------------------------
 // I need to also hadd receive comment, and create comment so that
@@ -18,16 +18,10 @@ const receivePosts = posts => {
 }
 
 const receivePost = post => {
+    debugger
     return {
-        type: RECEIVE_POSTS,
+        type: RECEIVE_POST,
         post
-    }
-}
-
-const receiveComment = comment => {
-    return {
-        type: receiveComment,
-        comment
     }
 }
 
@@ -40,11 +34,8 @@ export const fetchPosts = posts => dispatch => {
 }
 
 export const fetchPost = postId => dispatch => {
+    debugger
     return APIUTIL.fetchPost(postId)
         .then(post => dispatch(receivePost(post)))
 }
 
-export const fetchComment = commentId => dispatch => {
-    return APIUTIL.fetchComment(commentId)
-        .then(comment => dispatch(receiveComment(comment)))
-}
