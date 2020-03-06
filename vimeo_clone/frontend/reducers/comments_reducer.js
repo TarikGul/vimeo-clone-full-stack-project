@@ -1,4 +1,5 @@
-import { REMOVE_COMMENT, RECEIVE_COMMENT, RECEIVE_POST } from '../actions/post_session'
+import { RECEIVE_POST } from '../actions/post_actions'
+import { REMOVE_COMMENT, RECEIVE_COMMENT } from '../actions/comment_actions'
 
 const commentsReducer = (state = {}, action) => {
     Object.freeze(state)

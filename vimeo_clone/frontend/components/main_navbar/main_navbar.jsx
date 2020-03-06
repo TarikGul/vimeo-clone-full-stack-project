@@ -1,4 +1,5 @@
 import React from 'react';
+import UserDropdown from './user_dropdown'
 
 class HomeNavbar extends React.Component {
     constructor(props) {
@@ -20,7 +21,8 @@ class HomeNavbar extends React.Component {
         <div className='navbar-container'>
                 
             Your navbar is working <br/>
-            <button className='home-navbar-logout' onClick={this.handleProcess}> nav form</button>
+            <button className='home-navbar-logout' onClick={this.handleProcess}> Logout </button>
+            <UserDropdown processForm={this.props.processForm}/>
         </div>
         )
     }

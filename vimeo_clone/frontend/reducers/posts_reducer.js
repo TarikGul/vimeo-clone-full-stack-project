@@ -1,9 +1,9 @@
-import { RECEIVE_POST, RECEIVE_ALL_POSTS } from '../actions/post_session'
+import { RECEIVE_POST, RECEIVE_ALL_POSTS } from '../actions/post_actions'
 
 const postsReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state)
-    debugger
+    // debugger
     switch(action.type) {
         case RECEIVE_ALL_POSTS:
             return action.posts

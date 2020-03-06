@@ -18,7 +18,6 @@ const receivePosts = posts => {
 }
 
 const receivePost = post => {
-    debugger
     return {
         type: RECEIVE_POST,
         post

@@ -1,5 +1,10 @@
 class Api::CommentsController < ApplicationController
 
+    def index
+      @comments = Comment.all
+      render :index
+    end
+
     def show
       @comment = comment.find(params[:id])
     end
@@ -11,7 +16,7 @@ class Api::CommentsController < ApplicationController
       if @comment.save
         render :show
       else
-        render :json @comment, status: :unprocessable_entity
+        render :json, status: :unprocessable_entity
       end
     end
 

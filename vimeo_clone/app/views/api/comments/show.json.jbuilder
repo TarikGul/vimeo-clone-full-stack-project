@@ -3,7 +3,7 @@ json.comment do
 end
 
 json.user do 
-  json.partial! `api/users/user`, user: @user.comment
+  json.partial! `/api/users/user`, user: @user.comment
 end
 
 # not sure about above this

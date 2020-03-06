@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root'
-import { fetchPost, fetchPosts } from './actions/post_session'
+import { fetchPost, fetchPosts } from './actions/post_actions'
 // import * as APIUtil from './util/session_api_util'
 import { login } from './actions/session_actions'
 

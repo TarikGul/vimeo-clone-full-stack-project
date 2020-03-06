@@ -2,7 +2,7 @@ import * as APIUTIL from '../util/comment_api_util'
 
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT'
 export const REMOVE_COMMENT = 'REMOVE_COMMENT'
-export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS'
+// export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS'
 
 const removeComment = commentId => {
     return {
@@ -18,20 +18,21 @@ const receiveComment = comment => {
     }
 }
 
-const receiveComments = comments => {
-    return {
-        type: RECEIVE_COMMENTS,
-        comments
-    }
-}
+// const receiveComments = comments => {
+//     return {
+//         type: RECEIVE_COMMENTS,
+//         comments
+//     }
+// }
 
-export const removeComment = commentId => dispatch => {
+export const deleteComment = commentId => dispatch => {
     return APIUTIL.deleteComment(commentId)
         .then(() => dispatch(removeComment(commentId)))
 }
 
-export const receiveComment = comment => dispatch => {
+export const createComment = comment => dispatch => {
     return APIUTIL.createComment(comment)
         .then(createdComment => dispatch(receiveComment(createdComment)))
 }
+
 

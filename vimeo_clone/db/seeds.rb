@@ -107,3 +107,12 @@ def generate_hashed_name(rand_string = generate_random_string(7))
 end
 
 #______________________________________________
+
+
+Comment.create({
+    user_id: User.first.id , 
+    parent_comment_id: nil, 
+    child_comment_id: nil, 
+    post_id: Post.last.id - 2, 
+    body: "Comment -" + generate_random_string(5)
+  })
