@@ -25,12 +25,17 @@ class Post < ApplicationRecord
     
     has_many :comments,
         foreign_key: :post_id,
-        class_name: :Post
+        class_name: :Comment
 
     has_many :plays,
         foreign_key: :post_id,
-        class_name: :Post
+        class_name: :VideoPlay
 
+    has_many :comments_user,
+        through: :comments,
+        source: :user
+
+    # Active storage association
     has_one_attached :video
-    
+
 end

@@ -13,13 +13,29 @@ Post.destroy_all
 VideoCategory.destroy_all
 User.destroy_all
 
+def generate_random_string(n)
+  alpha = ("a".."z").to_a
+  sample = []
+
+  (1..n).each do |i|
+    rand_num = rand(0...27)
+    sample << alpha[rand_num]
+  end
+
+  sample.join('')
+end
+
 # This is the user sections of the seed file
 
 User.create({ username: 'guest', email: 'guest@gmail.com', password: 'password' })
-User.create({ username: 'tarikOutDoors', email: 'tarik@gmail.com', password: 'password' })
-User.create({ username: 'puppies', email: 'dogs@gmail.com', password: 'password' })
-User.create({ username: 'kitties', email: 'kitty@gmail.com', password: 'password' })
-User.create({ username: 'outoftown', email: 'outoftown@gmail.com', password: 'password' })
+
+(1..20).each do |i| 
+  User.create({ 
+    username: "User-" + generate_random_string(4), 
+    email: generate_random_string(6) + "@gmail.com",
+    password: 'password'
+  })
+end
 
 #This is the categories section of the seeds file
 
@@ -28,17 +44,22 @@ VideoCategory.create({ name: 'DYI' })
 VideoCategory.create({ name: 'Educational' })
 
 #This is the post sections of the seed file
+(0..20).each do |i|
+  Post.create({ title: "Post-" + generate_random_string(7), user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false })
+end
 
-Post.create({ title: "Walking across America", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
-Post.create({ title: "Enjoying a sandwhich", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
-Post.create({ title: "Playing games", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
-Post.create({ title: "Coding is fun", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
-Post.create({ title: "Basic", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false }) 
-Post.create({ title: "basiccccc", user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false })
 
 #This is the comments sections of the seeds file
 
-Comment.create({ user_id: User.first.id, parent_comment_id: nil, child_comment_id: nil, post_id: Post.first.id, body: "it was a beautiful video! Good Job" })
+(0..20).each do |i|
+  Comment.create({
+    user_id: User.first.id + i, 
+    parent_comment_id: nil, 
+    child_comment_id: nil, 
+    post_id: Post.last.id - i, 
+    body: "Comment -" + generate_random_string(5)
+  })
+end
 
 #This is the likes section of the seeds file
 
@@ -52,23 +73,10 @@ Follower.create({ user_id: User.first.id, follower_id: User.first.id + 1 })
 
 # VideoPlay.create({ user_id: 1, post_id: 1 })
 
-
-
-
-
-
-VideoCategory.create({ name: 'Sports' })
-
-def generate_random_string(n)
-  alpha = ("a".."z").to_a
-  sample = []
-
-  (1..n).each do |i|
-    rand_num = rand(0...27)
-    sample << alpha[rand_num]
-  end
-
-  sample.join('')
+# Attaches a video url to a post. This is how we would open a file and attach 
+# It to the state of an object on the backend
+Post.all.each do |post|
+  post.video.attach(io: File.open("/Users/tarik/Desktop/videos/IMG_1159.MOV"), filename: "IMG_1159.MOV")
 end
 
 def generate_hashed_name(rand_string = generate_random_string(7))
