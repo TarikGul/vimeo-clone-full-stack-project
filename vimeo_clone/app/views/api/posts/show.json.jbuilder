@@ -1,6 +1,7 @@
 json.post do 
   json.partial! '/api/posts/post', post: @post
   json.videoUrl  url_for(@post.video)
+  json.thumbnailUrl url_for(@post.thumbnail)
 end
 
 json.comments do 

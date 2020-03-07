@@ -46,7 +46,7 @@
 .page-name {
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-left: 30px;
+    padding-left: 320px;
     font-size: 28px;
     line-height: 32px;
     letter-spacing: 0.64px;
@@ -83,6 +83,7 @@ button {
     display: flex;
     flex-direction: row;
     height: 100%;
+    padding-left:300px;
 }
 
 .grid-duple {
@@ -90,10 +91,25 @@ button {
 }
 
 .my-feed-container-name {
-    padding-left:30px;
+    padding-left: 320px;
 }
 
 .post-item {
     padding-top: 10px;
     padding-bottom: 20px;
+    position: relative;
+    width: 260px;
+    height: 308px;
+    border: 1px solid rgb(223, 223, 223);
+    margin-top: 20px
+}
+
+.post-video {
+    padding-top: 38px;
+   
+}
+
+.side-navbar-container-left {
+    position: fixed;
+    z-index:8;
 }

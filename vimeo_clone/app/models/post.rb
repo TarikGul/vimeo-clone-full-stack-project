@@ -37,5 +37,6 @@ class Post < ApplicationRecord
 
     # Active storage association
     has_one_attached :video
+    has_one_attached :thumbnail
 
 end

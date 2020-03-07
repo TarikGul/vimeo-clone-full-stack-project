@@ -7,10 +7,10 @@ class Api::PostsController < ApplicationController
 
     def show
       @post = Post
-        .includes(:comments)
-        .includes(:plays) #added this line
-        .includes(:category) #added this line
-        .find(params[:id])
+        .includes(:comments).find(params[:id])
+        # .includes(:plays) #added this line
+        # .includes(:category) #added this line
+        
 
       render :show
     end
