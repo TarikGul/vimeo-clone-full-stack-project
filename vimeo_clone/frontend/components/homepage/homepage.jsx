@@ -30,6 +30,7 @@ class Homepage extends React.Component {
                                 </div>
                             </button>
                         </div>
+                        {/*Make this into its own component */}
                         <div className="navigation-links">
                             <button>Home</button>
                             <button>Videos</button>

@@ -12,6 +12,14 @@ const PostIndexItem = props => {
             {/* <Link></Link>
             <Link></Link> */}
             <div className="post-item">
+                <div className="post-index-video-group">
+                    <div className="video-group-placeholder">
+                        Added to
+                    </div>
+                    <div className="video-group-name-container">
+                        <button className="video-group-name">Video Staff Picks</button>
+                    </div>
+                </div>
                 <div className="post-video">
                     {/* <ReactPlayer url={props.post.videoUrl}  width={400} height={300}/> */}
                     <img src={props.post.thumbnailUrl} width="261" height="150"/>
