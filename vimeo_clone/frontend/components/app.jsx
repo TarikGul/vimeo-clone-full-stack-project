@@ -15,7 +15,7 @@ const App = () => (
         <Route exact path='/' component={GreetingContainer}/>
         <Route exact path='/' component={SplashContainer}/>
         <Route exact path='/home' component={HomepageContainer} />
-        <Route exact path="/posts/:postId" component={PostShowContainer}/>
+        <Route path="/posts/:postId" component={PostShowContainer}/>
     </div>
 );
 export default App;
