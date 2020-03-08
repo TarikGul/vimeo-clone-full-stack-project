@@ -1,0 +1,1 @@
+json.extract! play, :id, :post_id

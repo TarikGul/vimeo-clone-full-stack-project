@@ -31,14 +31,12 @@ class User < ApplicationRecord
 
     has_many :posts,
       foreign_key: :user_id,
-      class_name: :User
+      class_name: :Post
     
     has_many :followers,
       foreign_key: :follower_id,
       class_name: :Follower
     
-
-    # change to leaders.
     has_many :leaders,
       foreign_key: :user_id,
       class_name: :Follower

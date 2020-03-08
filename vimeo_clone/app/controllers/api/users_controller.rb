@@ -4,6 +4,8 @@ class Api::UsersController < ApplicationController
       @user = User
             .includes(:posts)
             .find(params[:id])
+
+      render :show
     end
 
     def create
