@@ -1,6 +1,8 @@
 import React from 'react'
 import PostIndex from '../posts/post_index'
 import { Link } from 'react-router-dom'
+import Carousel from './carousel/carousel'
+import SidebarButtonBox from './sidebar_button_box'
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -32,11 +34,7 @@ class Homepage extends React.Component {
                         </div>
                         {/*Make this into its own component */}
                         <div className="navigation-links">
-                            <button>Home</button>
-                            <button>Videos</button>
-                            <button>Create</button>
-                            <button>Live events</button>
-                            <button>Showcases</button>
+                            <SidebarButtonBox />
                         </div>
                         <div className="available-storage">
 
@@ -48,7 +46,7 @@ class Homepage extends React.Component {
                         </div>
                         <div className='feed-container'>
                             <div className="my-feed-container-name"> My Feed</div>
-                            <PostIndex posts={this.props.posts} />
+                            <Carousel posts={this.props.posts} />
                         </div>
                     </div>
                 </div>

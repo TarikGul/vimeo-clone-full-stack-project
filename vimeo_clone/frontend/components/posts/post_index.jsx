@@ -4,11 +4,21 @@ import PostIndexItem from './post_index_item'
 class PostIndex extends React.Component {
     constructor(props) {
         super(props)
+
     }
 
+    componentDidMount() {
+        $('.video-feed-posts').flickity({
+            // options
+            cellAlign: 'left',
+            groupCells: true,
+            draggable: false
+        });
+    }
+
+
     render() {
-        // debugger
-        const { posts } = this.props
+        const { posts, divIndex } = this.props
 
         const tempGrid = posts => {
             let postKeys = Object.keys(posts)
@@ -22,6 +32,8 @@ class PostIndex extends React.Component {
             return postPairs
         }
         const grid = tempGrid(posts)
+        const gridPosts = grid.slice(divIndex, divIndex + 5)
+        
         return (
             <div className="video-feed-posts">
                 {
@@ -37,7 +49,8 @@ class PostIndex extends React.Component {
                                     />
                                 </div>
                     })
-                }
+
+            }
             </div>
 
         ) 
