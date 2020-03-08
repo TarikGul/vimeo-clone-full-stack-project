@@ -3,6 +3,7 @@ class Api::UsersController < ApplicationController
     def show
       @user = User
             .includes(:posts)
+            .includes(:followers)
             .find(params[:id])
 
       render :show

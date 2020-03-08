@@ -6,6 +6,7 @@ import Modal from './modal/modal'
 import SplashContainer from './splash/splash_container'
 import HomeNavbarContainer from './main_navbar/navbar_container'
 import HomepageContainer from './homepage/homepage_container'
+import PostShowContainer from './posts/post_show_container'
 
 const App = () => (
     <div className="main">
@@ -14,6 +15,7 @@ const App = () => (
         <Route exact path='/' component={GreetingContainer}/>
         <Route exact path='/' component={SplashContainer}/>
         <Route exact path='/home' component={HomepageContainer} />
+        <Route exact path="/posts/:postId" component={PostShowContainer}/>
     </div>
 );
 export default App;

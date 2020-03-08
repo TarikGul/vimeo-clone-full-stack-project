@@ -1,6 +1,5 @@
-json.user do
-  json.partial! '/api/users/user', user: @user 
-end
+json.partial! '/api/users/user', user: @user 
+
 
 json.user_posts do
   @user.posts.each do |post|
@@ -10,15 +9,15 @@ json.user_posts do
   end
 end
 
-# json.user_followers do 
-#   @user.followers.each do |follower|
-#     json.set! follower.id do
-#       json.partial! '/api/followers/follower'
-#     end
-#   end
-# end
+json.user_followers do 
+  @user.followers.each do |follower|
+    json.set! follower.id do
+      json.partial! '/api/followers/follower'
+    end
+  end
+end
 
-# json.user_follows do
+# json.user_leaders do
 #   @user.leaders.each do |leader|
 #     json.set! leader.id do
 #       json.partial! '/api/followers/follower'

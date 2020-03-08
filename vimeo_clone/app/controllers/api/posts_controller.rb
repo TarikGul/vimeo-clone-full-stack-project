@@ -7,11 +7,10 @@ class Api::PostsController < ApplicationController
 
     def show
       @post = Post
-        .includes(:comments).find(params[:id])
+        .includes(:comments)
+        .find(params[:id])
         # .includes(:plays) #added this line
         # .includes(:category) #added this line
-        
-
       render :show
     end
 
@@ -21,7 +20,7 @@ class Api::PostsController < ApplicationController
       if @post.save(post_params)
         render :show
       else
-        render json: @review, status: :unprocessable_entity
+        render json: @post, status: :unprocessable_entity
       end
     end
 
