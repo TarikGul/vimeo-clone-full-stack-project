@@ -19,7 +19,6 @@ class PostIndex extends React.Component {
 
     render() {
         const { posts, divIndex } = this.props
-
         const tempGrid = posts => {
             let postKeys = Object.keys(posts)
             const postPairs = []
@@ -41,10 +40,12 @@ class PostIndex extends React.Component {
                         return  <div className="grid-duple" id={`grid-${i}`}>
                                     <PostIndexItem 
                                         post={post[0]}
+                                        ownProps={this.props.ownProps}
                                         key={post[0].id}
                                     />
                                     <PostIndexItem
                                         post={post[1]}
+                                        ownProps={this.props.ownProps}
                                         key={post[1].id}
                                     />
                                 </div>

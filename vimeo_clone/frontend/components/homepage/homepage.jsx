@@ -17,6 +17,7 @@ class Homepage extends React.Component {
         this.props.fetchPosts();
     }
 
+
     render() {
         if (this.props.posts.length !== 0) {
             return (
@@ -46,7 +47,7 @@ class Homepage extends React.Component {
                         </div>
                         <div className='feed-container'>
                             <div className="my-feed-container-name"> My Feed</div>
-                            <Carousel posts={this.props.posts} />
+                            <Carousel posts={this.props.posts} ownProps={this.props.ownProps}/>
                         </div>
                     </div>
                 </div>

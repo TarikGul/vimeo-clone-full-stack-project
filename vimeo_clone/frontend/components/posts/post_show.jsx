@@ -20,7 +20,7 @@ class PostShow extends React.Component {
         }
         return (
             <div>
-                <HomeNavbar />
+                <HomeNavbar processForm={this.props.processForm}/>
             </div>
         )
     }

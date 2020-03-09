@@ -7,17 +7,22 @@ import { Link } from 'react-router-dom'
 class HomeNavbar extends React.Component {
     constructor(props) {
         super(props)
-
+        // this.state = this.props.ownProps
         this.handleProcess = this.handleProcess.bind(this)
     }
 
     handleProcess(e) {
         e.preventDefault()
-
-        this.props.processForm()
+        // debugger
+        console.log('this.props.location', this.props.location)
+        if (this.props.location.pathname === '/home') {
+            this.props.processForm()
             .then(()=> (
                 this.props.history.push('/')
-            ))
+                ))
+        } else {
+            // debugger
+        }
     }
     render() {
         return (
