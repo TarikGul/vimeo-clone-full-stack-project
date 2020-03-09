@@ -57,3 +57,11 @@
     border: 1px solid gray;
     height: 256px;
 }
+
+.comment-textarea {
+    width: 99.5%;
+    height: 70px;
+    border-radius: 3px;
+    outline: none;
+    font-size: 16px;
+}

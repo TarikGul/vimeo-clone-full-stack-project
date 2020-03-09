@@ -4,9 +4,10 @@ import CommentForm from './comments_form'
 import { createComment, deleteComment } from '../../actions/comment_actions'
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        state
+        state,
+        ownProps
     }
 }
 

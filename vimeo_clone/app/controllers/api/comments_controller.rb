@@ -11,12 +11,16 @@ class Api::CommentsController < ApplicationController
 
     #This logic might need to be =revisited myight be a bug during testing
     def create
-      @comment = current_user.comments.new(comment_params)
+
+      @comment = Comment.new(comment_params)
+
+      @comment[:post_id] = params[:comment][:postId]
+      @comment[:user_id] = current_user.id
 
       if @comment.save
         render :show
       else
-        render :json, status: :unprocessable_entity
+        render json: @comment.errors.full_messages, status: 422
       end
     end
 
@@ -33,6 +37,6 @@ class Api::CommentsController < ApplicationController
     private
 
     def comment_params
-      params.require(:comment).premit(:body)
+      params.require(:comment).permit(:body)
     end
 end
