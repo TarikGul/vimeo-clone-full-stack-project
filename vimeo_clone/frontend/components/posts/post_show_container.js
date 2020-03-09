@@ -6,7 +6,6 @@ import { logout } from '../../actions/session_actions'
 import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         postId: ownProps.match.params.postId,
         ownProps: ownProps,

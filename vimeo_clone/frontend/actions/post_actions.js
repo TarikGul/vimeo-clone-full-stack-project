@@ -33,7 +33,6 @@ export const fetchPosts = posts => dispatch => {
 }
 
 export const fetchPost = postId => dispatch => {
-    debugger
     return APIUTIL.fetchPost(postId)
         .then(post => dispatch(receivePost(post)))
 }
