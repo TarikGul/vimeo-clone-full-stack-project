@@ -18,13 +18,6 @@ const receiveComment = comment => {
     }
 }
 
-// const receiveComments = comments => {
-//     return {
-//         type: RECEIVE_COMMENTS,
-//         comments
-//     }
-// }
-
 export const deleteComment = commentId => dispatch => {
     return APIUTIL.deleteComment(commentId)
         .then(() => dispatch(removeComment(commentId)))

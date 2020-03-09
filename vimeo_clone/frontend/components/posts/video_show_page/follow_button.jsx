@@ -2,9 +2,13 @@ import React from 'react'
 
 const FollowButton = props => {
     return (
-       <button className="follow-button">
-           Follow
-       </button> 
+        <div className="Follow-button-container">
+            <button className="follow-button">
+                <div className="follow-button-text">
+                    Follow
+                </div>
+            </button> 
+        </div>
     )
 }
 

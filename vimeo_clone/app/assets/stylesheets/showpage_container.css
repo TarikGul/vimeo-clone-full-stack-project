@@ -39,10 +39,21 @@
 
 .follow-user-container {
     display: flex;
+    padding-top: 10px;
 }
 
 .follow-button {
     padding-left: 40px;
-    padding-top: 2%;
-    /* border: 1px solid gray; */
+    padding-top: 20px;
+    
+}
+
+.follow-button-container {
+    display: inline-flex;    
+    padding-left: 10px;
+}
+
+.video-left-info-container {
+    border: 1px solid gray;
+    height: 256px;
 }

@@ -9,18 +9,18 @@ json.user_posts do
   end
 end
 
-# json.user_followers do 
-#   @user.followers.each do |follower|
-#     json.set! follower.id do
-#       json.partial! '/api/followers/follower'
-#     end
-#   end
-# end
+json.user_followers do 
+  @user.followers.each do |follower|
+    json.set! follower.id do
+      json.partial! '/api/followers/follower', follower: follower
+    end
+  end
+end
 
-# json.user_leaders do
-#   @user.leaders.each do |leader|
-#     json.set! leader.id do
-#       json.partial! '/api/followers/follower'
-#     end
-#   end
-# end
+json.user_leaders do
+  @user.leaders.each do |follower|
+    json.set! follower.id do
+      json.partial! '/api/followers/follower', follower: follower
+    end
+  end
+end

@@ -1,6 +1,7 @@
 import React from 'react'
 import TitleContainer from './video_left_title_container'
 import VideoLeftInfo from './video_left_info'
+import CommentForm from '../../comments/comments_form'
 
 class VideoLeftContainer extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class VideoLeftContainer extends React.Component {
                     entities={this.props.entities} />
 
                 <VideoLeftInfo />
+                <CommentForm />
             </div>
         )
     }
