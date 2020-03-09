@@ -6,10 +6,9 @@ const postsReducer = (state = {}, action) => {
     // debugger
     switch(action.type) {
         case RECEIVE_ALL_POSTS:
-            return action.posts
+            return action.posts;
         case RECEIVE_POST:
-            nextState[action.post.post.id] = action.post.post
-            // nextState[action.post.comment.id] = action.posts.comment
+            nextState[action.post.post.id] = action.post.post;
             return nextState
             //need to also put a delete
         default: 

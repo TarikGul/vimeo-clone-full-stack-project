@@ -31,6 +31,7 @@ class Carousel extends React.Component {
     }
 
     render() {
+
         return (
             <div className="carousel">
                 <PostIndex posts={this.props.posts} divIndex={this.state.currentImageIndex} ownProps={this.props.ownProps}/>

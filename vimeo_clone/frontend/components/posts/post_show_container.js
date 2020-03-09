@@ -3,12 +3,14 @@ import { connect } from 'react-redux'
 import { fetchPost } from '../../actions/post_actions'
 import PostShow from './post_show'
 import { logout } from '../../actions/session_actions'
+import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+    debugger
     return {
         postId: ownProps.match.params.postId,
-        ownProps: ownProps
+        ownProps: ownProps,
+        state
     }
 }
 
@@ -19,7 +21,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(PostShow)
+)(PostShow))

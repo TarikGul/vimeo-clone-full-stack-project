@@ -11,11 +11,11 @@ import PostShowContainer from './posts/post_show_container'
 const App = () => (
     <div className="main">
         <Modal />
+        <Route path="/posts/:postId" component={PostShowContainer}/>
         <Route path='/home' component={HomeNavbarContainer}/>
         <Route exact path='/' component={GreetingContainer}/>
         <Route exact path='/' component={SplashContainer}/>
         <Route exact path='/home' component={HomepageContainer} />
-        <Route path="/posts/:postId" component={PostShowContainer}/>
     </div>
 );
 export default App;
