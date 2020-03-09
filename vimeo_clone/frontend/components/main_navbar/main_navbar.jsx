@@ -32,7 +32,6 @@ class HomeNavbar extends React.Component {
     }
 
     reRoute() {
-        debugger
         this.props.ownProps.history.push('/home')
         this.forceUpdate();
     }

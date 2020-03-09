@@ -36,3 +36,13 @@
 .uploader-username-container {
     padding-top: 2%;
 }
+
+.follow-user-container {
+    display: flex;
+}
+
+.follow-button {
+    padding-left: 40px;
+    padding-top: 2%;
+    /* border: 1px solid gray; */
+}

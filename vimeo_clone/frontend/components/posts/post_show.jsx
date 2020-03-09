@@ -20,7 +20,6 @@ class PostShow extends React.Component {
         } else if (this.props.state.entities.posts[this.props.postId] === undefined) {
             return null
         }
-        debugger
         return (
             <div className="showpage-container">
                 <HomeNavbar 

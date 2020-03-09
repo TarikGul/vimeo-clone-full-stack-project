@@ -1,14 +1,12 @@
 import React from 'react'
+import _ from 'lodash'
+import FollowButton from './follow_button'
 
 const parseDate = (date) => {
     let splitDate = date.split('')
 
     let newDate = splitDate.slice(0, 10)
     return newDate.join('')
-}
-
-const capitalizeUsername = name => {
-    
 }
 
 const TitleContainer = props => {
@@ -24,8 +22,11 @@ const TitleContainer = props => {
             <div className='uploaded-date'>
                 {`Uploaded on ${parseDate(prop.created_at)}`}
             </div>
-            <div className='uploader-username-container'>
-                {prop.uploader.username}
+            <div className='follow-user-container'>
+                <div className='uploader-username-container'>
+                    {_.capitalize(prop.uploader.username)}
+                </div>
+                <FollowButton />
             </div>
         </div>
     )
