@@ -1,4 +1,5 @@
 .showpage-video-container {
+    /* display: flex; */
     padding-top: 62px;
 }
 
@@ -13,10 +14,15 @@
     padding-left: 25%;
     padding-right: 25%;
     position: relative;
+    outline: hidden;
 }
 
 .video-player {
     /* position: absolute; */
     top: 0;
     left: 0;
+}
+
+.video-player:focus {
+    outline: none;
 }

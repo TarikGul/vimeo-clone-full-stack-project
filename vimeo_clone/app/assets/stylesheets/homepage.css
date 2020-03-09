@@ -78,7 +78,7 @@ button {
 }
 
 .feed-container {
-    width: 100%;
+    width: 104%;
     /* height: 100%; */
     padding-left: 20px;
 }
@@ -90,7 +90,7 @@ button {
 }
 
 .my-feed-container-name {
-    
+    font-weight: 500;
 }
 
 .post-item {

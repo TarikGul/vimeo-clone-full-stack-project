@@ -6,7 +6,7 @@ const VideoViewport = props => {
         <div className="video-viewport">
             <ReactPlayer 
                 width='100%'
-                height='100%'
+                height='110%'
                 className="video-player"
                 url={props.videoUrl} 
                 controls/>
