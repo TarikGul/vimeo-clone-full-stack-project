@@ -13,17 +13,22 @@ class HomeNavbar extends React.Component {
 
     handleProcess(e) {
         e.preventDefault()
-        // debugger
-        console.log('this.props.location', this.props.location)
-        if (this.props.location.pathname === '/home') {
-            this.props.processForm()
-            .then(()=> (
-                this.props.history.push('/')
+        
+        if (this.props.location !== undefined) {
+            if (this.props.location.pathname === '/home') {
+                this.props.processForm()
+                .then(()=> (
+                    this.props.history.push('/')
                 ))
+            } 
         } else {
-            // debugger
+            this.props.processForm()
+                .then(() => (
+                    this.props.ownProps.history.push('/')
+                ))
         }
     }
+    
     render() {
         return (
         <div className='navbar-container-1'>

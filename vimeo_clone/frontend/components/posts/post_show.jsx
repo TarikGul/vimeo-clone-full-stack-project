@@ -9,18 +9,20 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
+        debugger
         this.props.fetchPost(this.props.postId)
     }
 
     render() {
-        // debugger
         if (this.props.postId === undefined) {
             return null
         }
         return (
             <div>
-                <HomeNavbar processForm={this.props.processForm}/>
+                <HomeNavbar 
+                    processForm={this.props.processForm} 
+                    ownProps={this.props.ownProps}/>
+                
             </div>
         )
     }

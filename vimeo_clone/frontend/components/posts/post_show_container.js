@@ -7,7 +7,8 @@ import { logout } from '../../actions/session_actions'
 const mapStateToProps = (state, ownProps) => {
     // debugger
     return {
-        postId: ownProps.match.params.postId
+        postId: ownProps.match.params.postId,
+        ownProps: ownProps
     }
 }
 
