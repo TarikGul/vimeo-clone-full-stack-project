@@ -2,3 +2,37 @@
     display: flex;
     flex-direction: column;
 }
+
+/* This is where the bottom container starts */
+.showpage-bottom-container {
+    display: flex;
+    padding-left: 15%;
+    padding-right: 10%;
+}
+
+.video-left-container {
+    width: 70%;
+}
+
+.post-title {
+    font-size: 36px;
+    color: #1a2e3b;
+    line-height: 40px;
+    letter-spacing: 0.64px;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.video-title-container {
+    height: 151px;
+    border-bottom: 1px solid rgb(206, 205, 205);
+}
+
+.uploaded-date {
+    padding-top: 1%;
+    color: rgb(202, 201, 201);
+}
+
+.uploader-username-container {
+    padding-top: 2%;
+}

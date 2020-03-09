@@ -8,26 +8,6 @@ class Carousel extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            currentImageIndex: 0,
-            direction: ''
-        }
-        this.divPositions = Object.keys(this.props.posts)
-        this.clickLeft = this.clickLeft.bind(this)
-        this.clickRight = this.clickRight.bind(this)
-    }
-
-    clickRight() {
-        this.setState(prevState => ({
-            currentImageIndex: prevState.currentImageIndex + 5
-        }))
-        console.log("it got click", this.state.currentImageIndex)
-    }
-
-    clickLeft() {
-        this.setState(prevState => ({
-            currentImageIndex: prevState.currentImageIndex - 5
-        }))
     }
 
     render() {

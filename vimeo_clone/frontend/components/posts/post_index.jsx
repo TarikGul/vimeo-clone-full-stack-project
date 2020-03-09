@@ -4,16 +4,9 @@ import PostIndexItem from './post_index_item'
 class PostIndex extends React.Component {
     constructor(props) {
         super(props)
-
-    }
-
-    componentDidMount() {
-        $('.video-feed-posts').flickity({
-            // options
-            cellAlign: 'left',
-            groupCells: true,
-            draggable: false
-        });
+        this.state = {
+            carousel: false
+        }
     }
 
 

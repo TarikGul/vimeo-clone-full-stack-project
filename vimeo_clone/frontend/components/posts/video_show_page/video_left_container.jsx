@@ -1,5 +1,6 @@
 import React from 'react'
 import TitleContainer from './video_left_title_container'
+import VideoLeftInfo from './video_left_info'
 
 class VideoLeftContainer extends React.Component {
     constructor(props) {
@@ -14,6 +15,8 @@ class VideoLeftContainer extends React.Component {
                 <TitleContainer 
                     postId={this.props.postId}
                     entities={this.props.entities} />
+
+                <VideoLeftInfo />
             </div>
         )
     }

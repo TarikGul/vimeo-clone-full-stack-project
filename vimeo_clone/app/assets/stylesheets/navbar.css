@@ -69,10 +69,11 @@
 
 .drop-down-container {
     z-index: 1;
+    background-color: white;
     position: absolute;
     display: flex;
     flex-direction: column;
-    right: 105px;
+    right: 110px;
     box-shadow: black;
 }
 

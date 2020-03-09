@@ -9,6 +9,7 @@ class HomeNavbar extends React.Component {
         super(props)
         // this.state = this.props.ownProps
         this.handleProcess = this.handleProcess.bind(this)
+        this.reRoute = this.reRoute.bind(this)
     }
 
     handleProcess(e) {
@@ -20,6 +21,7 @@ class HomeNavbar extends React.Component {
                 .then(()=> (
                     this.props.history.push('/')
                 ))
+                this.forceUpdate();
             } 
         } else {
             this.props.processForm()
@@ -27,6 +29,12 @@ class HomeNavbar extends React.Component {
                     this.props.ownProps.history.push('/')
                 ))
         }
+    }
+
+    reRoute() {
+        debugger
+        this.props.ownProps.history.push('/home')
+        this.forceUpdate();
     }
     
     render() {
@@ -38,7 +46,8 @@ class HomeNavbar extends React.Component {
                 <div className='navbar-container-sub'>
                     <div className="navbar-container-left">
                         <div className='vimeo-logo-button'>
-                                <Link to='/home'><img className="logo-img" src="assets/input-onlinepngtools.png" /></Link>
+                                {/* <Link to='/home' ><img className="logo-img" src="assets/input-onlinepngtools.png" /></Link> */}
+                                <img onClick={this.reRoute}className="logo-img" src="assets/input-onlinepngtools.png" />
                         </div>
                         <div className='manage-video-dropdown'>
 
@@ -49,7 +58,7 @@ class HomeNavbar extends React.Component {
                     </div>
                     <div className="navbar-container-right">
                         <div className="search-bar">
-                            <Search />
+                            <Search location={this.props.location}/>
                         </div>
                         <div>
                             <button className='home-navbar-logout' onClick={this.handleProcess}> Logout </button>

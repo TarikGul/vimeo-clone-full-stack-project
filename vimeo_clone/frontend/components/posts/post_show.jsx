@@ -20,14 +20,13 @@ class PostShow extends React.Component {
         } else if (this.props.state.entities.posts[this.props.postId] === undefined) {
             return null
         }
-        console.log(this.props)
+        debugger
         return (
             <div className="showpage-container">
                 <HomeNavbar 
                     processForm={this.props.processForm} 
                     ownProps={this.props.ownProps}/>
                 <VideoPage entities={this.props.state.entities} postId={this.props.postId}/>
-                {/* <ReactPlayer url={this.props.state.entities.posts[this.props.postId].videoUrl} controls/> */}
             </div>
         )
     }
