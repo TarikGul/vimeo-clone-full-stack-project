@@ -2,7 +2,7 @@ json.post do
   json.partial! '/api/posts/post', post: @post
   json.videoUrl url_for(@post.video)
   json.thumbnailUrl url_for(@post.thumbnail)
-  json.user_post @post.user
+  json.uploader @post.user
 end
 
 json.comments do 
@@ -12,6 +12,7 @@ json.comments do
     end
   end
 end
+
 
 # Need to add another includes for Likes 
 
