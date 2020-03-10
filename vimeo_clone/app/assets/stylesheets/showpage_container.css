@@ -34,23 +34,27 @@
 }
 
 .uploader-username-container {
-    padding-top: 2%;
+    /* padding-top: 2%; */
 }
 
 .follow-user-container {
     display: flex;
     padding-top: 10px;
+    width: 40%;
+    justify-content: space-evenly;
+    float: left;
+    /* padding-top: 10px; */
 }
 
 .follow-button {
-    padding-left: 40px;
-    padding-top: 20px;
+    /* padding-left: 40px;
+    padding-top: 20px; */
     
 }
 
 .follow-button-container {
-    display: inline-flex;    
-    padding-left: 10px;
+    /* display: inline-flex;     */
+    /* padding-left: 10px; */
 }
 
 .video-left-info-container {
@@ -59,10 +63,72 @@
 }
 
 .comment-textarea {
-    width: 99.5%;
+    width: 99%;
     height: 70px;
     border-radius: 3px;
     outline: none;
-    font-size: 16px;
+    font-size: 14px;
 }
 
+.comment-container {
+    width: 99.5%;
+    height: 98px;
+    padding-top: 20px;
+}
+
+.comment-author-date-container {
+    display: flex;
+    width: 22%;
+    /* border: 1px solid black; */
+    justify-content: space-evenly;
+}
+
+.amount-of-comments {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    font-weight: 500;
+    color: #1a2e3b;
+}
+
+.comment-author {
+    font-size: 14px;
+    /* padding-left: 22px; */
+    font-weight: 500;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: #8498a4;
+    padding-top: 2px;
+}
+
+.comment-body {
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    padding-top: 0.5%;
+    border-bottom: 1px solid rgb(204, 204, 204)
+}
+.user-picture-comments {
+    width:6.0%;
+}
+
+.profile-body-container {
+    display: flex;
+    height: 80%;
+}
+
+.add-a-new-comment {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.space-container {
+    width: 7%;
+}
+
+.profile-icon-img {
+    height: 30px;
+    width: 30px;
+}
