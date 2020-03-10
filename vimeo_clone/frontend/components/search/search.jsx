@@ -16,7 +16,6 @@ class SearchBar extends React.Component {
     handleChange(e) {
         e.preventDefault(e)
         
-        console.log(this.state.clicked)
         this.setState({ clicked: true })
     }
 
@@ -24,7 +23,6 @@ class SearchBar extends React.Component {
     //Component did mount is useless here. 
     //Need to probable refactor
     render() {
-        console.log("This is the search bar render",this.props.location)
         return (
             <div>
                 {  

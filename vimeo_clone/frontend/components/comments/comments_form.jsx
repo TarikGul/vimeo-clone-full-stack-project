@@ -20,9 +20,7 @@ class CommentForm extends React.Component {
     }
 
     submitEvent(e) {
-        console.log(this.props)
         e.preventDefault()
-        console.log(this.props)
         this.props.createComment({
             body: this.state.body,
             postId: this.state.postId
@@ -31,12 +29,11 @@ class CommentForm extends React.Component {
             .then(() => this.setState({ 
                 body: '',
                 postId: this.props.postId 
-            }));
+            }))
     }
 
     handleClick() {
         this.setState({ clicked: true })
-        console.log(this.state)  
     }
 
     render() {

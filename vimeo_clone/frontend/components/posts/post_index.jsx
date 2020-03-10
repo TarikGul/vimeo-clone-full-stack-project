@@ -21,7 +21,6 @@ class PostIndex extends React.Component {
                 postPairs.push([posts[postKeys[i]], posts[postKeys[i + 1]]])
                 i+=2
             }
-            console.log(postPairs)
             return postPairs
         }
         const grid = tempGrid(posts)

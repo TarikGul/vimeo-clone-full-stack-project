@@ -11,7 +11,6 @@ class PostIndexItem extends React.Component {
     }
 
     handleClick() {
-        console.log(this.props)
         this.props.ownProps.history.push(`/posts/${this.props.post.id}`)
     }
     render() {
