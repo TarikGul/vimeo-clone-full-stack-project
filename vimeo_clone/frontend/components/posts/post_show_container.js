@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        fetchPosts: () => dispatch(fetchPosts()),
         fetchPost: postId => dispatch(fetchPost(postId)),
         processForm: () => dispatch(logout())
     }

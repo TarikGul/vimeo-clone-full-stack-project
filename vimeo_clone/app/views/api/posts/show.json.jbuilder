@@ -3,6 +3,19 @@ json.post do
   json.videoUrl url_for(@post.video)
   json.thumbnailUrl url_for(@post.thumbnail)
   json.uploader @post.user
+  json.uploaderPosts do 
+    @post.user.posts.each do |post|
+      json.set! post.id do
+        json.id post.id
+        json.category_id post.category_id
+        json.title post.title
+        json.userId post.user_id
+        json.thumbnailUrl url_for(post.thumbnail)
+        json.videoUrl url_for(post.video)
+      end
+    end
+  end
+
 end
 
 json.comments do 
@@ -14,6 +27,14 @@ json.comments do
   end
 end
 
+# json.uploads do 
+#   @post.user.posts do |post|
+#     json.set! post.id do
+#       json.thumnailUrl url_for(post.thumbnail)
+#       json.videoUrl url_for(post.video)
+#     end
+#   end
+# end
 
 # Need to add another includes for Likes 
 

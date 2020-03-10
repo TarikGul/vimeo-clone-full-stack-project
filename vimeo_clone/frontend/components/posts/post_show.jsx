@@ -1,7 +1,6 @@
 import React from 'react'
 import HomeNavbar from '../main_navbar/main_navbar'
 import VideoPage from './video_show_page/video_page'
-import ReactPlayer from 'react-player'
 
 class PostShow extends React.Component {
     constructor(props) {
@@ -11,6 +10,7 @@ class PostShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchPost(this.props.postId)
+        console.log("this is the props in the show page", this.props)
     }
 
 
@@ -26,7 +26,9 @@ class PostShow extends React.Component {
                 <HomeNavbar 
                     processForm={this.props.processForm} 
                     ownProps={this.props.ownProps}/>
-                <VideoPage entities={this.props.state.entities} postId={this.props.postId}/>
+                <VideoPage 
+                    entities={this.props.state.entities} 
+                    postId={this.props.postId}/>
             </div>
         )
     }
