@@ -1,5 +1,6 @@
 import React from 'react'
 import VideoShowItem from './video_show_item'
+import ToggleButton from './toggle'
 
 class VideoRightContainer extends React.Component {
     constructor(props) {
@@ -40,6 +41,7 @@ class VideoRightContainer extends React.Component {
             <div className="video-right-top-container">
                 <div className="video-right-inner-container">
                 <div className="more-from-this-user">More from this user</div>
+                <ToggleButton />
                     <div className="video-right-thumbnail-title-container">
                         {
                             

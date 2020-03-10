@@ -69,7 +69,7 @@
     justify-content: space-evenly;
     padding: 10px;
     padding-top: 10px;
-    width: 60%;
+    width: 48%;
     height: 32px;
     /* transform: translateY(20%); */
     text-align: center;
@@ -196,7 +196,7 @@
 }
 
 .user-posts-show-page-thumbnail{
-    width: auto%;
+    width: auto;
     height: 76px;
 }
 
@@ -207,11 +207,12 @@
 }
 
 .more-from-this-user {
-    padding-bottom: 35px;
+    padding-bottom: 5px;
     font-size: 18px;
     line-height: 24px;
     text-align: start;
     letter-spacing: 0.16px;
+    font-weight: 500;
 }
 
 .user-posts-sidebar-container {
@@ -276,4 +277,15 @@
     background-color: rgb(206, 205, 205);
     color: rgb(66, 66, 66);
     border: 1px solid rgb(117, 117, 117);
+}
+
+.autoplay-toggle {
+    font-size: 14px;
+    color: #1a2e3b;
+    padding-left: 10px;
+}
+
+.toggle-autplay-container {
+    display: flex;
+    padding-bottom: 25px;
 }
