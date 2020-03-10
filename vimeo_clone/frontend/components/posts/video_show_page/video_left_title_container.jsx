@@ -24,10 +24,12 @@ const TitleContainer = props => {
             </div>
             <div className='follow-user-container'>
                 <img className="profile-icon-img" src="assets/profile_icon.png" alt="" />
-                <div className='uploader-username-container'>
-                    {_.capitalize(prop.uploader.username)}
+                <div className="button-follower-container-for-title title-icon">
+                    <div className='uploader-username-container'>
+                        {_.capitalize(prop.uploader.username)}
+                    </div>
+                    <FollowButton />
                 </div>
-                <FollowButton />
             </div>
         </div>
     )

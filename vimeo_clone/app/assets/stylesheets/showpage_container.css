@@ -41,7 +41,7 @@
     display: flex;
     padding-top: 10px;
     width: 40%;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     float: left;
     /* padding-top: 10px; */
 }
@@ -50,6 +50,13 @@
     /* padding-left: 40px;
     padding-top: 20px; */
     
+}
+
+.button-follower-container-for-title {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    width: 80%;
 }
 
 .follow-button-container {
@@ -131,4 +138,8 @@
 .profile-icon-img {
     height: 30px;
     width: 30px;
+}
+
+.uploader-username-container {
+    padding-right: 30px;
 }
