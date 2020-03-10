@@ -42,26 +42,44 @@
     padding-top: 10px;
     width: 40%;
     /* justify-content: space-evenly; */
-    float: left;
+    /* float: left; */
     /* padding-top: 10px; */
+    /* align-items: center; */
 }
 
 .follow-button {
-    /* padding-left: 40px;
-    padding-top: 20px; */
-    
+    background-color: #00adef;
+    border-radius: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 11px;
+    padding-right: 11px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.follow-button:hover {
+    background-color: #0384b8;
 }
 
 .button-follower-container-for-title {
     display: flex;
     justify-content: space-evenly;
+    padding: 10px;
     padding-top: 10px;
-    width: 80%;
+    width: 60%;
+    height: 32px;
+    /* transform: translateY(20%); */
+    text-align: center;
 }
 
+
 .follow-button-container {
-    /* display: inline-flex;     */
-    /* padding-left: 10px; */
+    width: 30%;
+    height: 24px;
+    padding-top: 30px;
+    /* border: 1px solid black; */
 }
 
 .video-left-info-container {
@@ -87,7 +105,8 @@
     display: flex;
     width: 22%;
     /* border: 1px solid black; */
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    padding-left: 4%;
 }
 
 .amount-of-comments {
@@ -102,6 +121,7 @@
     font-size: 14px;
     /* padding-left: 22px; */
     font-weight: 500;
+    padding-right: 5px;
 }
 
 .comment-date {
@@ -138,8 +158,33 @@
 .profile-icon-img {
     height: 30px;
     width: 30px;
+    padding-top: 10px;
 }
 
 .uploader-username-container {
     padding-right: 30px;
+    padding-top: 8px;
+}
+
+.button-comment-container {
+    display: flex;
+}
+
+.button-comment {
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #00adef;
+    cursor: pointer;
+    color: white;
+}
+
+.button-comment:hover {
+    background-color: #0384b8;
+}
+
+.play-nice-comment {
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 12px;
+    color: rgb(84, 183, 240);
 }

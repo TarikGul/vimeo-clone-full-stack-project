@@ -9,7 +9,7 @@ const FollowButton = props => {
                     Follow
                 </div>
                 <div className="follow-button-plus-sign">
-
+                    
                 </div>
                 </div>
             </button> 

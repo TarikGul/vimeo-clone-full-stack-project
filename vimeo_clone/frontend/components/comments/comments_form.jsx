@@ -21,6 +21,9 @@ class CommentForm extends React.Component {
 
     submitEvent(e) {
         e.preventDefault()
+        if (this.state.body.length < 3) {
+            return 
+        }
         this.props.createComment({
             body: this.state.body,
             postId: this.state.postId
