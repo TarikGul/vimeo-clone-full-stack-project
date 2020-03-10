@@ -11,7 +11,9 @@ const Greeting = ({ currentUser, logout, openModal}) => {
             <div id="navbar-container-2">
                 <div className="nav-button-list">
                     <div className='nav-button-list-left'>
-                        <div className="navbar-name">Bimeo</div>
+                        <div className="navbar-name">
+                            <img className="logo-img" src="assets/bimeoJP.png" alt=""/>
+                        </div>
                         <div className="join-box">
                             <div className='join-container'>
                                 <button className='join success' onClick={() => openModal('signup')}>Join</button>
