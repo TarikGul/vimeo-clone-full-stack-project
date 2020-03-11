@@ -12,7 +12,6 @@ class PostShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchPost(this.props.postId)
-        console.log("this is the props in the show page", this.props)
     }
 
 

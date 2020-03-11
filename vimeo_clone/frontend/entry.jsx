@@ -5,6 +5,7 @@ import Root from './components/root'
 import { fetchPost, fetchPosts } from './actions/post_actions'
 // import * as APIUtil from './util/session_api_util'
 import { login } from './actions/session_actions'
+import { fetchUser } from './actions/user_actions'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore();
     }   
+    window.fetchUser = fetchUser;
     window.fetchPost = fetchPost;
     window.fetchPosts = fetchPosts;
     window.dispatch = store.dispatch

@@ -10,7 +10,6 @@ class VideoPage extends React.Component {
     
     render() {
         const { postId, entities, fetchPosts } = this.props
-        console.log('this is the videopage props', this.props)
         return (
             <div className="showpage-video-container">
                 <VideoViewportContainer videoUrl={entities.posts[postId].videoUrl}/>

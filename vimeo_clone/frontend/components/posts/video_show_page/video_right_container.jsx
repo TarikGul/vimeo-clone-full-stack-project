@@ -26,7 +26,6 @@ class VideoRightContainer extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         const { postId, entities } = this.props
         const userId = Object.keys(entities.users)[0]
         const uploaderState = entities.posts[postId].uploaderPosts

@@ -1,0 +1,38 @@
+.manage-videos-container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-content-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 65px;
+    width: 100%;
+    padding-left: 240px;
+}
+
+.manage-video-top-inner-container {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    padding-top: 2%;
+    padding-left: 0.5%;
+}
+
+
+.left-inner-container-name {
+    color: #1a2e3b;
+    font-size: 30px;
+    line-height: 32px;
+    letter-spacing: 0.64px;
+    font-weight: 500;
+}
+
+.left-inner-container-number-of-videos {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.16px;
+    color: #8498a4;
+    padding-top: 10px;
+}

@@ -9,7 +9,6 @@ class VideoBottomContainer extends React.Component {
     }
 
     render() {
-        console.log("this is the bottome container props", this.props)
         return (
             <div className="showpage-bottom-container">
                 <VideoLeftContainer 
