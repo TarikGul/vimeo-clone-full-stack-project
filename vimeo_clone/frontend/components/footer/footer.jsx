@@ -15,14 +15,13 @@ const Footer = props => {
                     </ul>
                 </div>
                 <div className="footer-left-container">
-
+                    May the force be with you
                 </div>
             </div>
             <div className="footer-bottom-container">
                 <div className="footer-bottom-inner-container">
                     <div className='one-love-sf'>
                     Made with love in SF
-
                     </div>
                 </div>
             </div>
