@@ -9,6 +9,7 @@
     font-size: 14px;
     outline: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .home-page-sidebar-button:hover {
@@ -45,9 +46,11 @@
     font-size: 14px;
     padding-top: 5px;
     padding-left: 15px;
+    text-decoration: none;
 }
 
 .homepage-inner-container-substance {
     display: flex;
     padding-left: 30px;
+    text-decoration: none;
 }

@@ -7,10 +7,12 @@ import SplashContainer from './splash/splash_container'
 import HomeNavbarContainer from './main_navbar/navbar_container'
 import HomepageContainer from './homepage/homepage_container'
 import PostShowContainer from './posts/post_show_container'
+import ManageVideosContainer from './manage/videos/manage_videos_container'
 
 const App = () => (
     <div className="main">
         <Modal />
+        <Route path='/manage/videos' component={ManageVideosContainer} />
         <Route path="/posts/:postId" component={PostShowContainer}/>
         <Route path='/home' component={HomeNavbarContainer}/>
         <Route exact path='/' component={GreetingContainer}/>

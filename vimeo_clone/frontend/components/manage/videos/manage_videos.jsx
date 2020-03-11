@@ -1,5 +1,6 @@
 import React from 'react'
-import HomeNavbar from '../main_navbar/main_navbar'
+import HomeNavbar from '../../main_navbar/main_navbar'
+import SidebarButtonBox from '../../homepage/sidebar_button_box'
 
 class ManageVideos extends React.Component {
     constructor(props) {
@@ -9,10 +10,13 @@ class ManageVideos extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="manage-videos-container">
                 <HomeNavbar />
+                <SidebarButtonBox />
                 
             </div>
         )
     }
 }
+
+export default ManageVideos

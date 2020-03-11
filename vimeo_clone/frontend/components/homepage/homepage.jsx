@@ -28,25 +28,7 @@ class Homepage extends React.Component {
         if (this.props.posts.length !== 0) {
             return (
                 <div className="page-container">
-                    <div className="side-navbar-container-left">
-                        <div className='new-video-button-container'>
-                            <button className='new-video-button'>
-                                <div className='unicode-sidebar-new-video-button'>
-                                    {'\u002B'}
-                                </div>  
-                                <div className="new-video-button-name">
-                                     New Video
-                                </div>
-                            </button>
-                        </div>
-                        {/*Make this into its own component */}
-                        <div className="navigation-links">
-                            <SidebarButtonBox />
-                        </div>
-                        <div className="available-storage">
-
-                        </div>
-                    </div>
+                    <SidebarButtonBox />
                     <div className="main-container-right">
                         <div className="page-name">
                             Home
