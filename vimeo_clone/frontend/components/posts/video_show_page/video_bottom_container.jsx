@@ -9,12 +9,15 @@ class VideoBottomContainer extends React.Component {
     }
 
     render() {
+        console.log("this is the bottome container props", this.props)
         return (
             <div className="showpage-bottom-container">
                 <VideoLeftContainer 
                     postId={this.props.postId}
                     entities={this.props.entities}/>
-                <VideoRightContainer 
+                <VideoRightContainer
+                    clickHandler={this.props.clickHandler}
+                    ownProps={this.props.ownProps} 
                     postId={this.props.postId}
                     entities={this.props.entities}/>
             </div>

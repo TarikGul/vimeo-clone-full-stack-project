@@ -6,6 +6,7 @@ class PostShow extends React.Component {
     constructor(props) {
         super(props)
 
+        this.clickHandler = this.clickHandler.bind(this)
     }
 
     componentDidMount() {
@@ -13,6 +14,15 @@ class PostShow extends React.Component {
         console.log("this is the props in the show page", this.props)
     }
 
+
+
+    clickHandler(postId) {
+       return () => this.props.fetchPost(postId)
+                        .then(() => {
+                            this.props.ownProps.history.push(`/posts/${postId}`)
+                        })
+    }
+    
 
     render() {
         if (this.props.postId === undefined) {
@@ -26,7 +36,9 @@ class PostShow extends React.Component {
                 <HomeNavbar 
                     processForm={this.props.processForm} 
                     ownProps={this.props.ownProps}/>
-                <VideoPage 
+                <VideoPage
+                    clickHandler={this.clickHandler} 
+                    ownprops={this.props.ownProps}
                     entities={this.props.state.entities} 
                     postId={this.props.postId}/>
             </div>

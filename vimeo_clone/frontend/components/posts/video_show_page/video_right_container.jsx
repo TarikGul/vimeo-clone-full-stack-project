@@ -7,20 +7,24 @@ class VideoRightContainer extends React.Component {
         super(props)
 
         this.state = {
-            index: 7
+            index: 7,
+            postId: null
         }
-
+        
         this.handleClick= this.handleClick.bind(this)    
     }
 
     handleClick(e) {
         e.preventDefault()
+
         this.setState(prevState => ({
-            index: prevState.index + 5
+            index: prevState.index + 5,
+            postId: this.props.postId
         }))
     }
 
     render() {
+        console.log(this.props)
         const { postId, entities } = this.props
         const userId = Object.keys(entities.users)[0]
         const uploaderState = entities.posts[postId].uploaderPosts
@@ -29,14 +33,18 @@ class VideoRightContainer extends React.Component {
         if (uploaderState === undefined) {
             return null
         }
-
         //This is to map out the uploads of the users current show page so that 
         //they can see all the related videos on the side bar.
         const keys = Object.keys(uploaderState)
         const collectionOfPosts = keys.map(key => uploaderState[key])
         const uploaderSliceOfState = collectionOfPosts.slice(0, this.state.index)
-
-
+        if (this.state.postId !== this.props.postId) {
+            this.setState({
+                index: 7,
+                postId: this.props.postId
+            })
+        }
+        
         return (
             <div className="video-right-top-container">
                 <div className="video-right-inner-container">
@@ -46,10 +54,12 @@ class VideoRightContainer extends React.Component {
                         {
                             
                             uploaderSliceOfState.map((post, i) => {
-                                return <VideoShowItem 
-                                key={`post-show-${i}`}
-                                user={entities.users[userId]}
-                                post={post}/>
+                                return <VideoShowItem
+                                    clickHandler={this.props.clickHandler}
+                                    ownProps={this.props.ownProps}
+                                    key={`post-show-${i}`}
+                                    user={entities.users[userId]}
+                                    post={post}/>
                             })
                         }
                     </div>
