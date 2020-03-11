@@ -4,7 +4,7 @@ const Footer = props => {
     return (
         <div className="footer-container">
             <div className="footer-top-container">
-                <div className="footer-right-container">
+                <div className="footer-left-container">
                     <ul className="list-container-footer">
                         <li>
                             <a className='github-link atag' href="https://github.com/TarikGul">Github</a>
@@ -14,7 +14,7 @@ const Footer = props => {
                         </li>
                     </ul>
                 </div>
-                <div className="footer-left-container">
+                <div className="footer-right-container">
                     May the force be with you
                 </div>
             </div>

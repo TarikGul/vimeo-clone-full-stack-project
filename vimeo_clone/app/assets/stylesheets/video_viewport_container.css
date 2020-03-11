@@ -1,6 +1,7 @@
 .showpage-video-container {
     /* display: flex; */
     padding-top: 62px;
+    padding-bottom: 50px;
 }
 
 .video-viewport-container {

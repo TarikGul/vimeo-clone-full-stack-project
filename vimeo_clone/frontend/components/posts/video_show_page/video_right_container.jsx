@@ -14,6 +14,8 @@ class VideoRightContainer extends React.Component {
         this.handleClick= this.handleClick.bind(this)    
     }
 
+    //This handle click allows the video show bar on the right to refresh
+    //on every show page. 
     handleClick(e) {
         e.preventDefault()
 

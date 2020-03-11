@@ -15,10 +15,11 @@
     border-bottom: 1px solid rgb(173, 173, 173);
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .footer-right-container {
-
+    color: white;
 }
 
 .github-link {

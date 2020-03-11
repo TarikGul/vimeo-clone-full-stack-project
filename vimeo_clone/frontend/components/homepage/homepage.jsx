@@ -54,6 +54,9 @@ class Homepage extends React.Component {
                         <div className='feed-container'>
                             <div className="my-feed-container-name"> My Feed</div>
                             <Carousel posts={this.props.posts} ownProps={this.props.ownProps}/>
+                            <div className="right-linear-gradient">
+                                {' '}
+                            </div>
                         </div>
                     </div>
                 </div>
