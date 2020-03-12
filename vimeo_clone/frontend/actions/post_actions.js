@@ -2,6 +2,7 @@ import * as APIUTIL from '../util/post_api_util'
 
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
+export const REMOVE_POST = 'REMOVE_POST'
 
 
 //-----------------------------------
@@ -24,6 +25,13 @@ const receivePost = post => {
     }
 }
 
+const removePost = postId => {
+    return {
+        type: REMOVE_POST,
+        postId
+    }
+}
+
 
 // We are going to add more to this such as likes, plays and comments
 // I need to set up receive likes and plays still and add them to a single
@@ -37,3 +45,7 @@ export const fetchPost = postId => dispatch => {
         .then(post => dispatch(receivePost(post)))
 }
 
+export const deletePost = postId => dispatch => {
+    return APIUTIL.deletePost(postId)
+        .then(() => dispatch(removePost(postId)))
+}

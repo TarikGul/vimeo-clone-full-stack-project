@@ -10,7 +10,7 @@ class SidebarButtonBox extends React.Component {
         const routes = [
             "/home",
             "/manage/videos",
-            "/manage/create",
+            "/manage/upload",
             "/manage/live_events",
             "/manage/showcases"
         ]
@@ -24,7 +24,7 @@ class SidebarButtonBox extends React.Component {
         const name = [
             "Home",
             "Videos",
-            "Create",
+            "Upload",
             "Life events",
             "Showcases"
         ]; 

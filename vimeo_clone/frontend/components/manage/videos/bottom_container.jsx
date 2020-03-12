@@ -37,17 +37,7 @@ class BottomContainer extends React.Component {
                     <div className="bottom-container-manage-videos-top-manager">
                         <div className="manage-videos-top-row-left">
                             <div className="checkbox-manage-videos">
-                                {   
-                                    this.state.clicked
-                                    ?
-                                    (
-                                        <input className="manage-videos-checkbox checked" type="checkbox" onClick={this.handleClick} />
-                                    ): (
-                                        <input className="manage-videos-checkbox" type="checkbox" onClick={this.handleClick} checked/>
-                                    )
-
-                                }
-                                
+                                <input className="manage-videos-checkbox" type="checkbox" onClick={this.handleClick} />
                             </div>
                             <div className="manage-videos-title-sorter">
                                 Title
