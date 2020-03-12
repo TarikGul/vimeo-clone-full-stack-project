@@ -17,6 +17,7 @@ class VideoContentContainer extends React.Component {
                     entities={this.props.entities}
                     ownProps={this.props.ownProps}/>
                 <BottomContainer
+                    deletePost={this.props.deletePost}
                     fetchUser={this.props.fetchUser}
                     userId={this.props.userId}  
                     entities={this.props.entities}

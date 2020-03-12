@@ -1,17 +1,18 @@
 import React from 'react'
 import { timeSince } from '../../../util/date_api_util'
-import { Link } from 'react-redux'
 
 class PostInfoRow extends React.Component {
     constructor(props) {
         super(props)
+
+
 
         this.reRoute = this.reRoute.bind(this)
     }
 
     reRoute(e) {
         e.preventDefault()
-        console.log("this is in the handleclick", this.props)
+    
         this.props.ownProps.history.push(`/posts/${this.props.post.id}`)
     }
 
@@ -19,7 +20,6 @@ class PostInfoRow extends React.Component {
 
     render() {
         const date = new Date(this.props.post.created_at)
-        console.log("this is the postitem" ,this.props)
         return (
             <div className="manage-video-row" >
                 <div className="manage-video-row-left-container">
@@ -28,9 +28,17 @@ class PostInfoRow extends React.Component {
                             this.props.clicked
                             ?
                             (
-                                    <input className="checkbox-manage-videos" type="checkbox" checked={this.props.clicked} />
+                                    <input data={"hello" + this.props.post.id}
+                                           className="checkbox-manage-videos"
+                                           type="checkbox" 
+                                           onClick={this.props.handleClick} 
+                                           checked={this.props.clicked} />
                             ) : (
-                                    <input className="checkbox-manage-videos" type="checkbox" checked={null} />
+                                    <input data-val={this.props.post.id}
+                                           className="checkbox-manage-videos" 
+                                           type="checkbox" 
+                                           onClick={this.props.handleClick} 
+                                           checked={null} />
                             )
                         }
                     </div>

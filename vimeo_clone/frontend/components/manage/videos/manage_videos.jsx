@@ -25,6 +25,7 @@ class ManageVideos extends React.Component {
                     ownProps={this.props.ownProps}/>
                 <SidebarButtonBox />
                 <VideoContentContainer
+                    deletePost={this.props.deletePost}
                     fetchUser={this.props.fetchUser}
                     userId={this.props.state.session.id} 
                     entities={this.props.state.entities}
