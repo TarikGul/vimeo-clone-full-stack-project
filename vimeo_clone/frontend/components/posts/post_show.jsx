@@ -1,6 +1,7 @@
 import React from 'react'
 import HomeNavbar from '../main_navbar/main_navbar'
 import VideoPage from './video_show_page/video_page'
+import { scrollToTop } from '../../util/window_util'
 import Footer from '../footer/footer'
 
 class PostShow extends React.Component {
@@ -30,7 +31,8 @@ class PostShow extends React.Component {
         } else if (this.props.state.entities.posts[this.props.postId] === undefined) {
             return null
         }
-
+        
+        scrollToTop();
         return (
             <div className="showpage-container">
                 <HomeNavbar 

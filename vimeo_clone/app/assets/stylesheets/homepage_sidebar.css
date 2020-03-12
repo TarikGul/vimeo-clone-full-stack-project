@@ -16,14 +16,7 @@
     background-color: #e3e8e9;
 }
 
-.homepage-sidebar-inner-container button:first-child {
-    background-color: #ebecec;
 
-}
-
-.Home-sidebar-button {
-    background-color: #ebecec;
-}
 
 .sidebar-button-inner-container {
     width: 94.5%
@@ -53,4 +46,8 @@
     display: flex;
     padding-left: 30px;
     text-decoration: none;
+}
+
+.clicked-sidebar {
+    background-color: #ebecec;
 }

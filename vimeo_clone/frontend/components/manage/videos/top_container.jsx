@@ -7,10 +7,13 @@ class TopContainer extends React.Component {
     }
 
     render() {
+        debugger
         const { userId, entities } = this.props
         // Sanity check to make sure that the prop is passed down before we 
         // render the page
-        if (entities.users[userId].user_posts === undefined){
+        if (userId === null) {
+            return null
+        } else if (entities.users[userId].user_posts === undefined){
             return null
         }
         const userPostsKeys = Object.keys(entities.users[userId].user_posts)

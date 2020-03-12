@@ -89,6 +89,14 @@ class SignupForm extends React.Component {
                                 />
                         </div>
                         <input className="modal-button" type="text" type="submit" value={this.props.formType} />
+                        <div className="have-an-account">
+                            <div className="have-an-account-tex">
+                                Have an account?
+                            </div>
+                            <div className="login-bottom-modal">
+                                {this.props.otherForm}
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

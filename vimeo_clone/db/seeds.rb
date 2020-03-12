@@ -79,7 +79,7 @@ Follower.create({ user_id: User.first.id, follower_id: User.first.id + 1 })
 # Attaches a video url to a post. This is how we would open a file and attach 
 # It to the state of an object on the backend
 Post.all.each do |post|
-  post.video.attach(io: File.open("/Users/tarik/Desktop/videos/IMG_1159.mp4"), filename: "IMG_1159.MOV")
+  post.video.attach(io: File.open("/Users/tarik/Desktop/videos/final_video.mp4"), filename: "final_video.mp4")
 end
 
 Post.all.each do |post|

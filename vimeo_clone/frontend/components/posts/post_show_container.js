@@ -1,7 +1,6 @@
-import React from 'react'
+import PostShow from './post_show'
 import { connect } from 'react-redux'
 import { fetchPost } from '../../actions/post_actions'
-import PostShow from './post_show'
 import { logout } from '../../actions/session_actions'
 import { withRouter } from 'react-router-dom'
 

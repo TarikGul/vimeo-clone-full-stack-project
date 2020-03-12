@@ -17,13 +17,12 @@ class ManageVideos extends React.Component {
     // The upload video splash for this link needs to show up otherwise 
     // The users videos show up and they can edit or delete them. 
     render() {
-        console.log("this is the props from the manage videos component",this.props)
         return (
             <div className="manage-videos-container">
                 <HomeNavbar 
                     processForm={this.props.processForm}
                     ownProps={this.props.ownProps}/>
-                <SidebarButtonBox />
+                <SidebarButtonBox ownProps={this.props.ownProps}/>
                 <VideoContentContainer
                     deletePost={this.props.deletePost}
                     fetchUser={this.props.fetchUser}

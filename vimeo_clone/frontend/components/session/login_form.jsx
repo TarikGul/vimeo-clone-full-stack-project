@@ -77,6 +77,14 @@ class LoginForm extends React.Component {
                         />
                     </div>
                     <input className="modal-button" type="submit" value='Login' />
+                    <div className="navigate-to-other-method">
+                        <div className="dont-have-an-account">
+                            Dont have an account?
+                        </div>
+                        <div className="signup-link-bottom">
+                            {this.props.otherForm}
+                        </div>
+                    </div>
                 </form>
             </div>
         )

@@ -48,6 +48,7 @@ class SidebarButtonBox extends React.Component {
                             counter.map(i => {
                                 return <SidebarButton
                                     key={`sidebar-button-${i}`}
+                                    ownProps={this.props.ownProps}
                                     imgUrl={images[i]}
                                     buttonName={name[i]}
                                     route={routes[i]}

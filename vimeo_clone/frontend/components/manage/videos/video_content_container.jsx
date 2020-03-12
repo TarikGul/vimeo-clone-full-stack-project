@@ -9,7 +9,6 @@ class VideoContentContainer extends React.Component {
     }
 
     render() {
-        console.log("this s the props from the video content container", this.props)
         return (
             <div className='video-content-container'>
                 <TopContainer

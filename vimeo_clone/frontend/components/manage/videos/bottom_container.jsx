@@ -20,7 +20,6 @@ class BottomContainer extends React.Component {
 
     allPosts(posts) {
         const ids = []
-        debugger
         for(let i = 0; i < posts.length; i++) {
             ids.push(posts[i].id)
         }
@@ -45,7 +44,6 @@ class BottomContainer extends React.Component {
 
         for(let i = 1; i < checks.length; i++) {
             if(checks[i].checked) {
-                // let index = checks[i].getAttribute('data-val')
                 let index = i
                 nodes.push(index)
             }
@@ -53,9 +51,6 @@ class BottomContainer extends React.Component {
 
         for(let i = 0; i < nodes.length; i++) {
             let index = parseInt(nodes[i]) - 1
-            console.log(index)
-            console.log(values)
-            console.log(values[index])
             let node = values[index].id
             this.props.deletePost(node)
                 .then(() => {
@@ -101,23 +96,28 @@ class BottomContainer extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
         const { entities, userId, ownProps } = this.props
-        if(entities.users[userId].user_posts === undefined) {
+
+        if (userId === null) {
+            return null
+        } else if (entities.users[userId].user_posts === undefined) {
             return null
         }
         const postKeys = Object.values(entities.users[userId].user_posts)
         return (
             <div className="bottom-container-manage-videos">
-                {
-                    this.state.clicked || this.state.oneClicked
-                    ?
-                    (
-                        <button className="delete-post" onClick={this.deleteClick}>Delete</button>
-                    ):(
-                        null
-                    )
-                }
+                <div className="delete-post-container">
+                    {
+                        this.state.clicked || this.state.oneClicked
+                        ?
+                        (
+                            <button className="delete-post" onClick={this.deleteClick}>Delete</button>
+                        ):(
+                            null
+                        )
+                    }
+                </div>
                 <div className="bottom-container-manage-videos-block">
                     <div className="bottom-container-manage-videos-top-manager">
                         <div className="manage-videos-top-row-left">
