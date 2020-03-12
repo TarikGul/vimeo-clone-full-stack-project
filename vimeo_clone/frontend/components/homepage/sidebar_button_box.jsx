@@ -15,11 +15,11 @@ class SidebarButtonBox extends React.Component {
             "/manage/showcases"
         ]
         const images = [
-            "assets/home-button.png", 
-            "assets/video-button.png",
-            "assets/create-video-button.png",
-            "assets/camera-button.png",
-            "assets/showcase-button.png" 
+            "/home-button.png", 
+            "/video-button.png",
+            "/create-video-button.png",
+            "/camera-button.png",
+            "/showcase-button.png" 
         ];
         const name = [
             "Home",

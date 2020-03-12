@@ -60,10 +60,10 @@ class Splash extends React.Component {
                             <button className='image-1-button'> Post a job </button>
                         </div>
                     </div>
-                    <img className='image-1'src="assets/947.png" alt=""/>
+                    <img className='image-1'src="/947.png" alt=""/>
                 </div>
                 <div className="image-2-container">
-                    <img className='image-2' src="assets/948.jpg" alt="" />
+                    <img className='image-2' src="/948.jpg" alt="" />
                     <div className="image-2-left-column">
                         <div className="image-1-column-header">
                             Publish anywhere, <br /> grow everywhere.
@@ -104,10 +104,10 @@ class Splash extends React.Component {
                             <button className='image-1-button'> See privacy options </button>
                         </div>
                     </div>
-                    <img className='image-3' src="assets/953.jpg" alt="" />
+                    <img className='image-3' src="/953.jpg" alt="" />
                 </div>
                 <div className="image-2-container">
-                    <img className='image-4' src="assets/950.jpg" alt="" />
+                    <img className='image-4' src="/950.jpg" alt="" />
                     <div className="image-2-left-column">
                         <div className="image-1-column-header">
                             Just add Live.

@@ -25,7 +25,7 @@ const TitleContainer = props => {
                 {`Uploaded on ${parseDate(prop.created_at)}`}
             </div>
             <div className='follow-user-container'>
-                <img className="profile-icon-img" src="assets/profile_icon.png" alt="" />
+                <img className="profile-icon-img" src="/profile_icon.png" alt="" />
                 <div className="button-follower-container-for-title title-icon">
                     <div className='uploader-username-container'>
                         {_.capitalize(prop.uploader.username)}

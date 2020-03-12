@@ -39,7 +39,7 @@ class CommentItem extends React.Component {
                 </div>
                 <div className='profile-body-container'>
                     <div className="user-picture-comments">
-                        <img className="profile-icon-img" src="assets/profile_icon.png" alt=""/>
+                        <img className="profile-icon-img" src="/profile_icon.png" alt=""/>
                     </div>
                     <div className="comment-body">
                         {this.props.comment.body}

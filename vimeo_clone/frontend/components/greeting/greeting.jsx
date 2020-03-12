@@ -12,7 +12,7 @@ const Greeting = ({ currentUser, logout, openModal}) => {
                 <div className="nav-button-list">
                     <div className='nav-button-list-left'>
                         <div className="navbar-name">
-                            <img className="logo-img" src="assets/bimeoJP.png" alt=""/>
+                            <img className="logo-img" src="/bimeoJP.png" alt=""/>
                         </div>
                         <div className="join-box">
                             <div className='join-container'>

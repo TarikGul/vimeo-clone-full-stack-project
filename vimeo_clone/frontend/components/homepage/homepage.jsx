@@ -1,6 +1,4 @@
 import React from 'react'
-import PostIndex from '../posts/post_index'
-import { Link } from 'react-router-dom'
 import Carousel from './carousel/carousel'
 import SidebarButtonBox from './sidebar_button_box'
 
