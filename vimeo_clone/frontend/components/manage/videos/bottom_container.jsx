@@ -96,7 +96,6 @@ class BottomContainer extends React.Component {
     }
 
     render() {
-        debugger
         const { entities, userId, ownProps } = this.props
 
         if (userId === null) {
