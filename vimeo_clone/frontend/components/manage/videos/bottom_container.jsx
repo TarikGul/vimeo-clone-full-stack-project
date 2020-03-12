@@ -1,11 +1,27 @@
 import React from 'react'
 import PostInfoRow from './post_info_row'
-import { timeSince } from '../../../util/date_api_util'
+
 
 class BottomContainer extends React.Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            clicked: false
+        }
+
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        let clickedState;
+        if(this.state.clicked === true) {
+            clickedState = false
+        } else {
+            clickedState = true
+        }
+        this.setState({ clicked: clickedState })
     }
 
     render() {
@@ -20,8 +36,18 @@ class BottomContainer extends React.Component {
                 <div className="bottom-container-manage-videos-block">
                     <div className="bottom-container-manage-videos-top-manager">
                         <div className="manage-videos-top-row-left">
-                            <div className="manage-videos-checkbox">
-                                {' '}
+                            <div className="checkbox-manage-videos">
+                                {   
+                                    this.state.clicked
+                                    ?
+                                    (
+                                        <input className="manage-videos-checkbox checked" type="checkbox" onClick={this.handleClick} />
+                                    ): (
+                                        <input className="manage-videos-checkbox" type="checkbox" onClick={this.handleClick} checked/>
+                                    )
+
+                                }
+                                
                             </div>
                             <div className="manage-videos-title-sorter">
                                 Title
@@ -39,6 +65,7 @@ class BottomContainer extends React.Component {
                     {
                         postKeys.map((post, i) => {
                             return <PostInfoRow
+                                        clicked={this.state.clicked}
                                         key={`post-info-${i}`}
                                         ownProps={ownProps} 
                                         post={post}/>

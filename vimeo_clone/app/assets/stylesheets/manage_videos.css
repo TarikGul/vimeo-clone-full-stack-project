@@ -8,8 +8,9 @@
     flex-direction: column;
     height: 100%;
     padding-top: 65px;
-    width: 100%;
-    padding-left: 240px;
+    width: 82%;
+    padding-left: 250px;
+    
 }
 
 .manage-video-top-inner-container {
@@ -36,3 +37,112 @@
     color: #8498a4;
     padding-top: 10px;
 }
+
+.bottom-container-manage-videos-block {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bottom-container-manage-videos-top-manager {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+
+.manage-videos-top-row-left {
+    display: flex;
+    width: 8%;
+    justify-content: space-between;
+}
+
+.manage-videos-checkbox {
+    width: 30px;
+    height: 30px;
+}
+
+.manage-videos-title-sorter {
+    font-size: 14px;
+    padding-top: 10px;
+    padding-left: 145%
+}
+
+.manage-video-row {
+    /* border: 1px solid black; */
+    border-top: 1px solid rgb(233, 233, 233);
+    display: flex;
+    justify-content: space-between;
+    /* width: 80%; */
+    cursor: pointer;
+}
+
+.manage-video-row:hover {
+    background-color: #f4f5f5;
+}
+
+.manage-videos-top-row-right {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    padding-top: 8px;
+}
+
+.checkbox-container {
+    padding-right: 40px;
+}
+
+.checkbox-manage-videos {
+    padding-right: 40px;
+    width: 20px;
+    height: 45px;
+    border: none;
+}
+
+.manage-video-row-left-container {
+    display: flex;
+    width: 50%;
+    padding-top: 15px;
+}
+
+
+.manage-video-thumbnail-container {
+    width: 10%;
+    height: 65px;
+}
+
+.manage-video-thumbnail {
+    width:auto;
+    height: 50px;
+    /* padding-top: 7px; */
+    border-radius: 3px;
+}
+
+.manage-video-title-name {
+    padding-left: 60px;
+    font-size: 16px;
+    padding-top: 13px;
+}
+
+
+.manage-video-row-right-container {
+    display: flex;
+    width: 17%;
+    justify-content: space-between;
+    padding-right: 11%;
+    padding-top: 27px;
+}
+
+.manage-videos-privacy {
+
+}
+
+.manage-video-password-protected {
+    color: rgb(197, 197, 197);
+}
+
+.manage-video-password-date-modified {
+    color: rgb(197, 197, 197);
+}
+

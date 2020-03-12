@@ -5,6 +5,7 @@ json.user_posts do
   @user.posts.each do |post|
       json.set! post.id do
         json.partial! '/api/posts/post', post: post
+        json.passwordProtected post.password_protected
         json.thumbnailUrl url_for(post.thumbnail)
         json.videoUrl url_for(post.video)
       end

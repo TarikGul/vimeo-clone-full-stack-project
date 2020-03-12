@@ -10,6 +10,7 @@ json.post do
         json.category_id post.category_id
         json.title post.title
         json.userId post.user_id
+        json.passwordProtected post.password_protected
         json.thumbnailUrl url_for(post.thumbnail)
         json.videoUrl url_for(post.video)
       end
