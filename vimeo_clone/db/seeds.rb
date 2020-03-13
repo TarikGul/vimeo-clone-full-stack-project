@@ -121,16 +121,21 @@ counter = 0
 Post.all.each do |post|
   counter = 0 if counter == 4
   puts counter
-  post.video.attach(io: File.open("/Users/tarik/Desktop/videos/#{mp4_file[counter]}"), filename: mp4_file[counter])
-  post.thumbnail.attach(io: File.open("/Users/tarik/Desktop/videos/#{thumbnails[counter]}"), filename: thumbnails[counter])
+
+  post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[counter]}")), filename: mp4_file[counter])
+  post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "#{thumbnails[counter]}")), filename: thumbnails[counter])
   counter += 1 
 end
 
 (0..12).each do |i|
   post = Post.create!({ title: "Post-" + (generate_random_string(7) + generate_random_number(8)), user_id: User.first.id + 1, category_id: VideoCategory.first.id, password_protected: false })
-  post.video.attach(io: File.open("/Users/tarik/Desktop/videos/final_video.mp4"), filename: 'final_video.mp4')
-  post.thumbnail.attach(io: File.open("/Users/tarik/Desktop/videos/thumbnail.png"), filename: 'thumbnail.png')
+  post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4')), filename: 'final_video.mp4')
+  post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "thumbnail.png")), filename: 'thumbnail.png')
 end
+
+
+# post.video.attach(io: File.open("/Users/tarik/Desktop/videos/#{mp4_file[counter]}"), filename: mp4_file[counter])
+# post.thumbnail.attach(io: File.open("/Users/tarik/Desktop/videos/#{thumbnails[counter]}"), filename: thumbnails[counter])
 # Post.all.each do |post|
 #   post.video.attach(io: File.open("/Users/tarik/Desktop/videos/final_video.mp4"), filename: "final_video.mp4")
 # end
