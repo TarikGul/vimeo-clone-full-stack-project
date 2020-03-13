@@ -12,6 +12,7 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchPost(this.props.postId)
     }
 
@@ -26,10 +27,13 @@ class PostShow extends React.Component {
     
 
     render() {
+        debugger
         if (this.props.postId === undefined) {
             return null
         } else if (this.props.state.entities.posts[this.props.postId] === undefined) {
             return null
+        } else { 
+          
         }
         
         scrollToTop();
