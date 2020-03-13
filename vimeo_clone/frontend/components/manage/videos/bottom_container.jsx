@@ -1,5 +1,6 @@
 import React from 'react'
 import PostInfoRow from './post_info_row'
+import DeleteButton from './delete_button'
 
 
 class BottomContainer extends React.Component {
@@ -133,7 +134,7 @@ class BottomContainer extends React.Component {
                         this.state.clicked || this.state.oneClicked
                         ?
                         (
-                            <button className="delete-post" onClick={this.deleteClick}>Delete</button>
+                            <DeleteButton deleteClick={this.deleteClick} />
                         ):(
                             null
                         )

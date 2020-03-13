@@ -147,3 +147,20 @@
     color: rgb(197, 197, 197);
 }
 
+.delete-button-inner-container {
+    display: flex;
+    width: 3%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(51, 197, 255);
+    border-radius: 3px; 
+}
+
+.delete-button-manage-videos {
+    color: white;
+}
+
+.delete-button-inner-container:hover {
+    background-color: rgb(46, 174, 224);
+}
