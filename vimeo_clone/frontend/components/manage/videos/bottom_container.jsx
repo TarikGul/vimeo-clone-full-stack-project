@@ -9,7 +9,8 @@ class BottomContainer extends React.Component {
 
         this.state = {
             clicked: false,
-            oneClicked: false
+            oneClicked: false,
+            loading: false
         }
 
         this.uncheck = this.uncheck.bind(this)
@@ -56,7 +57,8 @@ class BottomContainer extends React.Component {
             this.props.deletePost(node)
                 .then(() => {
                     this.props.fetchUser(this.props.userId)
-                }).then(() => {
+                })
+                .then(() => {
                     this.uncheck()
                 })
         }
@@ -100,6 +102,8 @@ class BottomContainer extends React.Component {
 
         if (userId === null) {
             return null
+        } else if(this.state.loading === true) {
+            <div>Loading</div>
         } else if (entities.users[userId].user_posts === undefined) {
             return (
             <div className="bottom-container-manage-videos">

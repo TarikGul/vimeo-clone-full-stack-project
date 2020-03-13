@@ -9,6 +9,13 @@ const parseDate = (date) => {
     return newDate.join('')
 }
 
+const parseName = name => {
+    let splitName = name.split('')
+
+    let newName = splitName.slice(0, 6).concat(['...'])
+    return newName.join('')
+}
+
 const TitleContainer = props => {
     const prop = props.entities.posts[props.postId]
     if (prop.uploader === undefined) {
@@ -27,7 +34,7 @@ const TitleContainer = props => {
                 <img className="profile-icon-img" src="/profile_icon.png" alt="" />
                 <div className="button-follower-container-for-title title-icon">
                     <div className='uploader-username-container'>
-                        {_.capitalize(prop.uploader.username)}
+                        {_.capitalize(parseName(prop.uploader.username))}
                     </div>
                     <FollowButton />
                 </div>

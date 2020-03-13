@@ -10,6 +10,10 @@ class PostIndexItem extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
 
+    viewGenerator() {
+        return Math.floor(Math.random() * 10000)
+    }
+
     handleClick() {
         this.props.ownProps.history.push(`/posts/${this.props.post.id}`)
     }
@@ -24,14 +28,21 @@ class PostIndexItem extends React.Component {
                             Added to
                         </div>
                         <div className="video-group-name-container">
-                            <button className="video-group-name">Video Staff Picks</button>
+                            <button className="video-group-name">  Video Staff Picks</button>
                         </div>
                     </div>
                     <div className="post-video">
                         {/* <ReactPlayer url={props.post.videoUrl}  width={400} height={300}/> */}
                         <img src={this.props.post.thumbnailUrl} width="261" height="150"/>
                     </div>
-                    {this.props.post.title}
+                    <div className="show-post-title-and-views-box">
+                        <div className="show-post-title-page">
+                            {this.props.post.title}
+                        </div>
+                        <div className="show-post-views">
+                            {`${this.viewGenerator()} views`}
+                        </div>
+                    </div>
                 </div>
             </div>
         )

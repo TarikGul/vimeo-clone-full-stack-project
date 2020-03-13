@@ -200,6 +200,7 @@
 .user-posts-show-page-thumbnail{
     width: 136px;
     height: 76px;
+    cursor: pointer;
 }
 
 .video-right-inner-container {

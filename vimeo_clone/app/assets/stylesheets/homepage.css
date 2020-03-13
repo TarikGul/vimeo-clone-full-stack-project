@@ -122,7 +122,10 @@ button {
 
 .post-video {
     padding-top: 5px;
-   
+}
+
+.post-video:hover {
+    filter: opacity(.7) grayscale(20%) brightness(60%) blur(0.2px);
 }
 
 .side-navbar-container-left {
@@ -136,4 +139,39 @@ button {
     background: linear-gradient(to right, white, transparent 90%);
 }
 
+.post-index-video-group {
+    display: flex;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-left: 15px;
+}
 
+.video-group-placeholder {
+    color: #8498a4;
+    padding-right: 8px;
+    font-size: 14px;
+    padding-top: 2px;
+}
+
+.video-group-name {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.show-post-title-and-views-box {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+    padding-left: 12px;
+}
+
+.show-post-views {
+    color: #8498a4;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.show-post-title-page {
+    font-size: 14px;
+    font-weight: 500;
+}
