@@ -192,8 +192,13 @@
 
 }
 
+.active-video {
+    box-sizing: border-box;
+    border: 2px solid rgb(15, 164, 250);
+}
+
 .user-posts-show-page-thumbnail{
-    width: auto;
+    width: 136px;
     height: 76px;
 }
 

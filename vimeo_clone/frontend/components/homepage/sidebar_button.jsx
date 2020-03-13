@@ -13,7 +13,6 @@ class SidebarButton extends React.Component {
         if (this.props.ownProps === undefined) {
             return null
         }
-        console.log('button props', this.props)
         return (
             <div className={`sidebar-button-inner-container ${this.props.buttonName}-sidebar-button`}>
                 <Link to={this.props.route}>

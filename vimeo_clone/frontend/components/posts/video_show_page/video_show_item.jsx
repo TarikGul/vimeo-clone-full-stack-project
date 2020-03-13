@@ -1,10 +1,10 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
 const parseStringTitle = (title) => {
+    debugger
     const arrTitle = title.split('')
     if (title.length > 12) {
-        return arrTitle.slice(0, 12).push('...').join('')
+        return arrTitle.slice(0, 12).concat(['...']).join('')
     } else {
         return title
     }
@@ -18,7 +18,9 @@ class VideoShowItem extends React.Component {
     
     render() {
         const { post, user } = this.props
-
+        if(user === undefined) {
+            return null
+        }
         return (
         <div onClick={this.props.clickHandler(post.id)}>
             <div className="user-posts-sidebar-container" >

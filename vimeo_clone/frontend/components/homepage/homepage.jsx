@@ -23,7 +23,6 @@ class Homepage extends React.Component {
 
 
     render() {
-        console.log('this is the homepage props', this.props)
         if (this.props.posts.length !== 0) {
             return (
                 <div className="page-container">

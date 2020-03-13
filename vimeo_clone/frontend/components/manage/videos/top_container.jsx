@@ -10,10 +10,24 @@ class TopContainer extends React.Component {
         const { userId, entities } = this.props
         // Sanity check to make sure that the prop is passed down before we 
         // render the page
+        console.log(this.props)
         if (userId === null) {
             return null
         } else if (entities.users[userId].user_posts === undefined){
-            return null
+            return (
+                <div className="manage-video-top-container">
+                    <div className="manage-video-top-inner-container">
+                        <div className="left-inner-container">
+                            <div className="left-inner-container-name">
+                                Videos
+                            </div>
+                            <div className="upload-new-video-manage-video">
+                                You currently have no videos.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
         }
         const userPostsKeys = Object.keys(entities.users[userId].user_posts)
         return (

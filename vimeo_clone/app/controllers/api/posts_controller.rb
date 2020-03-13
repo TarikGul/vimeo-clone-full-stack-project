@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-
+    #what is wrong with this
     def index
       @posts = Post.all
       render :index

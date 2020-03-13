@@ -29,11 +29,12 @@ class VideoRightContainer extends React.Component {
         const { postId, entities } = this.props
         const userId = Object.keys(entities.users)[0]
         const uploaderState = entities.posts[postId].uploaderPosts
-
+        
         //Conditional to check if the props has been full updated or not
         if (uploaderState === undefined) {
             return null
         }
+        
         //This is to map out the uploads of the users current show page so that 
         //they can see all the related videos on the side bar.
         const keys = Object.keys(uploaderState)
@@ -45,7 +46,7 @@ class VideoRightContainer extends React.Component {
                 postId: this.props.postId
             })
         }
-        
+        console.log('this is video show props before its made', this.props)
         return (
             <div className="video-right-top-container">
                 <div className="video-right-inner-container">
@@ -56,6 +57,7 @@ class VideoRightContainer extends React.Component {
                             
                             uploaderSliceOfState.map((post, i) => {
                                 return <VideoShowItem
+                                    playingPostId={this.props.postId}
                                     clickHandler={this.props.clickHandler}
                                     ownProps={this.props.ownProps}
                                     key={`post-show-${i}`}

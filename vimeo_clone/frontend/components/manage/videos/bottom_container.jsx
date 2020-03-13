@@ -66,7 +66,6 @@ class BottomContainer extends React.Component {
     }
 
     handleClickOne(e){
-        console.log(this.props)
         let count = 0
         let checks = document.getElementsByClassName('checkbox-manage-videos')
 
@@ -101,7 +100,30 @@ class BottomContainer extends React.Component {
         if (userId === null) {
             return null
         } else if (entities.users[userId].user_posts === undefined) {
-            return null
+            return (
+            <div className="bottom-container-manage-videos">
+                <div className="bottom-container-manage-videos-block">
+                    <div className="bottom-container-manage-videos-top-manager">
+                        <div className="manage-videos-top-row-left">
+                            <div className="checkbox-manage-videos">
+                                <input className="manage-videos-checkbox" type="checkbox" onClick={this.handleClick} />
+                            </div>
+                            <div className="manage-videos-title-sorter">
+                                Title
+                            </div>
+                        </div>
+                        <div className="manage-videos-top-row-right">
+                            <div className="manage-videos-privacy">
+                                Privacy
+                            </div>
+                            <div className="manage-videos-modified-date">
+                                Modified
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            )
         }
         const postKeys = Object.values(entities.users[userId].user_posts)
         return (

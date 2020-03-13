@@ -5,6 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#File that the seed videos will come from
+mp4_file = [
+  'beach.mp4',
+  'buildings.mp4',
+  'final_video.mp4',
+  'trees.mp4'
+]
+
+#file that the seed thumbnails will come from
+thumbnails = [
+  'beach.png',
+  'buildings.png',
+  'thumbnail.png',
+  'trees.png'
+]
+
 VideoPlay.destroy_all
 Follower.destroy_all
 Like.destroy_all
@@ -25,13 +42,27 @@ def generate_random_string(n)
   sample.join('')
 end
 
+def generate_random_number(n)
+  sampleSymbols = ['!', '@', '#', '$', '%', '&', '?', '*']
+  sample = ''
+
+  (0..n).each do |i|
+    sample += rand(10).to_s
+  end
+
+  (0..(rand(n)+1)/2).each do |i|
+    sample[rand(n) - 1] = sampleSymbols.sample()
+  end
+  sample
+end
+
 # This is the user sections of the seed file
 
+User.create({ username: 'bot-life', email: 'bot-bimeo@gmail.com', password: 'password'})
 User.create({ username: 'guest', email: 'guest@gmail.com', password: 'password' })
-
 (1..20).each do |i| 
   User.create({ 
-    username: "User-" + generate_random_string(4), 
+    username: "User-" + (generate_random_string(4) + generate_random_number(8)), 
     email: generate_random_string(6) + "@gmail.com",
     password: 'password'
   })
@@ -46,31 +77,36 @@ VideoCategory.create({ name: 'Outdoors' })
 VideoCategory.create({ name: 'Creator' })
 VideoCategory.create({ name: 'Easter Egg' })
 
+random_user = rand(User.all.length - 10) + 8
+
+
 #This is the post sections of the seed file
-(0..20).each do |i|
-  Post.create({ title: "Post-" + generate_random_string(7), user_id: User.first.id, category_id: VideoCategory.first.id, password_protected: false })
+# Post.create({ title: "Post-" + (generate_random_string(7) + generate_random_number(8)), user_id: User.all[random_user].id, category_id: VideoCategory.first.id, password_protected: false })
+(0..12).each do |i|
+  Post.create!({ title: "Post-" + (generate_random_string(7) + generate_random_number(8)), user_id: User.all[rand(User.all.length - 10) + 9].id, category_id: VideoCategory.first.id, password_protected: false })
 end
 
-
+random_post = rand(Post.all.length - 10) + 8
 #This is the comments sections of the seeds file
 
-(0..20).each do |i|
+(0..12).each do |i|
   Comment.create({
-    user_id: User.first.id + i, 
+    user_id: User.first.id, 
     parent_comment_id: nil, 
     child_comment_id: nil, 
-    post_id: Post.last.id - i, 
-    body: "Comment -" + generate_random_string(5)
+    post_id: Post.all[i].id, 
+    body: "This is your friendly neighborhood bot. Enjoy Bimeo, wash your hands! I did not do this to avoid a bug ;)"
   })
 end
 
+random_comment = rand(Comment.all.length - 5) + 4
 #This is the likes section of the seeds file
 
-Like.create({ user_id: User.first.id, comment_id: Comment.first.id })
+# ----------------Like.create({ user_id: User.all[random_user].id, comment_id: Comment.all[random_comment].id })
 
 #This is the Follows section of the seeds file
 
-Follower.create({ user_id: User.first.id, follower_id: User.first.id + 1 })
+# ----------------Follower.create({ user_id: User.all[random_user].id, follower_id: User.all[random_user].id })
 
 #This is the video_play section of the seeds file
 
@@ -78,13 +114,30 @@ Follower.create({ user_id: User.first.id, follower_id: User.first.id + 1 })
 
 # Attaches a video url to a post. This is how we would open a file and attach 
 # It to the state of an object on the backend
+
+
+
+counter = 0
 Post.all.each do |post|
-  post.video.attach(io: File.open("/Users/tarik/Desktop/videos/final_video.mp4"), filename: "final_video.mp4")
+  counter = 0 if counter == 4
+  puts counter
+  post.video.attach(io: File.open("/Users/tarik/Desktop/videos/#{mp4_file[counter]}"), filename: mp4_file[counter])
+  post.thumbnail.attach(io: File.open("/Users/tarik/Desktop/videos/#{thumbnails[counter]}"), filename: thumbnails[counter])
+  counter += 1 
 end
 
-Post.all.each do |post|
-  post.thumbnail.attach(io: File.open("/Users/tarik/Desktop/videos/thumbnail.png"), filename: "thumbnail.png")
+(0..12).each do |i|
+  post = Post.create!({ title: "Post-" + (generate_random_string(7) + generate_random_number(8)), user_id: User.first.id + 1, category_id: VideoCategory.first.id, password_protected: false })
+  post.video.attach(io: File.open("/Users/tarik/Desktop/videos/final_video.mp4"), filename: 'final_video.mp4')
+  post.thumbnail.attach(io: File.open("/Users/tarik/Desktop/videos/thumbnail.png"), filename: 'thumbnail.png')
 end
+# Post.all.each do |post|
+#   post.video.attach(io: File.open("/Users/tarik/Desktop/videos/final_video.mp4"), filename: "final_video.mp4")
+# end
+
+# Post.all.each do |post|
+#   post.thumbnail.attach(io: File.open("/Users/tarik/Desktop/videos/thumbnail.png"), filename: "thumbnail.png")
+# end
 
 def generate_hashed_name(rand_string = generate_random_string(7))
   puts rand_string
@@ -113,10 +166,10 @@ end
 #______________________________________________
 
 
-Comment.create({
-    user_id: User.first.id , 
-    parent_comment_id: nil, 
-    child_comment_id: nil, 
-    post_id: Post.last.id - 2, 
-    body: "Comment -" + generate_random_string(5)
-  })
+# Comment.create({
+#     user_id: User.first.id , 
+#     parent_comment_id: nil, 
+#     child_comment_id: nil, 
+#     post_id: Post.last.id - 2, 
+#     body: "Comment -" + generate_random_string(5) + generate_random_number(60)
+# })
