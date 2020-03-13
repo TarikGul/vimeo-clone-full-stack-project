@@ -11,11 +11,10 @@ const parseDate = (date) => {
 
 const TitleContainer = props => {
     const prop = props.entities.posts[props.postId]
-    // debugger
     if (prop.uploader === undefined) {
         return null
     }
-    // debugger
+
     return (
         <div className='video-title-container'>
             <div className='post-title'>

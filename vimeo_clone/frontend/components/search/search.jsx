@@ -23,7 +23,6 @@ class SearchBar extends React.Component {
     //Component did mount is useless here. 
     //Need to probable refactor
     render() {
-        // debugger
         return (
             <div>
                 {  

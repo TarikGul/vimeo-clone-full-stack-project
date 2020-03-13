@@ -1,7 +1,6 @@
 import React from 'react'
 
 const parseStringTitle = (title) => {
-    debugger
     const arrTitle = title.split('')
     if (title.length > 12) {
         return arrTitle.slice(0, 12).concat(['...']).join('')
