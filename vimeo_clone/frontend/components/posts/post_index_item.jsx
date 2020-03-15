@@ -20,8 +20,6 @@ class PostIndexItem extends React.Component {
     render() {
         return (
             <div onClick={this.handleClick} className="post-container">
-                {/* <Link to={`/posts/${this.props.post.id}`}></Link> */}
-                {/* <Link></Link> */}
                 <div className="post-item">
                     <div className="post-index-video-group">
                         <div className="video-group-placeholder">
@@ -32,7 +30,6 @@ class PostIndexItem extends React.Component {
                         </div>
                     </div>
                     <div className="post-video">
-                        {/* <ReactPlayer url={props.post.videoUrl}  width={400} height={300}/> */}
                         <img src={this.props.post.thumbnailUrl} width="261" height="150"/>
                     </div>
                     <div className="show-post-title-and-views-box">
