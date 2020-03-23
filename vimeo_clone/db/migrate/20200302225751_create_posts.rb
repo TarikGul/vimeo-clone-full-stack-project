@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :category_id, null: false
       t.boolean :password_protected, null: false
       t.string :password_digest 
+      t.text :description, null: false
       t.timestamps
     end
     add_index :posts, :user_id

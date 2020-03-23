@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_185430) do
     t.integer "category_id", null: false
     t.boolean "password_protected", null: false
     t.string "password_digest"
+    t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_posts_on_category_id"
