@@ -2,6 +2,7 @@ json.post do
   json.partial! '/api/posts/post', post: @post
   json.videoUrl url_for(@post.video)
   json.thumbnailUrl url_for(@post.thumbnail)
+  json.description @post.description
   json.uploader @post.user
   json.uploaderPosts do 
     @post.user.posts.each do |post|
@@ -10,6 +11,7 @@ json.post do
         json.category_id post.category_id
         json.title post.title
         json.userId post.user_id
+        json.description post.description
         json.passwordProtected post.password_protected
         json.thumbnailUrl url_for(post.thumbnail)
         json.videoUrl url_for(post.video)

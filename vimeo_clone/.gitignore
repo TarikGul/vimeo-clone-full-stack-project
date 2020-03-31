@@ -5,7 +5,7 @@ config/master.key
 node_modules
 bundle.js
 bundle.js.map
-/log/development.log
+/log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
