@@ -291,3 +291,22 @@
     display: flex;
     padding-bottom: 25px;
 }
+
+.video-left-info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-info-top-container {
+    display: flex;
+}
+
+.inner-info-top-container > div {
+    margin: 15px;
+    color: #1a2e3b;
+    
+}
+
+.inner-info-top-container > div:hover {
+    background-color: grey;
+}

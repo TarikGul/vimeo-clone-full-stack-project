@@ -28,7 +28,9 @@ class VideoLeftContainer extends React.Component {
                 <TitleContainer 
                     postId={this.props.postId}
                     entities={this.props.entities} />
-                <VideoLeftInfo />
+                <VideoLeftInfo 
+                    postId={this.props.postId}
+                    entities={this.props.entities} />
                 <div className="amount-of-comments">
                     {comments.length + ' Comments'}
                 </div>
