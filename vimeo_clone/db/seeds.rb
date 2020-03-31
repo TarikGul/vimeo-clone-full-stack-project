@@ -56,6 +56,22 @@ def generate_random_number(n)
   sample
 end
 
+def generate_random_description(n)
+  description = [];
+  
+  rand_length = rand(3..7)
+  (0..n).each do 
+    rand_word = generate_random_string(rand_length)
+    if rand_word[-1] == 'c'
+      description << (rand_word + '.')
+    else 
+      description << rand_word
+    end
+  end
+
+  return description.join(' ')
+end
+
 # This is the user sections of the seed file
 
 User.create({ username: 'bot-life', email: 'bot-bimeo@gmail.com', password: 'password'})
@@ -83,7 +99,13 @@ random_user = rand(User.all.length - 10) + 8
 #This is the post sections of the seed file
 # Post.create({ title: "Post-" + (generate_random_string(7) + generate_random_number(8)), user_id: User.all[random_user].id, category_id: VideoCategory.first.id, password_protected: false })
 (0..12).each do |i|
-  Post.create!({ title: "Post-" + (generate_random_string(7) + generate_random_number(8)), user_id: User.all[rand(User.all.length - 10) + 9].id, category_id: VideoCategory.first.id, password_protected: false })
+  Post.create!({ 
+    title: "Post-" + (generate_random_string(7) + generate_random_number(8)), 
+    user_id: User.all[rand(User.all.length - 10) + 9].id, 
+    category_id: VideoCategory.first.id, 
+    password_protected: false,
+    description: generate_random_description(60)
+  })
 end
 
 random_post = rand(Post.all.length - 10) + 8
@@ -128,7 +150,13 @@ Post.all.each do |post|
 end
 
 (0..12).each do |i|
-  post = Post.create!({ title: "Post-" + (generate_random_string(7) + generate_random_number(8)), user_id: User.first.id + 1, category_id: VideoCategory.first.id, password_protected: false })
+  post = Post.create!({ 
+    title: "Post-" + (generate_random_string(7) + generate_random_number(8)), 
+    user_id: User.first.id + 1, 
+    category_id: VideoCategory.first.id, 
+    password_protected: false,
+    description: generate_random_description(60)
+   })
   post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4')), filename: 'final_video.mp4')
   post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "thumbnail.png")), filename: 'thumbnail.png')
 end
