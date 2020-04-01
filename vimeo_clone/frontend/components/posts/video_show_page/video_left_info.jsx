@@ -10,7 +10,17 @@ class VideoLeftInfo extends React.Component {
     render() {
         const { entities, postId } = this.props
         // debugger
-        const commentsLength = Object.keys(entities.comments).length
+        const retreiveComments = (arr, object) => {
+            let comments = []
+            for (let i = 0; i < arr.length; i++) {
+                if (object[arr[i]].post_id.toString() === postId) {
+                    comments.push(object[arr[i]])
+                }
+            }
+            return comments
+        }
+        const commentKeys = Object.keys(this.props.entities.comments)
+        const commentsLength = retreiveComments(commentKeys, this.props.entities.comments).length
         return (
             <div className="video-left-info-container">
                 <div className="inner-info-top-container">
