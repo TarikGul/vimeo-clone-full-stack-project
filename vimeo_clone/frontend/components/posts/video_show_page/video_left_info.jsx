@@ -9,7 +9,6 @@ class VideoLeftInfo extends React.Component {
 
     render() {
         const { entities, postId } = this.props
-        // debugger
         const retreiveComments = (arr, object) => {
             let comments = []
             for (let i = 0; i < arr.length; i++) {
@@ -24,9 +23,24 @@ class VideoLeftInfo extends React.Component {
         return (
             <div className="video-left-info-container">
                 <div className="inner-info-top-container">
-                    <div className="likes-info"> 14.2k </div>
-                    <div className="plays-info"> 532 </div>
-                    <div className="comments-info"> {commentsLength} </div>
+                    <div className="plays-info"> 
+                        <img class="plays-i" src="/play-button.svg" width="18" height="18"/>
+                        <div class="plays-text">
+                            14.2k 
+                        </div>
+                    </div>
+                    <div className="likes-info"> 
+                        <img class="likes-i" src="/like-button.svg" width="18" height="18"/>
+                        <div class="likes-text">
+                            532
+                        </div> 
+                    </div>
+                    <div className="comments-info"> 
+                        <img class="comments-i" src="/comment-button.svg" width="18" height="18"/>
+                        <div class="comments-text">
+                            {commentsLength} 
+                        </div>
+                    </div>
                 </div>
                 <div className="description-info">
                     {entities.posts[postId].description}

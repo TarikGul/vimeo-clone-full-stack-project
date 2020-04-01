@@ -302,11 +302,64 @@
 }
 
 .inner-info-top-container > div {
-    margin: 15px;
+    margin: 12px;
     color: #1a2e3b;
     
 }
 
 .inner-info-top-container > div:hover {
-    background-color: grey;
+    background-color: #f4f4f5; 
+    border-radius: 2px;
+}
+
+.plays-info {
+    display: flex;
+    justify-content: space-evenly;
+    height: 28px;
+    width: 74px;
+}
+
+.plays-text {
+    transform: translateY(5px);
+}
+
+.plays-i {
+    transform: translateY(4px); 
+}
+
+.likes-info {
+    display: flex;
+    justify-content: space-evenly;
+    height: 28px;
+    width: 59px;
+}
+
+.likes-text {
+    transform: translateY(5px);
+}
+
+.likes-i {
+    transform: translateY(4px); 
+}
+
+.comments-info {
+    display: flex;
+    justify-content: space-evenly;
+    height: 28px;
+    width: 50px;
+}
+
+.comments-text {
+    transform: translateY(5px);
+}
+
+.comments-i {
+    transform: translateY(5px); 
+}
+
+.description-info {
+    margin: 12px;
+    font-size: 14px;
+    letter-spacing: 0.16px;
+    line-height: 20px;
 }
