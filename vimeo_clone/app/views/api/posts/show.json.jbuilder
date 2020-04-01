@@ -18,7 +18,6 @@ json.post do
       end
     end
   end
-
 end
 
 json.comments do 

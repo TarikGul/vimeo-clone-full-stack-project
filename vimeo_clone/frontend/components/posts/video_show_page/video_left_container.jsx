@@ -13,10 +13,14 @@ class VideoLeftContainer extends React.Component {
 
 
     render() {
+        const { postId } = this.props
         const retreiveComments = (arr, object) => {
             let comments = []
             for(let i = 0; i < arr.length; i++) {
-                comments.push(object[arr[i]])
+                debugger
+                if (object[arr[i]].post_id.toString() === postId) {
+                    comments.push(object[arr[i]])
+                }
             }
             return comments
         }
