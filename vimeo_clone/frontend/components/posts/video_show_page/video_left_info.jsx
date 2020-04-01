@@ -24,20 +24,20 @@ class VideoLeftInfo extends React.Component {
             <div className="video-left-info-container">
                 <div className="inner-info-top-container">
                     <div className="plays-info"> 
-                        <img class="plays-i" src="/play-button.svg" width="18" height="18"/>
-                        <div class="plays-text">
+                        <img className="plays-i" src="/play-button.svg" width="18" height="18"/>
+                        <div className="plays-text">
                             14.2k 
                         </div>
                     </div>
                     <div className="likes-info"> 
-                        <img class="likes-i" src="/like-button.svg" width="18" height="18"/>
-                        <div class="likes-text">
+                        <img className="likes-i" src="/like-button.svg" width="18" height="18"/>
+                        <div className="likes-text">
                             532
                         </div> 
                     </div>
                     <div className="comments-info"> 
-                        <img class="comments-i" src="/comment-button.svg" width="18" height="18"/>
-                        <div class="comments-text">
+                        <img className="comments-i" src="/comment-button.svg" width="18" height="18"/>
+                        <div className="comments-text">
                             {commentsLength} 
                         </div>
                     </div>

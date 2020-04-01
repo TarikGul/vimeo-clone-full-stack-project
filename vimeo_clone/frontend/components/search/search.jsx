@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
                 (this.props.location !== undefined  || this.props.location !== '/')
                 ?(
                 <div className="search-bar-container-not-home">
-                    <input className="search-bar" type="text" placeHolder="Search videos, people, and more"/>
+                    <input className="search-bar" type="text" placeholder="Search videos, people, and more"/>
                 </div>
                 ):(
                 <div className='search-bar-container'>
