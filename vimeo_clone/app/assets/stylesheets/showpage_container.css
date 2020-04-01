@@ -37,7 +37,8 @@
 .follow-user-container {
     display: flex;
     padding-top: 10px;
-    width: 40%;
+    /* width: 40%; */
+    width: 40vw;
 }
 
 
@@ -53,6 +54,7 @@
     color: white;
     font-size: 15px;
     cursor: pointer;
+    transform: translateY(-3px);
 }
 
 .follow-button:hover {
