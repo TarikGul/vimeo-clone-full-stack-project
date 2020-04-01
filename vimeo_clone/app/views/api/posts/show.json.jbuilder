@@ -42,11 +42,11 @@ end
 
 # Plays is not working from the model level and im having problems with crating the seed
 # json.plays do 
-#     @post.plays.each do |play|
-#       json.array! play.id do 
-#         json.partial! 'api/plays/play', play: play
-#       end
+#   @post.plays.each do |play|
+#     json.array! play.id do 
+#       json.partial! 'api/plays/play', play: play
 #     end
+#   end
 # end
 # Need to add another includes for Plays
 

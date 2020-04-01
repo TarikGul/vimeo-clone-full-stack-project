@@ -68,9 +68,8 @@
     justify-content: space-evenly;
     padding: 10px;
     padding-top: 10px;
-    width: 48%;
+    width: 180px;
     height: 32px;
-    /* transform: translateY(20%); */
     text-align: center;
 }
 
