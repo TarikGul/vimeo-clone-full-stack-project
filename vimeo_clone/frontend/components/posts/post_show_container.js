@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        session: state.session,
         postId: ownProps.match.params.postId,
         ownProps: ownProps,
         state

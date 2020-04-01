@@ -21,7 +21,6 @@ const TitleContainer = props => {
     if (prop.uploader === undefined) {
         return null
     }
-
     return (
         <div className='video-title-container'>
             <div className='post-title'>

@@ -4,4 +4,8 @@ json.followers user.followers.each do |follow|
   json.username followingUser.username
   json.userId followingUser.id
 end
-json.leaders user.leaders
+json.leaders user.leaders.each do |follow|
+  followingUser = User.find(follow.follower_id)
+  json.username followingUser.username
+  json.userId followingUser.id
+end

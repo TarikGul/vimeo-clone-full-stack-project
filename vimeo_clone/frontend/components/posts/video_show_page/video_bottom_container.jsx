@@ -11,7 +11,8 @@ class VideoBottomContainer extends React.Component {
     render() {
         return (
             <div className="showpage-bottom-container">
-                <VideoLeftContainer 
+                <VideoLeftContainer
+                    sessionId={this.props.sessionId} 
                     postId={this.props.postId}
                     entities={this.props.entities}/>
                 <VideoRightContainer

@@ -7,13 +7,13 @@ const followerReducer = (state = {}, action) => {
     // debugger
     switch(action.type) {
         case RECEIVE_FOLLOW:
-            nextState[action.follow.id] = action.follow;
+            // nextState[action.follow.id] = action.follow;
             return nextState;
         case REMOVE_FOLLOW:
-            delete nextState[action.followId];
+            // delete nextState[action.followId];
             return nextState;
         case RECEIVE_CURRENT_USER:
-            nextState[action.currentUser.followers]
+            // nextState[action.currentUser.followers]
         default:
             return nextState
     };

@@ -14,6 +14,7 @@ class VideoPage extends React.Component {
             <div className="showpage-video-container">
                 <VideoViewportContainer videoUrl={entities.posts[postId].videoUrl}/>
                 <VideoBottomContainer
+                    sessionId={this.props.sessionId}
                     clickHandler={this.props.clickHandler}
                     ownProps={this.props.ownProps}
                     entities={entities} 

@@ -33,7 +33,6 @@ class PostShow extends React.Component {
         } else { 
           
         }
-        
         scrollToTop();
         return (
             <div className="showpage-container">
@@ -41,6 +40,7 @@ class PostShow extends React.Component {
                     processForm={this.props.processForm} 
                     ownProps={this.props.ownProps}/>
                 <VideoPage
+                    sessionId={this.props.session.id}
                     clickHandler={this.clickHandler} 
                     ownprops={this.props.ownProps}
                     entities={this.props.state.entities} 
