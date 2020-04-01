@@ -17,6 +17,7 @@ const parseName = name => {
 }
 
 const TitleContainer = props => {
+    const { sessionId, postId, entities } = props
     const prop = props.entities.posts[props.postId]
     if (prop.uploader === undefined) {
         return null
@@ -35,7 +36,10 @@ const TitleContainer = props => {
                     <div className='uploader-username-container'>
                         {_.capitalize(parseName(prop.uploader.username))}
                     </div>
-                    <FollowButton />
+                    <FollowButton 
+                        sessionId={sessionId}
+                        postId={postId}
+                        entities={entities}/>
                 </div>
             </div>
         </div>

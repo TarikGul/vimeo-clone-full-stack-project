@@ -41,6 +41,8 @@
 }
 
 .follow-button {
+    display: flex;
+    height: 35px;
     background-color: #00adef;
     border-radius: 3px;
     padding-top: 6px;
@@ -54,6 +56,11 @@
 
 .follow-button:hover {
     background-color: #0384b8;
+}
+
+.follow-i {
+    transform: translateY(1px);
+    padding-right: 5px;
 }
 
 .button-follower-container-for-title {
