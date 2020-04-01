@@ -17,7 +17,7 @@ const commentsReducer = (state = {}, action) => {
             }
             return Object.assign(nextState, action.post.comments)
         default:
-            return state;
+            return nextState;
     }
 }
 
