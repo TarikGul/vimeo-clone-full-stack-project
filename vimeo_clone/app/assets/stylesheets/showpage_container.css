@@ -78,6 +78,7 @@
 .video-left-info-container {
     border: 1px solid gray;
     height: 256px;
+    overflow: hidden;
 }
 
 .comment-textarea {
@@ -358,4 +359,5 @@
     font-size: 14px;
     letter-spacing: 0.16px;
     line-height: 20px;
+    white-space: pre-line;
 }

@@ -50,3 +50,7 @@ table {
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+div {
+	white-space: pre-line;
+}
