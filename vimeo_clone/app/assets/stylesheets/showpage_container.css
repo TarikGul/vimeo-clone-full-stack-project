@@ -80,15 +80,32 @@
     color: white;
     font-size: 15px;
     cursor: pointer;
+    transform: translateY(-3px);
 }
 
-.following-i {
-    transform: translateY(1px);
+.unfollowing-button {
+    display: flex;
+    justify-content: space-evenly;
+    height: 35px;
+    width: 120px;
+    background-color: #e3e8e9;
+    border-radius: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 11px;
+    padding-right: 11px;
+    color: #1a2e3b;
+    font-size: 15px;
+    cursor: pointer;
+    transform: translateY(-3px);
+}
+.unfollowing-i {
+    transform: translateY(4px);
 }
 
 .button-follower-container-for-title {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 10px;
     padding-top: 10px;
     width: 270px;
