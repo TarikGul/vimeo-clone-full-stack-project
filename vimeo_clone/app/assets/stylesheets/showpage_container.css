@@ -40,6 +40,7 @@
     width: 40%;
 }
 
+
 .follow-button {
     display: flex;
     height: 35px;
@@ -63,12 +64,32 @@
     padding-right: 5px;
 }
 
+.following-button {
+    display: flex;
+    justify-content: space-evenly;
+    height: 35px;
+    width: 120px;
+    background-color: #0ad83ddc;
+    border-radius: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 11px;
+    padding-right: 11px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.following-i {
+    transform: translateY(1px);
+}
+
 .button-follower-container-for-title {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
     padding-top: 10px;
-    width: 180px;
+    width: 270px;
     height: 32px;
     text-align: center;
 }
@@ -78,6 +99,7 @@
     width: 30%;
     height: 24px;
     padding-top: 30px;
+    /* padding-left: 20px; */
     /* border: 1px solid black; */
 }
 

@@ -20,12 +20,12 @@ const FollowButton = props => {
                 following 
                 ?
                 (
-                    <div>
-                        <img className="follow-i" src="/follow-plus.svg" width="14" height="14" />
-                        <div className="follow-button-text">
-                            Follow
+                    <button className="following-button">
+                        <img className="following-i" src="/follow-check.svg" width="14" height="14" />
+                        <div className="following-button-text">
+                            Following
                         </div>
-                    </div>
+                    </button>
                 ) : (
                     <button className="follow-button">
                         <img className="follow-i" src="/follow-plus.svg" width="14" height="14" />
