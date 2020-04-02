@@ -8,6 +8,7 @@ class Api::PostsController < ApplicationController
     def show
       @post = Post
         .includes(:comments)
+        .includes(:likes)
         .find(params[:id])
         # .includes(:plays) #added this line
         # .includes(:category) #added this line
