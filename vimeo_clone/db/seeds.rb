@@ -122,17 +122,20 @@ random_post = rand(Post.all.length - 10) + 8
 end
 
 random_comment = rand(Comment.all.length - 5) + 4
-#This is the likes section of the seeds file
-
-# ----------------Like.create({ user_id: User.all[random_user].id, comment_id: Comment.all[random_comment].id })
 
 #This is the Follows section of the seeds file
 
 # ----------------Follower.create({ user_id: User.all[random_user].id, follower_id: User.all[random_user].id })
 
-#This is the video_play section of the seeds file
+(4..10).each do |i|
+  leaderUser = User.all[i]
+  Follower.create({ user_id: leaderUser.id, follower_id: User.all[2].id })
+end
 
-# VideoPlay.create({ user_id: 1, post_id: 1 })
+(7..15).each do |i|
+  leaderUser = User.all[i]
+  Follower.create({ user_id: leaderUser.id, follower_id: User.all[3].id })
+end
 
 # Attaches a video url to a post. This is how we would open a file and attach 
 # It to the state of an object on the backend
@@ -161,16 +164,35 @@ end
   post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "thumbnail.png")), filename: 'thumbnail.png')
 end
 
+# This is the like section of the seeding data
 
-# post.video.attach(io: File.open("/Users/tarik/Desktop/videos/#{mp4_file[counter]}"), filename: mp4_file[counter])
-# post.thumbnail.attach(io: File.open("/Users/tarik/Desktop/videos/#{thumbnails[counter]}"), filename: thumbnails[counter])
-# Post.all.each do |post|
-#   post.video.attach(io: File.open("/Users/tarik/Desktop/videos/final_video.mp4"), filename: "final_video.mp4")
-# end
+(0..6).each do |i|
+  (0...20).each do |j|
+    Like.create({ user_id: User.all[i].id, post_id: Post.all[j].id })
+  end
+end
 
-# Post.all.each do |post|
-#   post.thumbnail.attach(io: File.open("/Users/tarik/Desktop/videos/thumbnail.png"), filename: "thumbnail.png")
-# end
+(7..12).each do |i|
+  (0...15).each do |j|
+    Like.create({ user_id: User.all[i].id, post_id: Post.all[j].id })
+  end
+end
+
+#This is the video_play section of the seeds file
+
+# VideoPlay.create({ user_id: 1, post_id: 1 })
+
+(0..20).each do |i|
+  (0..400).each do |j|
+    VideoPlay.create({ user_id: User.all[i].id, post_id: Post.all[i].id })
+  end
+end
+
+(0..20).each do |i|
+  (0..267).each do |j|
+    VideoPlay.create({ user_id: User.all[rand(18) + 1].id, post_id: Post.all[rand(19) + 1].id })
+  end
+end
 
 def generate_hashed_name(rand_string = generate_random_string(7))
   puts rand_string
