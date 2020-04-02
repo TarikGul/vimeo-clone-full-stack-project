@@ -4,15 +4,26 @@ import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions'
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state)
+    // debugger
+    let nextState = Object.assign({}, state)
+    let keys = Object.keys(nextState)
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, { [action.user.id]: action.user });
         case RECEIVE_USER:
             return Object.assign({}, state, { [action.user.id]: action.user });
         case RECEIVE_FOLLOW:
-            return Object.assign({}, state)
+            debugger
+            if (nextState[keys[0]].leaders === undefined) {
+                nextState[keys[0]]['leaders'] = {[action.follow.follower.id]: action.follow.follower}
+                return nextState
+            } else {
+                nextState[keys[0]].leaders[action.follow.follower.id] = action.follow.follower 
+                return nextState
+            }
         case REMOVE_FOLLOW:
-            return Object.assign({}, state)
+            delete nextState[keys[0]].leaders[action.followId]
+            return nextState
         default:
             return state;
     }
