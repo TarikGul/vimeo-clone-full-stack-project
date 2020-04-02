@@ -29,7 +29,7 @@ class PostIndex extends React.Component {
             <div className="video-feed-posts">
                 {
                     grid.map((post, i) => {
-                        return  <div className="grid-duple" id={`grid-${i}`}>
+                        return <div className="grid-duple" id={`grid-${i}`} key={`duple-${i}`}>
                                     <PostIndexItem 
                                         post={post[0]}
                                         ownProps={this.props.ownProps}
