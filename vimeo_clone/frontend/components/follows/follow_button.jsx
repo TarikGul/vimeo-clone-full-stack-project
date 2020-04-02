@@ -1,4 +1,4 @@
-import useHover from '../../../hooks/use_hover';
+import useHover from '../../hooks/use_hover';
 import React from 'react';
 
 const FollowButton = props => {
@@ -6,8 +6,8 @@ const FollowButton = props => {
     const { sessionId, postId, entities, createFollow, deleteFollow, currentUser } = props;
     const isFollowing = (field) => {
         if (currentUser.leaders === undefined) {
-            return false
-        }
+            return false;
+        };
         const curPostUserId = entities.posts[postId].user_id;
         const userLeaders = Object.values(entities.users[sessionId].leaders);
         for (let i = 0; i < userLeaders.length; i++) {
@@ -15,20 +15,20 @@ const FollowButton = props => {
                 if (field === 'following') {
                     return true;
                 } else if (field === 'leaderId') {
-                    return userLeaders[i].id
-                }
-            } 
+                    return userLeaders[i].id;
+                };
+            }; 
             if (userLeaders[i].follower_id === curPostUserId && field === 'following') {
-                return true
+                return true;
             } else if (field === 'leaderId') {
-                return userLeaders[i].id
-            }
-        }
+                return userLeaders[i].id;
+            };
+        };
         return false;
     };
 
     const leaderId = isFollowing('leaderId');
-    const uploaderId = entities.posts[postId].uploader.id
+    const uploaderId = entities.posts[postId].uploader.id;
     return (
         <div className="Follow-button-container" ref={hoverRef}>
             {

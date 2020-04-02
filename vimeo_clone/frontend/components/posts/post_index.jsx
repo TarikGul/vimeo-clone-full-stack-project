@@ -33,12 +33,12 @@ class PostIndex extends React.Component {
                                     <PostIndexItem 
                                         post={post[0]}
                                         ownProps={this.props.ownProps}
-                                        key={post[0].id}
+                                        key={`${post[0].id}`}
                                     />
                                     <PostIndexItem
                                         post={post[1]}
                                         ownProps={this.props.ownProps}
-                                        key={post[1].id}
+                                        key={`${post[1].id}`}
                                     />
                                 </div>
                     })

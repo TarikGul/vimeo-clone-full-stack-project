@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import FollowButton from './follow_button'
-import { deleteFollow, createFollow } from '../../../actions/follow_actions'
+import { deleteFollow, createFollow } from '../../actions/follow_actions'
 
 
 const msp = state => {

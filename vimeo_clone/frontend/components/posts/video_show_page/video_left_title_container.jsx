@@ -1,7 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
-import FollowButtonContainer from './follow_container'
-import { deleteFollow } from '../../../util/follow_api_util'
+import FollowButtonContainer from '../../follows/follow_container'
 
 const parseDate = (date) => {
     let splitDate = date.split('')
