@@ -1,6 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 import FollowButton from './follow_button'
+import { deleteFollow } from '../../../util/follow_api_util'
 
 const parseDate = (date) => {
     let splitDate = date.split('')
@@ -18,7 +19,7 @@ const parseName = name => {
 
 const TitleContainer = props => {
     const { sessionId, postId, entities } = props
-    const prop = props.entities.posts[props.postId]
+    const prop = entities.posts[props.postId]
     if (prop.uploader === undefined) {
         return null
     }
@@ -37,6 +38,8 @@ const TitleContainer = props => {
                         {_.capitalize(parseName(prop.uploader.username))}
                     </div>
                     <FollowButton 
+                        createFollow={createFollow}
+                        deleteFollow={deleteFollow}
                         sessionId={sessionId}
                         postId={postId}
                         entities={entities}/>

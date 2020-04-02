@@ -9,17 +9,29 @@ class VideoBottomContainer extends React.Component {
     }
 
     render() {
+        const { 
+            sessionId, 
+            postId, 
+            entities, 
+            clickHandler, 
+            ownProps, 
+            createFollow, 
+            deleteFollow 
+        } = this.props
+
         return (
             <div className="showpage-bottom-container">
                 <VideoLeftContainer
-                    sessionId={this.props.sessionId} 
-                    postId={this.props.postId}
-                    entities={this.props.entities}/>
+                    createFollow={createFollow}
+                    deleteFollow={deleteFollow}
+                    sessionId={sessionId} 
+                    postId={postId}
+                    entities={entities}/>
                 <VideoRightContainer
-                    clickHandler={this.props.clickHandler}
-                    ownProps={this.props.ownProps} 
-                    postId={this.props.postId}
-                    entities={this.props.entities}/>
+                    clickHandler={clickHandler}
+                    ownProps={ownProps} 
+                    postId={postId}
+                    entities={entities}/>
             </div>
         )
     }

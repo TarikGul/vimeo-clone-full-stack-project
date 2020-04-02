@@ -13,7 +13,13 @@ class VideoLeftContainer extends React.Component {
 
 
     render() {
-        const { postId } = this.props
+        const { 
+            postId, 
+            sessionId, 
+            entities, 
+            createFollow, 
+            deleteFollow 
+        } = this.props
         const retreiveComments = (arr, object) => {
             let comments = []
             for(let i = 0; i < arr.length; i++) {
@@ -23,19 +29,21 @@ class VideoLeftContainer extends React.Component {
             }
             return comments
         }
-        const commentKeys = Object.keys(this.props.entities.comments)
-        const comments = retreiveComments(commentKeys, this.props.entities.comments)
-        const userId = Object.keys(this.props.entities.users)
+        const commentKeys = Object.keys(entities.comments)
+        const comments = retreiveComments(commentKeys, entities.comments)
+        const userId = Object.keys(entities.users)
         return (
             <div className="video-left-container">
-                <TitleContainer 
-                    sessionId={this.props.sessionId}
-                    postId={this.props.postId}
-                    entities={this.props.entities} />
+                <TitleContainer
+                    createFollow={createFollow} 
+                    deleteFollow={deleteFollow}
+                    sessionId={sessionId}
+                    postId={postId}
+                    entities={entities} />
                 <VideoLeftInfo 
-                    sessionId={this.props.sessionId}
-                    postId={this.props.postId}
-                    entities={this.props.entities} />
+                    sessionId={sessionId}
+                    postId={postId}
+                    entities={entities} />
                 <div className="amount-of-comments">
                     {comments.length + ' Comments'}
                 </div>
