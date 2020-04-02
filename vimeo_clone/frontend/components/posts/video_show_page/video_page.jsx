@@ -9,14 +9,24 @@ class VideoPage extends React.Component {
     }
     
     render() {
-        const { postId, entities } = this.props
+        const { 
+            postId, 
+            entities, 
+            createFollow, 
+            deleteFollow,
+            sessionId,
+            clickHandler,
+            ownProps 
+        } = this.props
         return (
             <div className="showpage-video-container">
                 <VideoViewportContainer videoUrl={entities.posts[postId].videoUrl}/>
                 <VideoBottomContainer
-                    sessionId={this.props.sessionId}
-                    clickHandler={this.props.clickHandler}
-                    ownProps={this.props.ownProps}
+                    deleteFollow={deleteFollow}
+                    createFollow={createFollow}
+                    sessionId={sessionId}
+                    clickHandler={clickHandler}
+                    ownProps={ownProps}
                     entities={entities} 
                     postId={postId}/>
             </div>

@@ -26,25 +26,35 @@ class PostShow extends React.Component {
     
 
     render() {
+        const { 
+            deleteFollow, 
+            createFollow,
+            processForm,
+            ownProps,
+            session,
+            state,
+            postId
+        } = this.props
+        
         if (this.props.postId === undefined) {
             return null
         } else if (this.props.state.entities.posts[this.props.postId] === undefined) {
             return null
-        } else { 
-          
         }
         scrollToTop();
         return (
             <div className="showpage-container">
                 <HomeNavbar 
-                    processForm={this.props.processForm} 
-                    ownProps={this.props.ownProps}/>
+                    processForm={processForm} 
+                    ownProps={ownProps}/>
                 <VideoPage
-                    sessionId={this.props.session.id}
+                    createFollow={createFollow}
+                    deleteFollow={deleteFollow}
+                    sessionId={session.id}
                     clickHandler={this.clickHandler} 
-                    ownprops={this.props.ownProps}
-                    entities={this.props.state.entities} 
-                    postId={this.props.postId}/>
+                    ownprops={ownProps}
+                    entities={state.entities} 
+                    postId={postId}/>
                 <Footer />
             </div>
         )
