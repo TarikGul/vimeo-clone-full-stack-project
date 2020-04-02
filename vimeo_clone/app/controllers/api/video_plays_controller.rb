@@ -1,15 +1,5 @@
 class Api::VideoPlaysController < ApplicationController
 
-    def index
-      @plays = VideoPlay.all
-      render :index
-    end
-
-    def show
-      @play = VideoPlay.find(params[:id])
-      render :show
-    end
-
     def create
       @play = VideoPlay.new(play_params)
 
