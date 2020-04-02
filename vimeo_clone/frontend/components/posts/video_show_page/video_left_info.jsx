@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import LikeButtonContainer from '../../likes/likes_container';
 
 class VideoLeftInfo extends React.Component {
     constructor(props) {
@@ -29,12 +30,7 @@ class VideoLeftInfo extends React.Component {
                             14.2k 
                         </div>
                     </div>
-                    <div className="likes-info"> 
-                        <img className="likes-i" src="/like-button.svg" width="18" height="18"/>
-                        <div className="likes-text">
-                            532
-                        </div> 
-                    </div>
+                    <LikeButtonContainer />
                     <div className="comments-info"> 
                         <img className="comments-i" src="/comment-button.svg" width="18" height="18"/>
                         <div className="comments-text">

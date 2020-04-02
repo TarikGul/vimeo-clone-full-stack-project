@@ -361,6 +361,7 @@
     justify-content: space-evenly;
     height: 28px;
     width: 74px;
+    cursor: pointer;
 }
 
 .plays-text {
@@ -376,6 +377,7 @@
     justify-content: space-evenly;
     height: 28px;
     width: 59px;
+    cursor: pointer;
 }
 
 .likes-text {
@@ -385,12 +387,22 @@
 .likes-i {
     transform: translateY(4px); 
 }
+.likes-i:hover,
+.likes-i:focus {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+.likes-i-red,
+.likes-i:focus {
+    transform: translateY(4px); 
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
 
 .comments-info {
     display: flex;
     justify-content: space-evenly;
     height: 28px;
     width: 50px;
+    cursor: pointer;
 }
 
 .comments-text {

@@ -46,7 +46,6 @@ class VideoRightContainer extends React.Component {
                 postId: this.props.postId
             })
         }
-        console.log('this is video show props before its made', this.props)
         return (
             <div className="video-right-top-container">
                 <div className="video-right-inner-container">
