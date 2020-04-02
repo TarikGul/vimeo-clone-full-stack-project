@@ -18,7 +18,7 @@ const parseName = name => {
 }
 
 const TitleContainer = props => {
-    const { sessionId, postId, entities } = props
+    const { sessionId, postId, entities, createFollow, deleteFollow } = props
     const prop = entities.posts[props.postId]
     if (prop.uploader === undefined) {
         return null

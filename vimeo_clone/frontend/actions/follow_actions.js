@@ -12,7 +12,7 @@ const receiveFollow = follow => {
 
 const removeFollow = followId => {
     return {
-        type: RECEIVE_FOLLOW,
+        type: REMOVE_FOLLOW,
         followId
     };
 };
@@ -23,6 +23,6 @@ export const deleteFollow = followId => dispatch => {
 };
 
 export const createFollow = follow => dispatch => {
-    return APIUTIL.receiveFollow(follow)
+    return APIUTIL.createFollow(follow)
         .then((createdFollow) => dispatch(receiveFollow(createdFollow)));
 };
