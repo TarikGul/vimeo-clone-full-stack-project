@@ -34,7 +34,11 @@ class Post < ApplicationRecord
 
     has_many :comments_user,
         through: :comments,
-        source: :user
+        source: :User
+
+    has_many :likes,
+        foreign_key: :post_id,
+        class_name: :Like
 
     # Active storage association
     has_one_attached :video

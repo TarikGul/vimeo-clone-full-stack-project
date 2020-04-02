@@ -32,11 +32,6 @@ class Comment < ApplicationRecord
         foreign_key: :post_id,
         class_name: :Post
 
-    has_many :likes, 
-        foreign_key: :comment_id,
-        class_name: :Comment
-
-
     def comments_by_parent
         comments_by_parent = Hash.new { |hash, key| hash[key] = [] }
 
