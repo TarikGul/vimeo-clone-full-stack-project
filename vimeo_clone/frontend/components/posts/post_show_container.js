@@ -20,9 +20,7 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchPosts: () => dispatch(fetchPosts()),
         fetchPost: postId => dispatch(fetchPost(postId)),
-        processForm: () => dispatch(logout()),
-        deleteFollow: followId => dispatch(deleteFollow(followId)),
-        createFollow: follow => dispatch(createFollow(follow))
+        processForm: () => dispatch(logout())
     }
 }
 

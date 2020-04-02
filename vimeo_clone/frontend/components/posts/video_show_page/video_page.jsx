@@ -12,8 +12,6 @@ class VideoPage extends React.Component {
         const { 
             postId, 
             entities, 
-            createFollow, 
-            deleteFollow,
             sessionId,
             clickHandler,
             ownProps 
@@ -22,8 +20,6 @@ class VideoPage extends React.Component {
             <div className="showpage-video-container">
                 <VideoViewportContainer videoUrl={entities.posts[postId].videoUrl}/>
                 <VideoBottomContainer
-                    deleteFollow={deleteFollow}
-                    createFollow={createFollow}
                     sessionId={sessionId}
                     clickHandler={clickHandler}
                     ownProps={ownProps}

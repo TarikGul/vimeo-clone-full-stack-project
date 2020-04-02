@@ -3,36 +3,36 @@ import React from 'react';
 
 const FollowButton = props => {
     const [hoverRef, isHovered] = useHover();
-    const { sessionId, postId, entities, createFollow, deleteFollow } = props;
-    // debugger
+    const { sessionId, postId, entities, createFollow, deleteFollow, currentUser } = props;
     const isFollowing = (field) => {
-        if (entities.users[sessionId].leaders === undefined) {
+        if (currentUser.leaders === undefined) {
             return false
         }
-        const curPostUserId = entities.posts[postId].uploader.user_id;
-        const userFollowers = Object.values(entities.users[sessionId].leaders);
-        for (let i = 0; i < userFollowers.length; i++) {
-            // debugger
-            if (userFollowers[i].user_id === curPostUserId) {
+        const curPostUserId = entities.posts[postId].user_id;
+        const userLeaders = Object.values(entities.users[sessionId].leaders);
+        for (let i = 0; i < userLeaders.length; i++) {
+            if (userLeaders[i].userId === curPostUserId) {
                 if (field === 'following') {
-                    // debugger
                     return true;
                 } else if (field === 'leaderId') {
-                    return userFollowers[i].id
+                    return userLeaders[i].id
                 }
+            } 
+            if (userLeaders[i].follower_id === curPostUserId && field === 'following') {
+                return true
+            } else if (field === 'leaderId') {
+                return userLeaders[i].id
             }
         }
         return false;
     };
-    const following = isFollowing('following');
+
     const leaderId = isFollowing('leaderId');
     const uploaderId = entities.posts[postId].uploader.id
-    console.log(props)
     return (
-        
         <div className="Follow-button-container" ref={hoverRef}>
             {
-                following 
+                isFollowing('following') 
                 ?
                 (   
                         isHovered 

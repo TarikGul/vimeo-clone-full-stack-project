@@ -15,15 +15,11 @@ class VideoBottomContainer extends React.Component {
             entities, 
             clickHandler, 
             ownProps, 
-            createFollow, 
-            deleteFollow 
         } = this.props
 
         return (
             <div className="showpage-bottom-container">
                 <VideoLeftContainer
-                    createFollow={createFollow}
-                    deleteFollow={deleteFollow}
                     sessionId={sessionId} 
                     postId={postId}
                     entities={entities}/>

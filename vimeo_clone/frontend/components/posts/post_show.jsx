@@ -27,8 +27,6 @@ class PostShow extends React.Component {
 
     render() {
         const { 
-            deleteFollow, 
-            createFollow,
             processForm,
             ownProps,
             session,
@@ -48,8 +46,6 @@ class PostShow extends React.Component {
                     processForm={processForm} 
                     ownProps={ownProps}/>
                 <VideoPage
-                    createFollow={createFollow}
-                    deleteFollow={deleteFollow}
                     sessionId={session.id}
                     clickHandler={this.clickHandler} 
                     ownprops={ownProps}
