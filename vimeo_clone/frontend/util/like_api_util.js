@@ -1,14 +1,14 @@
-export const createFollow = follow => {
+export const createLike = like => {
     return $.ajax({
-        url: `api/followers`,
+        url: `api/likes`,
         method: 'POST',
-        data: { follow }
+        data: { like }
     });
 };
 
 export const deleteFollow = id => {
     return $.ajax({
-        url: `api/followers/${id}`,
+        url: `api/likes/${id}`,
         method: 'DELETE'
     });
 };
