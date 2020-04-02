@@ -1,9 +1,10 @@
-import { useRef, useState, useEffect } from 'react';
+import useHover from '../../../hooks/use_hover';
 import React from 'react'
 
 const FollowButton = props => {
     const [hoverRef, isHovered] = useHover();
     const { sessionId, postId, entities } = props;
+    
     const isFollowing = () => {
         const curPostUsername = entities.posts[postId].uploader.username;
         const userFollowers = Object.values(entities.users[sessionId].leaders);
@@ -28,7 +29,7 @@ const FollowButton = props => {
                             <button className="unfollowing-button" >
                                 <img className="unfollowing-i" src="/unfollow-x.svg" width="8" height="8" />
                                 <div className="unfollowing-button-text">
-                                    UnFollow
+                                    Unfollow
                                 </div>
                             </button>
                         ) : (
@@ -52,33 +53,6 @@ const FollowButton = props => {
             }
         </div>
     )
-}
-
-function useHover() {
-    const [value, setValue] = useState(false);
-
-    const ref = useRef(null);
-
-    const handleMouseOver = () => setValue(true);
-    const handleMouseOut = () => setValue(false);
-
-    useEffect(
-        () => {
-            const node = ref.current;
-            if (node) {
-                node.addEventListener('mouseover', handleMouseOver);
-                node.addEventListener('mouseout', handleMouseOut);
-
-                return () => {
-                    node.removeEventListener('mouseover', handleMouseOver);
-                    node.removeEventListener('mouseout', handleMouseOut);
-                };
-            }
-        },
-        [ref.current] // Recall only if ref changes
-    );
-
-    return [ref, value];
 }
 
 export default FollowButton;
