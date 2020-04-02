@@ -18,7 +18,6 @@ const removeLike = likeId => {
 };
 
 export const deleteLike = likeId => dispatch => {
-    debugger
     return APIUTIL.deleteLike(likeId)
         .then(() => dispatch(removeLike(likeId)))
 };
