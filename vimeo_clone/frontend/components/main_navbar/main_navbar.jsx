@@ -32,7 +32,9 @@ class HomeNavbar extends React.Component {
     }
 
     reRoute() {
-        this.props.ownProps.history.push('/home')
+        if (this.props.ownProps.location.pathname !== '/home') {
+            this.props.ownProps.history.push('/home')
+        }
     }
     
     render() {
@@ -44,8 +46,7 @@ class HomeNavbar extends React.Component {
                 <div className='navbar-container-sub'>
                     <div className="navbar-container-left">
                         <div className='vimeo-logo-button'>
-                                {/* <Link to='/home' ><img className="logo-img" src="assets/input-onlinepngtools.png" /></Link> */}
-                                <img onClick={this.reRoute}className="logo-img" src="/bimeoJP.png" />
+                                <img onClick={this.reRoute}className='logo-img' src='/bimeoJP.png' />
                         </div>
                         <div className='manage-video-dropdown'>
 

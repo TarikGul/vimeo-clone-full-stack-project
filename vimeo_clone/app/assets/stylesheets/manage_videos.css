@@ -149,7 +149,9 @@
 
 .delete-button-inner-container {
     display: flex;
-    width: 3%;
+    justify-content: flex-end;
+    width: 45px;
+    margin: 0;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -159,6 +161,11 @@
 
 .delete-button-manage-videos {
     color: white;
+}
+
+.delete-button-manage-videos-container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .delete-button-inner-container:hover {
