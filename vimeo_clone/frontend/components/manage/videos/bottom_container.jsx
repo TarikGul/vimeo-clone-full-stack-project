@@ -32,22 +32,22 @@ class BottomContainer extends React.Component {
         let checks = document.getElementsByClassName('checkbox-manage-videos')
         for(let i = 0; i < checks.length; i ++) {
             if(checks[i].checked) {
-                checks[i].checked = false
-            }
-        }
-    }
+                checks[i].checked = false;
+            };
+        };
+    };
 
     deleteClick(e) {
-        const { entities, userId } = this.props
-        let nodes = []
-        let checks = document.getElementsByClassName('checkbox-manage-videos')
-        let values = Object.values(entities.users[userId].user_posts)
+        const { entities, userId } = this.props;
+        let nodes = [];
+        let checks = document.getElementsByClassName('checkbox-manage-videos');
+        let values = Object.values(entities.users[userId].user_posts);
 
 
         for(let i = 1; i < checks.length; i++) {
             if(checks[i].checked) {
-                let index = i
-                nodes.push(index)
+                let index = i;
+                nodes.push(index);
             }
         }
 
@@ -71,7 +71,6 @@ class BottomContainer extends React.Component {
     handleClickOne(e){
         let count = 0
         let checks = document.getElementsByClassName('checkbox-manage-videos')
-
         for(let i = 0; i < checks.length; i++) {
             if (checks[i].checked) {
                 count += 1

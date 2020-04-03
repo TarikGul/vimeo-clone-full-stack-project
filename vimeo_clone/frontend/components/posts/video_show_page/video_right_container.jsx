@@ -8,7 +8,7 @@ class VideoRightContainer extends React.Component {
 
         this.state = {
             index: 7,
-            postId: null
+            postId: this.props.postId
         }
         
         this.handleClick= this.handleClick.bind(this)    
@@ -26,26 +26,21 @@ class VideoRightContainer extends React.Component {
     }
 
     render() {
-        const { postId, entities } = this.props
-        const userId = Object.keys(entities.users)[0]
-        const uploaderState = entities.posts[postId].uploaderPosts
+        const { postId, entities } = this.props;
+        const userId = Object.keys(entities.users)[0];
+        const uploaderState = entities.posts[postId].uploaderPosts;
         
         //Conditional to check if the props has been full updated or not
         if (uploaderState === undefined) {
             return null
-        }
+        };
         
         //This is to map out the uploads of the users current show page so that 
         //they can see all the related videos on the side bar.
-        const keys = Object.keys(uploaderState)
-        const collectionOfPosts = keys.map(key => uploaderState[key])
-        const uploaderSliceOfState = collectionOfPosts.slice(0, this.state.index)
-        if (this.state.postId !== this.props.postId) {
-            this.setState({
-                index: 7,
-                postId: this.props.postId
-            })
-        }
+        const keys = Object.keys(uploaderState);
+        const collectionOfPosts = keys.map(key => uploaderState[key]);
+        const uploaderSliceOfState = collectionOfPosts.slice(0, this.state.index);
+        
         return (
             <div className="video-right-top-container">
                 <div className="video-right-inner-container">
