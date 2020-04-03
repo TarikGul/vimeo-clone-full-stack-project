@@ -1,5 +1,5 @@
 import React from 'react'
-import PostIndex from '../../posts/post_index'
+import PostIndexContainer from '../../posts/post_index_container'
 import Arrow from './arrow'
 
 //pass props down from homepage to carousel then to PostIndex!!!!
@@ -14,7 +14,7 @@ class Carousel extends React.Component {
 
         return (
             <div className="carousel">
-                <PostIndex posts={this.props.posts} ownProps={this.props.ownProps}/>
+                <PostIndexContainer ownProps={this.props.ownProps}/>
             </div>
         )
     }

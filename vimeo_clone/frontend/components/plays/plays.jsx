@@ -9,7 +9,7 @@ const Plays = props => {
     } else if (match.params.postId && location.pathname === `/posts/${match.params.postId}`) {
         postId = parseInt(match.params.postId)
         if (props.entities.posts[postId].plays.length !== 0) {
-            plays = Object.keys(props.entities.posts[postId].plays).length
+            plays = props.entities.posts[postId].plays
         } else {
             plays = 0
         }
