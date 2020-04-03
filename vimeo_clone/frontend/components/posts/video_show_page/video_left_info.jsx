@@ -1,5 +1,6 @@
 import React from 'react';
 import LikeButtonContainer from '../../likes/likes_container';
+import PlaysContainer from '../../plays/plays_container';
 
 class VideoLeftInfo extends React.Component {
     constructor(props) {
@@ -24,12 +25,7 @@ class VideoLeftInfo extends React.Component {
         return (
             <div className="video-left-info-container">
                 <div className="inner-info-top-container">
-                    <div className="plays-info"> 
-                        <img className="plays-i" src="/play-button.svg" width="18" height="18"/>
-                        <div className="plays-text">
-                            14.2k 
-                        </div>
-                    </div>
+                    <PlaysContainer />
                     <LikeButtonContainer />
                     <div className="comments-info"> 
                         <img className="comments-i" src="/comment-button.svg" width="18" height="18"/>

@@ -15,6 +15,7 @@ const postsReducer = (state = {}, action) => {
             return nextState;
         case CREATE_PLAY:
             nextState[state.plays]
+            return nextState
         default: 
             return state;
     }
