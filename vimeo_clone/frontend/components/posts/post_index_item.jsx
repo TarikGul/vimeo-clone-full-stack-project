@@ -37,7 +37,7 @@ class PostIndexItem extends React.Component {
                             {this.props.post.title}
                         </div>
                         <div className="show-post-views">
-                            {`${this.viewGenerator()} views`}
+                            {`${this.props.post.plays} views`}
                         </div>
                     </div>
                 </div>
