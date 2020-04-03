@@ -18,15 +18,6 @@ json.post do
       end
     end
   end
-  # json.plays do 
-  #   @post.plays.each do |play|
-  #     json.set! play.id do
-  #       json.id play.id
-  #       json.userId play.user_id
-  #       json.postId play.post_id
-  #     end
-  #   end
-  # end
   json.plays @post.plays.length
 end
 

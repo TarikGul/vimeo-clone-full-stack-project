@@ -14,7 +14,8 @@ const postsReducer = (state = {}, action) => {
             delete nextState[action.postId];
             return nextState;
         case CREATE_PLAY:
-            nextState[state.plays]
+            const key = Object.keys(state)
+            nextState[state[key[0]].plays] + 1
             return nextState
         default: 
             return state;
