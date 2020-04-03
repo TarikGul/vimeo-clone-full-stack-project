@@ -1,5 +1,5 @@
 import React from 'react'
-import VideoViewportContainer from './video_viewport_container'
+import VideoViewportBox from './video_viewport_box'
 import VideoBottomContainer from './video_bottom_container'
 
 class VideoPage extends React.Component {
@@ -18,7 +18,7 @@ class VideoPage extends React.Component {
         } = this.props
         return (
             <div className="showpage-video-container">
-                <VideoViewportContainer videoUrl={entities.posts[postId].videoUrl}/>
+                <VideoViewportBox videoUrl={entities.posts[postId].videoUrl}/>
                 <VideoBottomContainer
                     sessionId={sessionId}
                     clickHandler={clickHandler}

@@ -1,4 +1,5 @@
 import { RECEIVE_POST, RECEIVE_ALL_POSTS, REMOVE_POST } from '../actions/post_actions'
+import { CREATE_PLAY } from '../actions/play_actions'
 
 const postsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -12,6 +13,8 @@ const postsReducer = (state = {}, action) => {
         case REMOVE_POST: 
             delete nextState[action.postId];
             return nextState;
+        case CREATE_PLAY:
+            nextState[state.plays]
         default: 
             return state;
     }

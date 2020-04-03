@@ -1,12 +1,22 @@
-import React from 'react'
+import { connect } from 'react-redux';
+import { createPlay } from '../../../actions/play_actions'
 import VideoViewport from './video_viewport'
 
-const VideoViewportContainer = props => {
-    return (
-        <div className="video-viewport-container">
-            <VideoViewport videoUrl={props.videoUrl}/>
-        </div>
-    )
+const msp = state => {
+    const { session, entities } = state
+    return {
+        session,
+        entities
+    }
 }
 
-export default VideoViewportContainer
+const mdtp = dispatch => {
+    return {
+        clearPlay: () => dispatch(createPlay()),
+    }
+}
+
+export default connect(
+    msp, 
+    mdtp
+)(VideoViewport);
