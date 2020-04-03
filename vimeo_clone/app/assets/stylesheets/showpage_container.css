@@ -123,9 +123,9 @@
 }
 
 .video-left-info-container {
-    border: 1px solid gray;
     height: 256px;
     overflow: hidden;
+    border-bottom: 1px solid rgb(206, 205, 205);
 }
 
 .comment-textarea {

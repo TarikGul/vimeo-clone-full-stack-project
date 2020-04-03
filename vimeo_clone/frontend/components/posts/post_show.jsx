@@ -15,7 +15,11 @@ class PostShow extends React.Component {
         this.props.fetchPost(this.props.postId)
     }
 
-
+    componentDidUpdate(prevProps) {
+        if (prevProps.ownProps.location.pathname !== this.props.ownProps.location.pathname) {
+            scrollToTop();
+        }
+    }
 
     clickHandler(postId) {
        return () => this.props.fetchPost(postId)
@@ -39,7 +43,7 @@ class PostShow extends React.Component {
         } else if (this.props.state.entities.posts[this.props.postId] === undefined) {
             return null
         }
-        scrollToTop();
+        // scrollToTop();
         return (
             <div className="showpage-container">
                 <HomeNavbar 
