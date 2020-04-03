@@ -10,13 +10,12 @@ class Api::PostsController < ApplicationController
         .includes(:comments)
         .includes(:likes)
         .find(params[:id])
-        # .includes(:plays) #added this line
-        # .includes(:category) #added this line
+        
       render :show
     end
 
     def create 
-      @post = Post.find(params[:id])
+      @post = Post.new(post_params)
 
       if @post.save(post_params)
         render :show
@@ -35,6 +34,6 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:title)
+        params.require(:post).permit(:title, :user_id, :video_url, :thumbnail_url, :category_id, :password_protected)
     end
 end
