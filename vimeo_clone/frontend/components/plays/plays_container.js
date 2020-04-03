@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import Plays from './plays';
 
 const msp = state => {
-    debugger
     return {
         entities: state.entities
     };

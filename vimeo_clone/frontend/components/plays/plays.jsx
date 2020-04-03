@@ -4,12 +4,10 @@ const Plays = props => {
     const { match, location } = props
     let postId;
     let plays;
-    debugger
     if (props.entities.posts[parseInt(match.params.postId)].plays === undefined) {
         plays = 0;
     } else if (match.params.postId && location.pathname === `/posts/${match.params.postId}`) {
         postId = parseInt(match.params.postId)
-        debugger
         if (props.entities.posts[postId].plays.length !== 0) {
             plays = Object.keys(props.entities.posts[postId].plays).length
         } else {
