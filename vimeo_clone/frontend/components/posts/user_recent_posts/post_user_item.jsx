@@ -1,14 +1,18 @@
 import React from 'react';
 import { timeSince } from '../../../util/date_api_util';
 import useHover from '../../../hooks/use_hover';
+import { Link, Redirect } from 'react-router-dom'
 
 const PostUserItem = props => {
     const [hoverRef, isHovered] = useHover();
-    const { post } = props
+    const { post, history } = props
     const date = new Date(post.created_at)
+    
+
+
     return (
-        <div className="recent-post-box-container" ref={hoverRef}>
-            <div className="recent-post-box">
+        <Link to={`/posts/${post.id}`} className="recent-post-box-container" ref={hoverRef} >
+            <div className="recent-post-box" >
                 {
                     isHovered ?
                     (   
@@ -19,14 +23,14 @@ const PostUserItem = props => {
                         <img className="recent-thumbnail" src={post.thumbnailUrl} alt="" />
                     )
                 }
-                <div className="recent-post-title">
+                <div className="recent-post-title" >
                     {post.title}
                 </div>
                 <div className="recent-date-posted">
                     {`${timeSince(date)} ago`}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

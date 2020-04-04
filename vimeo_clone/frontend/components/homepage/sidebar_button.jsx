@@ -13,7 +13,7 @@ class SidebarButton extends React.Component {
         }
         return (
             <div className={`sidebar-button-inner-container ${this.props.buttonName}-sidebar-button`}>
-                <Link to={this.props.route}>
+                <Link to={this.props.route} className="sidebar-button-link">
                     {
                         this.props.ownProps.match.path === this.props.route
                         ?

@@ -51,3 +51,7 @@
 .clicked-sidebar {
     background-color: #ebecec;
 }
+
+.sidebar-button-link {
+    text-decoration: none;
+}

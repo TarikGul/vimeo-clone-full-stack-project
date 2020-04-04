@@ -73,6 +73,7 @@
 
 .recent-post-box-container {
     display: flex;
+    text-decoration: none;
     flex-direction: column;
     margin-left: 18px;
     width: 260px;
@@ -128,4 +129,20 @@
   hsla(0, 0%, 0%, 0.002) 98.2%,
   hsla(0, 0%, 0%, 0) 100%
   );
+}
+
+.recent-post-title {
+    color: #17272e;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.recent-post-title:hover {
+    color: #0088cc;
+}
+
+.recent-date-posted {
+    color: #8498a4;
+    font-size: 14px;
+    padding-left: 10px;
 }

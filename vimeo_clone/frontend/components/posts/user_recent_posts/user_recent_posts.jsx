@@ -43,7 +43,8 @@ class UserRecentPosts extends React.Component {
                     </div>
                     {
                         sortedUserPosts.slice(0, 3).map((post, i) => {
-                            return <PostUserItem 
+                            return <PostUserItem
+                                        history={history} 
                                         key={`user-post-${i}`}
                                         post={post}/>
                         })
