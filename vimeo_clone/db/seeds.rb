@@ -27,7 +27,6 @@ Follower.destroy_all
 Like.destroy_all
 Comment.destroy_all
 Post.destroy_all
-VideoCategory.destroy_all
 User.destroy_all
 
 def generate_random_string(n)
@@ -84,25 +83,14 @@ User.create({ username: 'guest', email: 'guest@gmail.com', password: 'password' 
   })
 end
 
-#This is the categories section of the seeds file
-
-VideoCategory.create({ name: 'Adventure' })
-VideoCategory.create({ name: 'DYI' })
-VideoCategory.create({ name: 'Educational' })
-VideoCategory.create({ name: 'Outdoors' })
-VideoCategory.create({ name: 'Creator' })
-VideoCategory.create({ name: 'Easter Egg' })
-
 random_user = rand(User.all.length - 10) + 8
 
 
 #This is the post sections of the seed file
-# Post.create({ title: "Post-" + (generate_random_string(7) + generate_random_number(8)), user_id: User.all[random_user].id, category_id: VideoCategory.first.id, password_protected: false })
 (0..12).each do |i|
   Post.create!({ 
     title: "Post-" + (generate_random_string(7) + generate_random_number(8)), 
     user_id: User.all[rand(User.all.length - 10) + 9].id, 
-    category_id: VideoCategory.first.id, 
     password_protected: false,
     description: generate_random_description(60)
   })
@@ -156,7 +144,6 @@ end
   post = Post.create!({ 
     title: "Post-" + (generate_random_string(7) + generate_random_number(8)), 
     user_id: User.first.id + 1, 
-    category_id: VideoCategory.first.id, 
     password_protected: false,
     description: generate_random_description(60)
    })

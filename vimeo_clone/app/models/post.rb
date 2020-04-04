@@ -20,10 +20,6 @@ class Post < ApplicationRecord
         foreign_key: :user_id,
         class_name: :User
     
-    belongs_to :category,
-        foreign_key: :category_id,
-        class_name: :VideoCategory
-    
     has_many :comments,
         foreign_key: :post_id,
         class_name: :Comment

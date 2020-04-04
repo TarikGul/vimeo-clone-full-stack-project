@@ -70,13 +70,11 @@ ActiveRecord::Schema.define(version: 2020_03_05_185430) do
   create_table "posts", force: :cascade do |t|
     t.string "title", null: false
     t.integer "user_id", null: false
-    t.integer "category_id", null: false
     t.boolean "password_protected", null: false
     t.string "password_digest"
     t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -89,12 +87,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_185430) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
-  end
-
-  create_table "video_categories", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "video_plays", force: :cascade do |t|

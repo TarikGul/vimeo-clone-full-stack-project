@@ -8,7 +8,6 @@ json.post do
     @post.user.posts.each do |post|
       json.set! post.id do
         json.id post.id
-        json.category_id post.category_id
         json.title post.title
         json.userId post.user_id
         json.description post.description
