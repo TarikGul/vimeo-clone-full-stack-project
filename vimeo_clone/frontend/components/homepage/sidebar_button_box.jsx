@@ -11,24 +11,18 @@ class SidebarButtonBox extends React.Component {
             "/home",
             "/manage/videos",
             "/manage/upload",
-            "/manage/live_events",
-            "/manage/showcases"
         ]
         const images = [
             "/home-button.png", 
             "/video-button.png",
             "/create-video-button.png",
-            "/camera-button.png",
-            "/showcase-button.png" 
         ];
         const name = [
             "Home",
             "Videos",
             "Upload",
-            "Life events",
-            "Showcases"
         ]; 
-        const counter = [0, 1, 2, 3, 4];
+        const counter = [0, 1, 2];
         return (
             <div className="side-navbar-container-left">
                 <div className='new-video-button-container'>
