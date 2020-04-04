@@ -1,10 +1,12 @@
 import React from 'react';
-import NewVideoBox from './new_video'
+import NewVideoBox from './new_video';
+import PostUserItem from './post_user_item';
 
 class UserRecentPosts extends React.Component {
     constructor(props) {
         super(props)
 
+        this.parsePosts = this.parsePosts.bind(this)
     }
 
     sortByDate(arr) {
@@ -18,7 +20,7 @@ class UserRecentPosts extends React.Component {
 
         keys.forEach((k) => {
             if (posts[k].user_id === sessionId) {
-                userPosts.push(posts[k])
+                userPosts.push(posts[k]);
             }
         });
         return this.sortByDate(userPosts);
@@ -26,7 +28,8 @@ class UserRecentPosts extends React.Component {
 
     render() {
         const { history, entities, sessionId } = this.props 
-        console.log(this.parsePosts(entities.posts, sessionId))
+        const sortedUserPosts = this.parsePosts(entities.posts, sessionId)
+
         return (
             <div className="recent-posts-main-container">
                 <div className="recent-videos-title-container">
@@ -34,8 +37,15 @@ class UserRecentPosts extends React.Component {
                         Recent Videos
                     </div>
                 </div>
-                <div className="recent-posts-container">
-                    <NewVideoBox history={history}/>
+                <div className="recents-row">
+                    <div className="recent-posts-container">
+                        <NewVideoBox history={history}/>
+                    </div>
+                    {
+                        sortedUserPosts.slice(0, 3).map(post => {
+                            return <PostUserItem post={post}/>
+                        })
+                    }
                 </div>
             </div>
         )

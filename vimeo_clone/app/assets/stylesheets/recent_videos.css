@@ -64,3 +64,20 @@
     font-size: 18px;
     font-weight: 500;
 }
+
+.recents-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.recent-post-box-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 18px;
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgb(223, 223, 223);
+    background-color: #eef1f2;
+    cursor: pointer;
+    border-radius: 4px;
+}
