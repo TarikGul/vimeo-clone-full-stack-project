@@ -68,6 +68,7 @@
 .recents-row {
     display: flex;
     flex-direction: row;
+    width: 1200px;
 }
 
 .recent-post-box-container {
@@ -88,7 +89,6 @@
 .recent-post-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
     height: 100%;
     width: 100%;
 }
@@ -96,4 +96,11 @@
 .recent-thumbnail {
     width: 100%;
     height: auto;
+}
+
+.recent-post-box:hover {
+    box-shadow: 0 0 8px rgba(158, 158, 158, 0.6);
+    -moz-box-shadow: 0 0 8px rgba(155, 155, 155, 0.6);
+    -webkit-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
+    -o-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
 }
