@@ -10,7 +10,7 @@
     flex-direction: column;
     width: 260px;
     height: 260px;
-    border: 1px solid rgb(214, 214, 214);
+    border: 1px solid rgb(223, 223, 223);
     background-color: #eef1f2;
     cursor: pointer;
     border-radius: 4px;
@@ -52,4 +52,15 @@
     color: #b3bfc8;
     font-size: 15px;
     padding-top: 15px;
+}
+
+.recent-videos-title-container {
+    margin:22px;
+    
+}
+
+.recent-videos-title {
+    color: #1a2e3b;
+    font-size: 18px;
+    font-weight: 500;
 }

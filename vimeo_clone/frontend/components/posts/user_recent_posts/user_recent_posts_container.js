@@ -4,6 +4,7 @@ import UserRecentPosts from './user_recent_posts';
 
 const msp = (state) => {
     return {
+        sessionId: state.session.id,
         entities: state.entities
     };
 };
