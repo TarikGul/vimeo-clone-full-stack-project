@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import UserRecentPosts from './user_recent_posts'
+import { withRouter } from 'react-router-dom';
+import UserRecentPosts from './user_recent_posts';
 
-const msp = (state, ownProps) => {
+const msp = (state) => {
     return {
-        entities: state.entities,
-        ownProps
+        entities: state.entities
     };
 };
 
@@ -14,7 +14,7 @@ const mdtp = dispatch => {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     msp, 
     mdtp
-)(UserRecentPosts)
+)(UserRecentPosts))

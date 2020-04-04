@@ -6,8 +6,8 @@ class UserRecentPosts extends React.Component {
         super(props)
 
     }
-    
     render() {
+        const { history } = this.props 
         return (
             <div className="recent-posts-main-container">
                 <div className="recent-videos-title-container">
@@ -16,7 +16,7 @@ class UserRecentPosts extends React.Component {
                     </div>
                 </div>
                 <div className="recent-posts-container">
-                    <NewVideoBox />
+                    <NewVideoBox history={history}/>
                 </div>
             </div>
         )
