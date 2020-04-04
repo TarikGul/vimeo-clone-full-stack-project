@@ -42,8 +42,10 @@ class UserRecentPosts extends React.Component {
                         <NewVideoBox history={history}/>
                     </div>
                     {
-                        sortedUserPosts.slice(0, 3).map(post => {
-                            return <PostUserItem post={post}/>
+                        sortedUserPosts.slice(0, 3).map((post, i) => {
+                            return <PostUserItem 
+                                        key={`user-post-${i}`}
+                                        post={post}/>
                         })
                     }
                 </div>

@@ -4,7 +4,9 @@ const PostUserItem = props => {
 
     return (
         <div className="recent-post-box-container">
-            hello
+            <div className="recent-post-box">
+                <img className="recent-thumbnail" src={props.post.thumbnailUrl} alt=""/>
+            </div>
         </div>
     )
 }
