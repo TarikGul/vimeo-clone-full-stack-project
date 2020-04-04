@@ -1,13 +1,24 @@
 import React from 'react';
-import { timeSince } from '../../../util/date_api_util'
+import { timeSince } from '../../../util/date_api_util';
+import useHover from '../../../hooks/use_hover';
 
 const PostUserItem = props => {
+    const [hoverRef, isHovered] = useHover();
     const { post } = props
     const date = new Date(post.created_at)
     return (
-        <div className="recent-post-box-container">
+        <div className="recent-post-box-container" ref={hoverRef}>
             <div className="recent-post-box">
-                <img className="recent-thumbnail" src={post.thumbnailUrl} alt=""/>
+                {
+                    isHovered ?
+                    (   
+                        <div className="outer-layer-post-thumbnail">
+                            <img className="recent-thumbnail-hovered" src={post.thumbnailUrl} alt="" />
+                        </div>
+                    ) : (
+                        <img className="recent-thumbnail" src={post.thumbnailUrl} alt="" />
+                    )
+                }
                 <div className="recent-post-title">
                     {post.title}
                 </div>
