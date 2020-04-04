@@ -30,7 +30,7 @@ class PostIndexItem extends React.Component {
                         </div>
                     </div>
                     <div className="post-video">
-                        <img src={this.props.post.thumbnailUrl} width="261" height="150"/>
+                        <img className="feed-thumbnail" src={this.props.post.thumbnailUrl} />
                     </div>
                     <div className="show-post-title-and-views-box">
                         <div className="show-post-title-page">

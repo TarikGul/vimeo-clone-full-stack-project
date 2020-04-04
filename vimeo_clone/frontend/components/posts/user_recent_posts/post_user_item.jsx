@@ -13,7 +13,7 @@ const PostUserItem = props => {
                     isHovered ?
                     (   
                         <div className="outer-layer-post-thumbnail">
-                            <img className="recent-thumbnail-hovered" src={post.thumbnailUrl} alt="" />
+                            <img className="recent-thumbnail-hovered" src={post.thumbnailUrl}  />
                         </div>
                     ) : (
                         <img className="recent-thumbnail" src={post.thumbnailUrl} alt="" />
