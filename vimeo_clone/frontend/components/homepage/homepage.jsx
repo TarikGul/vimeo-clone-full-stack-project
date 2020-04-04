@@ -1,6 +1,7 @@
-import React from 'react'
-import Carousel from './carousel/carousel'
-import SidebarButtonBox from './sidebar_button_box'
+import React from 'react';
+import Carousel from './carousel/carousel';
+import SidebarButtonBox from './sidebar_button_box';
+import UserRecentPostsContainer from '../posts/user_recent_posts/user_recent_posts_container';
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -31,6 +32,7 @@ class Homepage extends React.Component {
                         <div className="page-name">
                             Home
                         </div>
+                        <UserRecentPostsContainer />
                         <div className='feed-container'>
                             <div className="my-feed-container-name"> My Feed</div>
                             <Carousel posts={this.props.posts} ownProps={this.props.ownProps}/>
