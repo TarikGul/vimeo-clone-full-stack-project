@@ -97,19 +97,6 @@ random_user = rand(User.all.length - 10) + 8
 end
 
 random_post = rand(Post.all.length - 10) + 8
-#This is the comments sections of the seeds file
-
-(0..12).each do |i|
-  Comment.create({
-    user_id: User.first.id, 
-    parent_comment_id: nil, 
-    child_comment_id: nil, 
-    post_id: Post.all[i].id, 
-    body: "This is your friendly neighborhood bot. Enjoy Bimeo, wash your hands! I did not do this to avoid a bug ;)"
-  })
-end
-
-random_comment = rand(Comment.all.length - 5) + 4
 
 #This is the Follows section of the seeds file
 
@@ -164,6 +151,20 @@ end
     Like.create({ user_id: User.all[i].id, post_id: Post.all[j].id })
   end
 end
+
+#This is the comments sections of the seeds file
+
+(0...26).each do |i|
+  Comment.create({
+    user_id: User.first.id, 
+    parent_comment_id: nil, 
+    child_comment_id: nil, 
+    post_id: Post.all[i].id, 
+    body: "This is your friendly neighborhood bot. Enjoy Bimeo, wash your hands! I did not do this to avoid a bug ;)"
+  })
+end
+
+random_comment = rand(Comment.all.length - 5) + 4
 
 #This is the video_play section of the seeds file
 
