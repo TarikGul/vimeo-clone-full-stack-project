@@ -40,10 +40,6 @@ class User < ApplicationRecord
     has_many :leaders,
       foreign_key: :user_id,
       class_name: :Follower
-    
-    #I am a little iffy on this one, unclear what association i am looking for.
-    #I am pretty sure i dont need another key so im going to get rid of the user_id assocaition in follower
-    #________________ASSOCIATION HAS BEEN ROMVED_________________________
 
     has_many :plays,
       foreign_key: :user_id,
