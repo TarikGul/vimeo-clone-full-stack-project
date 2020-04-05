@@ -68,7 +68,7 @@ class PostForm extends React.Component {
                                        onChange={this.handleFile('video')}
                                        className="upload-file-input"/>
                             </button>
-                            <button className="upload-button">
+                            <button className="upload-button" for="file">
                                 <img className="cloud-i" src="/cloud-upload.svg" width="18" height="18" />
                                 {/* Change this to a loading bar */}
                                 <div className="upload-button-text">
