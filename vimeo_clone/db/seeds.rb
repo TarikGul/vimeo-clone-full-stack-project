@@ -160,7 +160,7 @@ end
     parent_comment_id: nil, 
     child_comment_id: nil, 
     post_id: Post.all[i].id, 
-    body: "This is your friendly neighborhood bot. Enjoy Bimeo, wash your hands! I did not do this to avoid a bug ;)"
+    body: "This is your friendly neighborhood bot. Enjoy Bimeo, wash your hands, and stay at home :)!"
   })
 end
 
