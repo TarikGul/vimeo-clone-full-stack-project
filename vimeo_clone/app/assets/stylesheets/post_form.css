@@ -97,6 +97,11 @@
 .preview-message {
     font-size: 12px;
 }
+
+.video-preview-container {
+    height: 300px;
+    width: 400px;
+}
 /* .post-form-container {
   padding: 8px;
   width: 100%;
