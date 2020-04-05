@@ -35,7 +35,6 @@ class SidebarButtonBox extends React.Component {
                                 </div>
                     </button>
                 </div>
-                {/*Make this into its own component */}
                 <div className="navigation-links">
                     <div className="homepage-sidebar-container">
                         {
