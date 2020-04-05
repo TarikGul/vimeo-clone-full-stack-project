@@ -10,7 +10,7 @@ class PostForm extends React.Component {
             videoFile: null,
             thumbnailFile: null,
             description: '',
-            userId: null,
+            userId: this.props.sessionId,
             thumbnailUrl: null,
             videoUrl: null,
             passwordProtected: false
@@ -47,6 +47,8 @@ class PostForm extends React.Component {
         const formData = new FormData();
         formData.append('post[title]', this.state.title)
         formData.append('post[description]', this.state.description)
+        formData.append('post[user_id]', this.state.userId)
+        formData.append('post[password_protected]', this.state.passwordProtected)
         if (this.state.videoFile) {
             formData.append('post[video]', this.state.videoFile)
         }
@@ -54,8 +56,8 @@ class PostForm extends React.Component {
             formData.append('post[thumbnail]', this.state.thumbnailFile)
         }
         this.props.createPost(formData)
-            .then((response) => {
-            this.props.history.push(`/posts/${response.post.id}`)
+            .then((res) => {
+            this.props.history.push(`/posts/${res.post.id}`)
         });
     }
 

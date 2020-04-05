@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-    #what is wrong with this
+
     def index
       @posts = Post.all
       render :index
@@ -34,6 +34,6 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:title, :user_id, :video_url, :thumbnail_url, :category_id, :password_protected)
+        params.require(:post).permit(:title, :user_id, :video, :thumbnail, :password_protected)
     end
 end
