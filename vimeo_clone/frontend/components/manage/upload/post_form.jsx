@@ -13,6 +13,7 @@ class PostForm extends React.Component {
             passwordProtected: false
         }
 
+        this.update = this.update.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
     }
@@ -40,11 +41,22 @@ class PostForm extends React.Component {
     
 
     handleSubmit() {
-
+        const formData = new FormData();
+        formData.append('post[title]', this.state.title)
+        formData.append('post[description]', this.state.description)
+        if (this.state.videoFile) {
+            formData.append('post[video_file]', this.state.videoFile)
+        }
+        if (this.state.thumbFile) {
+            formData.append('post[thumbnail_file]', this.state.thumbnailFile)
+        }
+        this.props.createPost(formData)
+            .then((response) => {
+            this.props.history.push(`/posts/${response.post.id}`)
+        });
     }
 
     
-
     render() {
         return (
             <div className="upload-form-container">
@@ -65,6 +77,7 @@ class PostForm extends React.Component {
                                     }
                                 </div>
                                 <input type="file"
+                                       accept="video/mp4"
                                        onChange={this.handleFile('video')}
                                        className="upload-file-input"/>
                             </button>
@@ -77,17 +90,15 @@ class PostForm extends React.Component {
                                     }
                                 </div>
                                 <input type="file"
-                                    onChange={this.handleFile('video')}
-                                    className="upload-file-input" />
+                                       accept="image/png,image/jpeg"
+                                       onChange={this.handleFile('video')}
+                                       className="upload-file-input" />
                             </button>
+                            <div className="preview-message">
+                                Once files are uploaded, fill out the preview page before submitting
+                            </div>  
                         </div>
-                        <div className="title-description-container">
-                            <label> Title:
-                                <input type="text"/>
-                            </label>
-                            <label>Description</label>
-                            <input type="textArea"/>
-                        </div>
+                        
                     </form>
                 </div>
             </div>

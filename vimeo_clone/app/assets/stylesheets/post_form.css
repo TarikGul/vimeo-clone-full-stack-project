@@ -90,9 +90,12 @@
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
-    /* z-index: -1; */
     cursor: pointer;
     top:-3px;
+}
+
+.preview-message {
+    font-size: 12px;
 }
 /* .post-form-container {
   padding: 8px;
