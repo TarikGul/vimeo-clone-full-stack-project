@@ -14,12 +14,29 @@ class PostForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleFile = this.handleFile.bind(this)
     }
 
     update(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value })
     }
 
+    handleFile(field) {
+        return (e) => {
+            const file = e.currentTarget.files[0];
+            const fileReader = new FileReader();
+            fileReader.onloadend = () => {
+                if (field === 'thumbnail') {
+                    this.setState({ thumbnailFile: file});
+                } else {
+                    this.setState({ videoFile: file});
+                }
+            };
+            if (file) {
+                fileReader.readAsDataURL(file);
+            }
+        }
+    }
     
 
     handleSubmit() {
@@ -47,6 +64,9 @@ class PostForm extends React.Component {
                                         `Choose video files` : ` Upload Successful`
                                     }
                                 </div>
+                                <input type="file"
+                                       onChange={this.handleFile('video')}
+                                       className="upload-file-input"/>
                             </button>
                             <button className="upload-button">
                                 <img className="cloud-i" src="/cloud-upload.svg" width="18" height="18" />
@@ -56,10 +76,17 @@ class PostForm extends React.Component {
                                         `Choose thumbnail files` : ` Upload Successful`
                                     }
                                 </div>
+                                <input type="file"
+                                    onChange={this.handleFile('video')}
+                                    className="upload-file-input" />
                             </button>
                         </div>
                         <div className="title-description-container">
-
+                            <label> Title:
+                                <input type="text"/>
+                            </label>
+                            <label>Description</label>
+                            <input type="textArea"/>
                         </div>
                     </form>
                 </div>

@@ -34,7 +34,8 @@
 }
 
 .title-description-container {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .upload-button-text {
@@ -81,6 +82,15 @@
 
 .upload-video-thumbnail-container > div {
     transform: translateY(80px);
+}
+
+.upload-file-input {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 /* .post-form-container {
   padding: 8px;
