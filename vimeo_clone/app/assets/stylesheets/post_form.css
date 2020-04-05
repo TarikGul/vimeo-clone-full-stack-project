@@ -1,4 +1,88 @@
-.post-form-container {
+.upload-form-container {
+  padding: 8px;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.upload-form-inner-container {
+    height: 700px;
+    width: 100%;
+    transform: translateY(20%);
+}
+
+.upload-form {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    padding-top: 65px;
+    width: 82%;
+    padding-left: 250px;
+}
+
+.upload-video-thumbnail-container {
+    /* transform: translateY(30%); */
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    border: 1px dotted gray;
+    border-radius: 4px;
+}
+
+.title-description-container {
+
+}
+
+.upload-button-text {
+    color: white;
+}
+
+.upload-button {
+    display: flex;
+    justify-content: center;
+    background-color: #00adef;
+    margin: 20px;
+    width: 350px;
+    height: 39px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    background-color: #0088cc;
+}
+
+.upload-button > div {
+    padding-left: 10px;
+}
+
+.cloud-i {
+    transform: translateY(-1px);
+}
+
+.upload-box-text {
+    text-align: center;
+    color: #1a2e3b;
+    font-size: 22px;
+    padding: 30px;
+}
+
+.upload-video-thumbnail-container > img {
+    transform: translateY(80px);
+}
+
+.upload-video-thumbnail-container > button {
+    transform: translateY(80px);
+}
+
+.upload-video-thumbnail-container > div {
+    transform: translateY(80px);
+}
+/* .post-form-container {
   padding: 8px;
   width: 100%;
   box-sizing: border-box;
@@ -89,4 +173,4 @@ small {
   .thumbnail-caption {
     font-size: 12px;
   }
-}
+} */
