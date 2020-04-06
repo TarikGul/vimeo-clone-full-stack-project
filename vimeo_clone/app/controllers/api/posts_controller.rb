@@ -16,7 +16,6 @@ class Api::PostsController < ApplicationController
 
     def create 
       @post = Post.new(post_params)
-      debugger
       if @post.save
         if @post.video.attached? && @post.thumbnail.attached?
           render :show

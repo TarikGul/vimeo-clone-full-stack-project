@@ -64,7 +64,7 @@ class PostForm extends React.Component {
         }
         this.props.createPost(formData)
             .then((res) => {
-            this.props.history.push(`/posts/${res.post.id}`)
+            this.props.history.push(`/posts/${res.post.post.id}`)
         });
     }
 

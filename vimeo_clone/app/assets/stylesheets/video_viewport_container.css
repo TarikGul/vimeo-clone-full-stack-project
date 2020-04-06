@@ -6,7 +6,8 @@
 
 .video-viewport-container {
     display: flex;
-    height: 20%;
+    /* height: 20%; */
+    /* height: 540px; */
     background-color: #0d171d;
     flex-direction: column;
 }
@@ -19,9 +20,10 @@
 }
 
 .video-player {
-    /* position: absolute; */
     top: 0;
     left: 0;
+    height: 540px !important;
+    width: auto !important;
 }
 
 .video-player:focus {
