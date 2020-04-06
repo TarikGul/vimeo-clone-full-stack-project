@@ -53,11 +53,14 @@ class PostForm extends React.Component {
         if (this.state.videoFile) {
             formData.append('post[video]', this.state.videoFile)
         }
-        if (this.state.thumbFile) {
+        if (this.state.thumbnailFile) {
             formData.append('post[thumbnail]', this.state.thumbnailFile)
         }
         for (let key of formData.entries()) {
             console.log(key[0] + ', ' + key[1]);
+        }
+        for (let value of formData.values()) {
+            console.log(value)
         }
         this.props.createPost(formData)
             .then((res) => {
