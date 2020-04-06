@@ -43,7 +43,8 @@ class PostForm extends React.Component {
     }
     
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         const formData = new FormData();
         formData.append('post[title]', this.state.title)
         formData.append('post[description]', this.state.description)
@@ -54,6 +55,9 @@ class PostForm extends React.Component {
         }
         if (this.state.thumbFile) {
             formData.append('post[thumbnail]', this.state.thumbnailFile)
+        }
+        for (let key of formData.entries()) {
+            console.log(key[0] + ', ' + key[1]);
         }
         this.props.createPost(formData)
             .then((res) => {
@@ -77,7 +81,10 @@ class PostForm extends React.Component {
                                     thumbnailUrl={thumbnailUrl}
                                     videoUrl={videoUrl}
                                     update={this.update} />
-                                <button type="submit" className="submit-post">Upload</button>
+                                <button type="submit"
+                                        className="submit-post">
+                                        Upload
+                                </button>
                             </div>
                             ) : (
                             <div className="info-and-upload-container"> 
@@ -120,7 +127,7 @@ class PostForm extends React.Component {
                                 <div className="upload-info-container">
                                     <div className="top-info-container">
                                         <img className="upload-info-i" src="/upload-check.svg" width="30" height="32"/>
-                                        <div class="title-description-info">
+                                        <div className="title-description-info">
                                             <div className="upload-info-title">
                                                 Quality
                                             </div>
@@ -133,7 +140,7 @@ class PostForm extends React.Component {
                                     </div>
                                     <div className="middle-info-container">
                                         <img className="upload-info-i" src="/upload-lock.svg" width="30" height="32"/>
-                                        <div class="title-description-info">
+                                        <div className="title-description-info">
                                             <div className="upload-info-title">
                                                 Storage and privacy
                                             </div>
@@ -146,7 +153,7 @@ class PostForm extends React.Component {
                                     </div>
                                     <div className="bottom-info-container">
                                         <img className="upload-info-i" src="/upload-heart.svg" width="30" height="32"/>
-                                        <div class="title-description-info">
+                                        <div className="title-description-info">
                                             <div className="upload-info-title">
                                                 Community
                                             </div>

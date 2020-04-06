@@ -17,8 +17,10 @@ class Api::PostsController < ApplicationController
     def create 
       @post = Post.new(post_params)
 
-      if @post.save(post_params)
-        render :show
+      if @post.save
+        if @post.video.attached? && @post.thumbnail.attached?
+          render :show
+        end
       else
         render json: @post, status: :unprocessable_entity
       end
@@ -34,6 +36,6 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:title, :user_id, :video, :thumbnail, :password_protected)
+        params.require(:post).permit(:title, :user_id, :video, :thumbnail, :description, :password_protected)
     end
 end

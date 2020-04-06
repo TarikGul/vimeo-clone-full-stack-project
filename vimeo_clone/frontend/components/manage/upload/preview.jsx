@@ -14,17 +14,19 @@ const PreviewPost = props => {
             <div className="thumbnail-preview-container">
                 <img src={thumbnailUrl}
                      width="260"
-                     height="auto"/>
+                     height="230"/>
             </div>
             <div className="title-description-container">
                 <label>Title</label>
                 <input type="text"
                        className="title-preview"
-                       onChange={update('title')}/>
+                       onChange={update('title')}
+                       required/>
                 <label>Description</label>
                 <input type="textarea"
                        className="description-preview"
-                       onChange={update('description')}/>
+                       onChange={update('description')}
+                       required/>
             </div>
         </div>
     )
