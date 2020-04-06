@@ -75,7 +75,7 @@ class PostForm extends React.Component {
             <div className="upload-form-container">
                 <div className="upload-form-inner-container">
                     <form className="upload-form" onSubmit={this.handleSubmit}>
-                        {
+                         {
                             (thumbnailUrl && videoUrl) 
                             ?
                             (

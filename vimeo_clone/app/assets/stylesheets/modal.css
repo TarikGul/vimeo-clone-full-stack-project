@@ -38,30 +38,37 @@
     text-align: center;
     padding: 25px;
     font-size: 20px;
-    background-color: #f1f8ff;
-    border-radius: 3px;
+    background-color: #f2f4f5;
+    border-radius: 5px;
     border: 1px solid rgb(240, 240, 240);
     font-weight: bold;
 }
 
 .login-input {
     width: 350px;
-    height: 50px;
+    height: 45px;
     font-size: 25px;
     outline: none;
     border: none;
-    border: 1px solid rgb(241, 241, 241);
+    border: 0.5px solid rgb(223, 223, 223);
     border-radius: 3px;
+    cursor: pointer;
     /* border-style: solid; */
 }
+
+.login-input:focus {
+    border: 1px solid rgb(202, 202, 202);
+}
+
 .join-input {
     width: 350px;
-    height: 50px;
+    height: 45px;
     font-size: 17px;
     outline: none;
     border: none;
     border: 1px solid rgb(241, 241, 241);
-    border-radius: 3px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .input-wrapper {
@@ -72,6 +79,7 @@
 .modal-form {
     padding-top: 15px;
     text-align: center;
+    border-top: 1px solid rgb(212, 212, 212);;
 }
 
 .modal-button {
@@ -125,10 +133,37 @@
 
 .login-bottom-modal > button {
     color: rgb(61, 178, 224);
+    cursor: pointer;
 }
 
 .signup-link-bottom > button {
     color: rgb(61, 178, 224);
+    cursor: pointer;
 }
 
+.demo-user-login-modal {
+    width: 360px;
+    height: 50px;
+    background-color: #4285f4;
+    border-radius: 3px;
+    color: white;
+    font-weight: 500;
+}
+.space-between-demo-login {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 6px;
+    padding-bottom: 10px;
+}
 
+::placeholder {
+  color: rgb(212, 212, 212);
+  font-size: 16px;
+  padding-left: 15px;
+  transform: translateY(-3px);
+  font-weight: 300;
+}
+
+.join-input::placeholder {
+    transform: translateY(1px);
+}

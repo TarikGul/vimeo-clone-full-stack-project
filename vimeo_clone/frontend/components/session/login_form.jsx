@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.onDemoClick = this.onDemoClick.bind(this)
     }
 
     handleInput(type) {
@@ -32,6 +33,21 @@ class LoginForm extends React.Component {
         // on a successful Submit you can actually push the information from a 
         // link to your history in order to grab remaining information
         // .then(() => this.props.history.push('/chirps'));
+    }
+
+    onDemoClick(e) {
+        e.preventDefault();
+        const demoUser = {
+            username: 'guest',
+            password: 'password'
+        }
+        this.props.processForm(demoUser)
+            .then(() => (
+                this.props.history.push('/home')
+            ))
+            .then(() => (
+                this.props.closeModal()
+            ))
     }
 
     renderErrors() {
@@ -76,7 +92,11 @@ class LoginForm extends React.Component {
                             onChange={this.handleInput('password')}
                         />
                     </div>
-                    <input className="modal-button" type="submit" value='Login' />
+                    <input className="modal-button" type="submit" value='Log in with username' />
+                    <div className="space-between-demo-login"> or </div>
+                    <button className="demo-user-login-modal" onClick={this.onDemoClick}> 
+                        Demo User 
+                    </button>
                     <div className="navigate-to-other-method">
                         <div className="dont-have-an-account">
                             Dont have an account?

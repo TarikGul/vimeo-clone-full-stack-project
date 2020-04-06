@@ -10,6 +10,7 @@ class SignupForm extends React.Component {
             password: ""
         }
 
+        this.onDemoClick = this.onDemoClick.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
 
         //In the solution they have this not here!
@@ -24,6 +25,21 @@ class SignupForm extends React.Component {
                 [type]: e.target.value
             })
         }
+    }
+
+    onDemoClick(e) {
+        e.preventDefault();
+        const demoUser = {
+            username: 'guest',
+            password: 'password'
+        }
+        this.props.processForm(demoUser)
+            .then(() => (
+                this.props.history.push('/home')
+            ))
+            .then(() => (
+                this.props.closeModal()
+            ))
     }
 
     handleSubmit(e) {

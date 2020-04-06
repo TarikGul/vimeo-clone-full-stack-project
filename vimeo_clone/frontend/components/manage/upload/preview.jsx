@@ -7,8 +7,9 @@ const PreviewPost = props => {
         <div className="preview-container">
             <div className="video-preview-container">
                 <ReactPlayer url={videoUrl} 
-                             width="100%" 
-                             height="100%" 
+                             width="150%" 
+                             height="120%"
+                             className="preview-player" 
                              controls/>
             </div>
             <div className="thumbnail-preview-container">

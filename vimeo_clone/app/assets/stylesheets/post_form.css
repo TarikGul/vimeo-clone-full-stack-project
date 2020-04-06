@@ -7,9 +7,9 @@
 }
 
 .upload-form-inner-container {
-    height: 700px;
+    height: 800px;
     width: 100%;
-    transform: translateY(20%);
+    
 }
 
 .upload-form {
@@ -19,6 +19,7 @@
     padding-top: 65px;
     width: 82%;
     padding-left: 250px;
+    /* transform: translateY(20%); */
 }
 
 .upload-video-thumbnail-container {
@@ -106,6 +107,7 @@
 .info-and-upload-container {
     display: flex;
     flex-direction: row;
+    transform: translateY(20%);
 }
 
 .upload-info-container {
@@ -145,6 +147,19 @@
 
 .upload-info-i {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(166deg) brightness(104%) contrast(97%);
+}
+
+.preview-container {
+  width: 600px;
+  height: 700px;
+  border: 1px dotted gray;
+  transform: translateY(10%);
+
+}
+
+.preview-player {
+   width: 600px;
+   height: 700px;
 }
 /* .post-form-container {
   padding: 8px;
