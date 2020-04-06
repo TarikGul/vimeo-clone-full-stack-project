@@ -72,45 +72,64 @@ class PostForm extends React.Component {
                             (thumbnailUrl && videoUrl) 
                             ?
                             (
-                            <PreviewPost
-                                thumbnailUrl={thumbnailUrl}
-                                videoUrl={videoUrl}
-                                update={this.update} />
+                            <div>
+                                <PreviewPost
+                                    thumbnailUrl={thumbnailUrl}
+                                    videoUrl={videoUrl}
+                                    update={this.update} />
+                                <button type="submit" className="submit-post">Upload</button>
+                            </div>
                             ) : (
-                            <div className="upload-video-thumbnail-container">
-                                <img src="/upload-video.svg" alt="" width="85" height="56" />
-                                <div className="upload-box-text">
-                                    Upload any video that is an <br />
-                                    .mp4
+                            <div className="info-and-upload-container"> 
+                                <div className="upload-video-thumbnail-container">
+                                    <img src="/upload-video.svg" alt="" width="85" height="56" />
+                                    <div className="upload-box-text">
+                                        Upload any video that is an <br />
+                                        .mp4
+                                    </div>
+                                    <button className="upload-button">
+                                        <img className="cloud-i" src="/cloud-upload.svg" width="18" height="18" />
+                                        {/* Change this to a loading bar */}
+                                        <div className="upload-button-text">
+                                            {!this.state.videoFile ?
+                                                `Choose video files` : ` Upload Successful`
+                                            }
+                                        </div>
+                                        <input type="file"
+                                            accept="video/mp4"
+                                            onChange={this.handleFile('video')}
+                                            className="upload-file-input" />
+                                    </button>
+                                    <button className="upload-button">
+                                        <img className="cloud-i" src="/cloud-upload.svg" width="18" height="18" />
+                                        {/* Change this to a loading bar */}
+                                        <div className="upload-button-text">
+                                            {!this.state.thumbnailFile ?
+                                                `Choose thumbnail files` : ` Upload Successful`
+                                            }
+                                        </div>
+                                        <input type="file"
+                                            accept="image/png,image/jpeg"
+                                            onChange={this.handleFile('thumbnail')}
+                                            className="upload-file-input" />
+                                    </button>
+                                    <div className="preview-message">
+                                        Once files are uploaded, fill out the preview page before submitting
+                                    </div>
                                 </div>
-                                <button className="upload-button">
-                                    <img className="cloud-i" src="/cloud-upload.svg" width="18" height="18" />
-                                    {/* Change this to a loading bar */}
-                                    <div className="upload-button-text">
-                                        {!this.state.videoFile ?
-                                            `Choose video files` : ` Upload Successful`
-                                        }
+                                <div className="upload-info-container">
+                                    <div className="top-info-container">
+                                        <img src="" alt=""/>
+                                        <div></div>
                                     </div>
-                                    <input type="file"
-                                        accept="video/mp4"
-                                        onChange={this.handleFile('video')}
-                                        className="upload-file-input" />
-                                </button>
-                                <button className="upload-button">
-                                    <img className="cloud-i" src="/cloud-upload.svg" width="18" height="18" />
-                                    {/* Change this to a loading bar */}
-                                    <div className="upload-button-text">
-                                        {!this.state.thumbnailFile ?
-                                            `Choose thumbnail files` : ` Upload Successful`
-                                        }
+                                    <div className="middle-info-container">
+                                        <img src="" alt="" />
+                                        <div></div>
                                     </div>
-                                    <input type="file"
-                                        accept="image/png,image/jpeg"
-                                        onChange={this.handleFile('thumbnail')}
-                                        className="upload-file-input" />
-                                </button>
-                                <div className="preview-message">
-                                    Once files are uploaded, fill out the preview page before submitting
+                                    <div className="bottom-info-container">
+                                        <img src="" alt="" />
+                                        <div></div>
+                                    </div>
                                 </div>
                             </div>
                             )
