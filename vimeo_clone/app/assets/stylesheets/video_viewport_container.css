@@ -7,15 +7,14 @@
 .video-viewport-container {
     display: flex;
     /* height: 20%; */
-    /* height: 540px; */
+    height: 540px;
     background-color: #0d171d;
     flex-direction: column;
 }
 
 .video-viewport {
-    padding-left: 25%;
-    padding-right: 25%;
-    position: relative;
+    display: flex;
+    justify-content: center;
     outline: hidden;
 }
 
@@ -23,7 +22,7 @@
     top: 0;
     left: 0;
     height: 540px !important;
-    width: auto !important;
+    width: 950px !important;
 }
 
 .video-player:focus {
