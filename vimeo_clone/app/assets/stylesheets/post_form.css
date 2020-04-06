@@ -118,6 +118,34 @@
     margin-left: 30px;
     background-color: #eef1f2;
 }
+
+.upload-info-container > div {
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+}
+
+.upload-info-title {
+    font-size: 18px;
+    color: #1a2e3b;
+    letter-spacing: 0.16px;
+    line-height: 24px;
+}
+
+.upload-info-description {
+    font-size: 16px;
+    color: #8498a4;
+    letter-spacing: 0.16px;
+    line-height: 20px;
+}
+
+.title-description-info {
+    margin-left: 10px;
+}
+
+.upload-info-i {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(166deg) brightness(104%) contrast(97%);
+}
 /* .post-form-container {
   padding: 8px;
   width: 100%;

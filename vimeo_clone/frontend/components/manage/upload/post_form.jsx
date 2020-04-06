@@ -119,16 +119,43 @@ class PostForm extends React.Component {
                                 </div>
                                 <div className="upload-info-container">
                                     <div className="top-info-container">
-                                        <img src="" alt=""/>
-                                        <div></div>
+                                        <img className="upload-info-i" src="/upload-check.svg" width="30" height="32"/>
+                                        <div class="title-description-info">
+                                            <div className="upload-info-title">
+                                                Quality
+                                            </div>
+                                            <div className="upload-info-description">
+                                                Your videos will look their <br/>
+                                                best on every device, <br/>
+                                                anywhere.
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="middle-info-container">
-                                        <img src="" alt="" />
-                                        <div></div>
+                                        <img className="upload-info-i" src="/upload-lock.svg" width="30" height="32"/>
+                                        <div class="title-description-info">
+                                            <div className="upload-info-title">
+                                                Storage and privacy
+                                            </div>
+                                            <div className="upload-info-description">
+                                                Take control with private <br/>
+                                                links, password protection, <br/>
+                                                and flexible storage options.
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="bottom-info-container">
-                                        <img src="" alt="" />
-                                        <div></div>
+                                        <img className="upload-info-i" src="/upload-heart.svg" width="30" height="32"/>
+                                        <div class="title-description-info">
+                                            <div className="upload-info-title">
+                                                Community
+                                            </div>
+                                            <div className="upload-info-description">
+                                                Join the world’s best <br/>
+                                                community of talented, <br/>
+                                                supportive creators.
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
