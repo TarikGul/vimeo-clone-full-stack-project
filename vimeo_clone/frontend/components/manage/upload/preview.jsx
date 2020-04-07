@@ -20,7 +20,7 @@ const PreviewPost = props => {
                         <div className="preview-info-text">
                             Info
                         </div>
-                        <label>Title(required)</label>
+                        <label>Title (required)</label>
                         <input 
                             type="text"
                             className="title-preview"
