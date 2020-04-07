@@ -208,8 +208,19 @@
   flex-direction: column;
 }
 
-.title-description-container > label {
+.title-container-preview > label {
   font-size: 14px;
+  font-weight: 500;
+  color: #1a2e3b;
+}
+
+.description-container-preview {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.description-container-preview > label {
+   font-size: 14px;
   font-weight: 500;
   color: #1a2e3b;
 }
@@ -225,18 +236,33 @@
 .title-preview {
   border: none;
   border-radius: 3px;
-  border: 1px solid rgb(202, 202, 202);
+  border: 1px solid rgb(182, 182, 182);
   width: 100%;
   height: 30px;
+  outline: none;
+}
+
+.title-container-preview {
+  padding-top: 10px;
+  width: 100%;
 }
 
 .description-preview {
   border: none;
   border-radius: 3px;
-  border: 1px solid rgb(202, 202, 202);
+  border: 1px solid rgb(182, 182, 182);
   width: 100%;
-  height: 40px;
-  max-height: 400px;
+  height: 100px;
+  outline: none;
+  resize:vertical;
+}
+
+.title-preview::focus::active {
+    border: 1px solid rgb(143, 143, 143);
+}
+
+.description-preview::focus::active {
+    border: 1px solid rgb(143, 143, 143);
 }
 
 /* .post-form-container {

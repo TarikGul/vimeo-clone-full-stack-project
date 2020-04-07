@@ -20,18 +20,22 @@ const PreviewPost = props => {
                         <div className="preview-info-text">
                             Info
                         </div>
-                        <label>Title (required)</label>
-                        <input 
-                            type="text"
-                            className="title-preview"
-                            onChange={update('title')}
-                            required/>
-                        <label>Description</label>
-                        <input 
-                            type="textarea"
-                            className="description-preview"
-                            onChange={update('description')}
-                            required/>
+                        <div className="title-container-preview">
+                            <label>Title (required)</label>
+                            <input 
+                                type="text"
+                                className="title-preview"
+                                onChange={update('title')}
+                                required/>
+                        </div>
+                        <div className="description-container-preview">
+                            <label>Description</label>
+                            <textarea 
+                                type="body"
+                                className="description-preview"
+                                onChange={update('description')}
+                                required/>
+                        </div>
                     </div>
                     <div className="thumbnail-preview-container">
                         <img
