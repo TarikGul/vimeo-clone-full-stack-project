@@ -156,7 +156,7 @@
     padding-bottom: 10px;
 }
 
-::placeholder {
+.login-input::placeholder {
   color: rgb(212, 212, 212);
   font-size: 16px;
   padding-left: 15px;
@@ -166,4 +166,8 @@
 
 .join-input::placeholder {
     transform: translateY(1px);
+    color: rgb(212, 212, 212);
+    font-size: 16px;
+    padding-left: 15px;
+    font-weight: 300;
 }

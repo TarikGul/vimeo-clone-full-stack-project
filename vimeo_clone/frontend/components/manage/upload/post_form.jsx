@@ -79,7 +79,7 @@ class PostForm extends React.Component {
                             (thumbnailUrl && videoUrl) 
                             ?
                             (
-                            <div>
+                            <div className="preview-post-form-container">
                                 <PreviewPost
                                     thumbnailUrl={thumbnailUrl}
                                     videoUrl={videoUrl}
