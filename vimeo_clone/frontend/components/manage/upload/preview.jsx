@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
+import LoadingProcessFile from '../../loading/loading_process_file';
+
 
 const PreviewPost = props => {
-    const { update, videoUrl, thumbnailUrl } = props
+    const { update, videoUrl, thumbnailUrl, loading } = props
     return (
         <div className="preview-container">
             <div className="inner-sidebar-preview">
@@ -49,13 +51,21 @@ const PreviewPost = props => {
                             width="116"
                             height="65" />
                     </div>
-                    <div className="upload-form-button">
-                        <button 
-                            type="submit"
-                            className="submit-post">
-                            Upload
-                        </button>
-                    </div>
+                    {
+                        loading 
+                        ?
+                        (
+                            <LoadingProcessFile />
+                        ) : (
+                            <div className="upload-form-button">
+                                <button
+                                    type="submit"
+                                    className="submit-post">
+                                    Upload
+                                </button>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
             <div className="video-preview-container">

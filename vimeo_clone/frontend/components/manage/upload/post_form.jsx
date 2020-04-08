@@ -1,6 +1,7 @@
 import React from 'react';
 import PreviewPost from './preview'
 
+
 class PostForm extends React.Component {
     constructor(props) {
         super(props)
@@ -13,7 +14,8 @@ class PostForm extends React.Component {
             userId: this.props.sessionId,
             thumbnailUrl: null,
             videoUrl: null,
-            passwordProtected: false
+            passwordProtected: false,
+            loading: false
         }
 
         this.update = this.update.bind(this)
@@ -56,6 +58,7 @@ class PostForm extends React.Component {
         if (this.state.thumbnailFile) {
             formData.append('post[thumbnail]', this.state.thumbnailFile)
         }
+        this.setState({ loading: true })
         this.props.createPost(formData)
             .then((res) => {
             this.props.history.push(`/posts/${res.post.post.id}`)
@@ -64,7 +67,7 @@ class PostForm extends React.Component {
 
     
     render() {
-        const { thumbnailUrl, videoUrl} = this.state
+        const { thumbnailUrl, videoUrl, loading } = this.state
         return (
             <div className="upload-form-container">
                 <div className="upload-form-inner-container">
@@ -75,6 +78,7 @@ class PostForm extends React.Component {
                             (
                             <div className="preview-post-form-container">
                                 <PreviewPost
+                                    loading={loading}
                                     thumbnailUrl={thumbnailUrl}
                                     videoUrl={videoUrl}
                                     update={this.update} />

@@ -1,12 +1,15 @@
-import { Spinner } from 'react-bootstrap';
+import React from 'react';
 
 const LoadingProcessFile = props => {
-
+    
     return (
         <div className="loading-container">
-            <Spinner animation="border" role="status">
-                <span className="sr-only">Loading...</span>
-            </Spinner>
+            <div className="loader">
+    
+            </div>
+            <div className="processing">
+                Processing..
+            </div>  
         </div>
     )
 }
