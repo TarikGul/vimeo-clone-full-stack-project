@@ -56,12 +56,6 @@ class PostForm extends React.Component {
         if (this.state.thumbnailFile) {
             formData.append('post[thumbnail]', this.state.thumbnailFile)
         }
-        for (let key of formData.entries()) {
-            console.log(key[0] + ', ' + key[1]);
-        }
-        for (let value of formData.values()) {
-            console.log(value)
-        }
         this.props.createPost(formData)
             .then((res) => {
             this.props.history.push(`/posts/${res.post.post.id}`)
