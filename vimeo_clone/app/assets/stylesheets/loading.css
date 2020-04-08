@@ -20,5 +20,7 @@
 
 .processing {
     margin-left: 10px;
-    transform: translateY(10px);
+    margin-top: 15px;
+    font-size: 20px;
+    letter-spacing: 0.5px;
 }
