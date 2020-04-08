@@ -2,7 +2,7 @@ import React from 'react';
 import ReactPlayer from 'react-player'
 
 const PreviewPost = props => {
-    const { update, videoUrl, thumbnailUrl, openModal } = props
+    const { update, videoUrl, thumbnailUrl } = props
     return (
         <div className="preview-container">
             <div className="inner-sidebar-preview">
@@ -51,7 +51,6 @@ const PreviewPost = props => {
                     </div>
                     <div className="upload-form-button">
                         <button 
-                            onClick={openModal}
                             type="submit"
                             className="submit-post">
                             Upload

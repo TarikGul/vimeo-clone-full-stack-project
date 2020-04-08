@@ -6,7 +6,6 @@ import SignupFormContainer from '../session/signup_form_container';
 import LoadingProcessFile from '../loading/loading_process_file';
 
 const Modal = ({modal, closeModal}) => {
-    debugger
     if(!modal) {
         return null
     }

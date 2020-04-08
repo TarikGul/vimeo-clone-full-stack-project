@@ -64,9 +64,7 @@ class PostForm extends React.Component {
 
     
     render() {
-        debugger
         const { thumbnailUrl, videoUrl} = this.state
-        const { openModal } = this.props
         return (
             <div className="upload-form-container">
                 <div className="upload-form-inner-container">
@@ -77,7 +75,6 @@ class PostForm extends React.Component {
                             (
                             <div className="preview-post-form-container">
                                 <PreviewPost
-                                    openModal={() => openModal('loading')}
                                     thumbnailUrl={thumbnailUrl}
                                     videoUrl={videoUrl}
                                     update={this.update} />
