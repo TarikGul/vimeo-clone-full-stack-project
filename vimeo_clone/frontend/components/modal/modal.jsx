@@ -3,8 +3,10 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
+import LoadingProcessFile from '../loading/loading_process_file';
 
 const Modal = ({modal, closeModal}) => {
+    debugger
     if(!modal) {
         return null
     }
@@ -18,16 +20,27 @@ const Modal = ({modal, closeModal}) => {
             component = <SignupFormContainer />;
             break;
         case 'loading':
-            component = <loadingProcessFile />
+            component = <LoadingProcessFile />
         default:
             return null;
     }
 
     return (
         <div className="modal-background" onClick={closeModal}>
-            <div className="modal-child" onClick={e => e.stopPropagation()}>
-                { component }
-            </div>
+            {
+                component === 'loading'
+                ?
+                (
+                    <div className="modal-child-loading" onClick={e => e.stopPropagation()}>
+                        {component}
+                    </div>
+                ) : (
+                    <div className="modal-child" onClick={e => e.stopPropagation()}>
+                        {component}
+                    </div>
+                )
+            }
+            
         </div>
     )
 }

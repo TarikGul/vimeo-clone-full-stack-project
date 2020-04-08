@@ -20,6 +20,17 @@
   border-radius: 3px;
 }
 
+.modal-child-loading {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 200px;
+  height: 75px;
+  max-width: 100%;
+  border-radius: 3px;
+}
 
 
 /* .modal-username {
