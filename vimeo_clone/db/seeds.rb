@@ -171,13 +171,13 @@ random_comment = rand(Comment.all.length - 5) + 4
 # VideoPlay.create({ user_id: 1, post_id: 1 })
 
 (0..20).each do |i|
-  (0..400).each do |j|
+  (0..200).each do |j|
     VideoPlay.create({ user_id: User.all[i].id, post_id: Post.all[i].id })
   end
 end
 
 (0..20).each do |i|
-  (0..267).each do |j|
+  (0..167).each do |j|
     VideoPlay.create({ user_id: User.all[rand(18) + 1].id, post_id: Post.all[rand(19) + 1].id })
   end
 end
