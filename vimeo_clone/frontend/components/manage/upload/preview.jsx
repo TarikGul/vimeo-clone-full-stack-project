@@ -24,6 +24,7 @@ const PreviewPost = props => {
                             <label>Title (required)</label>
                             <input 
                                 type="text"
+                                placeholder=""
                                 className="title-preview"
                                 onChange={update('title')}
                                 required/>
@@ -32,6 +33,7 @@ const PreviewPost = props => {
                             <label>Description</label>
                             <textarea 
                                 type="body"
+                                placeholder="Tell the story behind your video (It's OK to include links)"
                                 className="description-preview"
                                 onChange={update('description')}
                                 required/>
@@ -47,13 +49,19 @@ const PreviewPost = props => {
                             width="116"
                             height="65" />
                     </div>
+                    <div className="upload-form-button">
+                        <button type="submit"
+                            className="submit-post">
+                            Upload
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className="video-preview-container">
                 <ReactPlayer
                     url={videoUrl}
-                    width="150%"
-                    height="120%"
+                    width="100%"
+                    height="auto"
                     className="preview-player"
                     controls />
             </div>

@@ -107,8 +107,11 @@
 }
 
 .video-preview-container {
-    height: 300px;
-    width: 400px;
+    display: flex;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    transform: translateX(4%);
 }
 
 .info-and-upload-container {
@@ -158,11 +161,13 @@
 
 .preview-container {
     display: flex;
-    height: 100%;
+    height: 100vh;
+    width: 100%;
 }
 
 .preview-player {
-
+  width: 100%;
+  height: auto;
 }
 
 .inner-sidebar-preview {
@@ -299,6 +304,37 @@
   color: #1a2e3b;
   margin-bottom: 10px;
 }
+
+.title-preview::placeholder {
+  font-size:  14px;
+  padding-left: 10px;
+}
+
+.description-preview::placeholder {
+  font-size: 14px;
+  color: #c5cdd3;
+  padding: 10px;
+}
+
+.submit-post {
+  height: 45px;
+  width: 120px;
+  background-color: #039deb;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-post:hover {
+    background-color: #0088cc;
+}
+
+.upload-form-button {
+  display: flex;
+  justify-content: center;
+  transform: translateY(50px);
+}
+
 /* .post-form-container {
   padding: 8px;
   width: 100%;
