@@ -38,10 +38,14 @@ const PreviewPost = props => {
                         </div>
                     </div>
                     <div className="thumbnail-preview-container">
+                        <div className="thumbnail-preview-title">
+                            Thumbnail
+                        </div>
                         <img
+                            className="thumbnail-preview"
                             src={thumbnailUrl}
-                            width="260"
-                            height="230" />
+                            width="116"
+                            height="65" />
                     </div>
                 </div>
             </div>
