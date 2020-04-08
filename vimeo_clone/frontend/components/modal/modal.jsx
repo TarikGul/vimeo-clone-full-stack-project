@@ -1,8 +1,8 @@
+import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
-import React from 'react';
 
 const Modal = ({modal, closeModal}) => {
     if(!modal) {
@@ -17,6 +17,8 @@ const Modal = ({modal, closeModal}) => {
         case 'signup':
             component = <SignupFormContainer />;
             break;
+        case 'loading':
+            component = <loadingProcessFile />
         default:
             return null;
     }

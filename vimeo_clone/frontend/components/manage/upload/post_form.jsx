@@ -84,10 +84,6 @@ class PostForm extends React.Component {
                                     thumbnailUrl={thumbnailUrl}
                                     videoUrl={videoUrl}
                                     update={this.update} />
-                                {/* <button type="submit"
-                                        className="submit-post">
-                                        Upload
-                                </button> */}
                             </div>
                             ) : (
                             <div className="info-and-upload-container"> 
