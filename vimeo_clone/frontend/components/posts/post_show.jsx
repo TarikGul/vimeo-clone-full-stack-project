@@ -12,6 +12,7 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchPost(this.props.postId)
     }
 

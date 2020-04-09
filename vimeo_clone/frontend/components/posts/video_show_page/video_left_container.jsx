@@ -17,8 +17,6 @@ class VideoLeftContainer extends React.Component {
             postId, 
             sessionId, 
             entities, 
-            createFollow, 
-            deleteFollow,
         } = this.props
 
         const retreiveComments = (arr, object) => {
@@ -36,11 +34,7 @@ class VideoLeftContainer extends React.Component {
         return (
             <div className="video-left-container">
                 <TitleContainer
-                    createFollow={createFollow} 
-                    deleteFollow={deleteFollow}
-                    sessionId={sessionId}
-                    postId={postId}
-                    entities={entities} />
+                    sessionId={sessionId}/>
                 <VideoLeftInfo 
                     sessionId={sessionId}
                     postId={postId}

@@ -13,13 +13,13 @@ class Homepage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts().then(() => {
-            $('.video-feed-posts').flickity({
-                cellAlign: 'left',
-                groupCells: true,
-                draggable: false
-            });
-        })
+        // this.props.fetchPosts().then(() => {
+        //     $('.video-feed-posts').flickity({
+        //         cellAlign: 'left',
+        //         groupCells: true,
+        //         draggable: false
+        //     });
+        // })
     }
 
 

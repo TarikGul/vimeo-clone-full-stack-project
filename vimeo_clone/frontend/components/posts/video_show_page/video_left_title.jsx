@@ -17,13 +17,12 @@ const parseName = name => {
 }
 
 const Title = props => {
-    const { postId, entities, match } = props
+    const { entities, match } = props
+    const postId = match.params.postId
     let prop;
-    if (entities.posts[props.postId] !== undefined) {
-        prop = entities.posts[props.postId]
-    } else {
-        prop = entities.posts[match.params.postId]
-    }
+    if (entities.posts[postId] !== undefined) {
+        prop = entities.posts[postId]
+    } 
     if (prop.uploader === undefined) {
         return null
     }
