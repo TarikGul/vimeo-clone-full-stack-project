@@ -13,8 +13,8 @@ class VideoBottomContainer extends React.Component {
             sessionId, 
             postId, 
             entities, 
-            clickHandler, 
-            ownProps, 
+            clickHandler,  
+            ownProps
         } = this.props
 
         return (

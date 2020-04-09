@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../actions/post_actions';
 import SearchBar from './search';
 
@@ -15,7 +16,7 @@ const mdtp = dispatch => {
     };
 };
 
-export default connect(
+export default withRouter(connect(
     msp, 
     mdtp
-)(SearchBar);
+)(SearchBar));

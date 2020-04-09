@@ -12,11 +12,17 @@ class SearchBar extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchPosts()
+        
     }
 
     update() {
         return (e) => this.setState({ search: e.currentTarget.value })
+    }
+
+    sort(str) {
+        const { entities } = this.props
+        const foundPosts = [];
+
     }
 
     render() {

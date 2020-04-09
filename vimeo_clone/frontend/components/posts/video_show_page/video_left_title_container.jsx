@@ -17,11 +17,17 @@ const parseName = name => {
 }
 
 const TitleContainer = props => {
-    const { sessionId, postId, entities } = props
-    const prop = entities.posts[props.postId]
+    const { postId, entities, match } = props
+    let prop;
+    if (entities.posts[props.postId] !== undefined) {
+        prop = entities.posts[props.postId]
+    } else {
+        prop = entities.posts[match.params.postId]
+    }
     if (prop.uploader === undefined) {
         return null
     }
+    console.log("this is the title container", props)
     return (
         <div className='video-title-container'>
             <div className='post-title'>

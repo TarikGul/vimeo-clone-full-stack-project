@@ -22,6 +22,26 @@ thumbnails = [
   'trees.png'
 ]
 
+post_names = [
+  'Watching Sunsets',
+  "Creating a birdhouse",
+  "Imagine a world of Silence",
+  "This is my bestfriend",
+  "I cant sleep, but i can dream",
+  "Maybe, just maybe",
+  "The Experience",
+  "Sky High",
+  "Playing Nice",
+  "Washing Your Hands",
+  "May",
+  "Adventure's On The Ground",
+  "Follow the leader",
+  "Like it or not",
+  "Montana, and more",
+  "Architects",
+  
+]
+
 VideoPlay.destroy_all
 Follower.destroy_all
 Like.destroy_all

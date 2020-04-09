@@ -18,8 +18,9 @@ class VideoLeftContainer extends React.Component {
             sessionId, 
             entities, 
             createFollow, 
-            deleteFollow 
+            deleteFollow,
         } = this.props
+
         const retreiveComments = (arr, object) => {
             let comments = []
             for(let i = 0; i < arr.length; i++) {
