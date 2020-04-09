@@ -1,8 +1,7 @@
 import React from 'react';
 import UserDropdown from './user_dropdown'
-import Search from '../search/search'
+import SearchBarContainer from '../search/search_container'
 import Dropdown from './home_dropwdown'
-import { Link } from 'react-router-dom'
 
 class HomeNavbar extends React.Component {
     constructor(props) {
@@ -57,7 +56,7 @@ class HomeNavbar extends React.Component {
                     </div>
                     <div className="navbar-container-right">
                         <div className="search-bar">
-                            <Search location={this.props.location}/>
+                            <SearchBarContainer />
                         </div>
                         <div>
                             <button className='home-navbar-logout' onClick={this.handleProcess}> Logout </button>
