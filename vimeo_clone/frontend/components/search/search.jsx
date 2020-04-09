@@ -23,31 +23,34 @@ class SearchBar extends React.Component {
     //Component did mount is useless here. 
     //Need to probable refactor
     render() {
+        debugger
         return (
             <div>
                 {  
                 (this.props.location !== undefined  || this.props.location !== '/')
-                ?(
+                ?
+                (
                 <div className="search-bar-container-not-home">
                     <input className="search-bar" type="text" placeholder="Search videos, people, and more"/>
                 </div>
                 ):(
-                <div className='search-bar-container'>
-                    {
-                        this.state.clicked
-                        ?(
-                            <div className='search-bar-input'>
-                                <input type="text" placeholder='Search'/>
-                            </div>
-                        ) : (
-                            <button
-                            onClick={this.handleChange}
-                            className='search-button'>
-                                Search
-                            </button>
-                        )
-                    }
-                </div>
+                // <div className='search-bar-container'>
+                //     {
+                //         this.state.clicked
+                //         ?(
+                //             <div className='search-bar-input'>
+                //                 <input type="text" placeholder='Search'/>
+                //             </div>
+                //         ) : (
+                //             <button
+                //             onClick={this.handleChange}
+                //             className='search-button'>
+                //                 Search
+                //             </button>
+                //         )
+                //     }
+                // </div>
+                null
                 )
                 }
             </div>
