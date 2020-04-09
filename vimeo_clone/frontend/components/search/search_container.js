@@ -3,7 +3,7 @@ import { fetchPosts } from '../../actions/post_actions';
 
 const msp = state => {
     return {
-
+        
     };
 };
 
