@@ -30,7 +30,6 @@ class PostShow extends React.Component {
     
 
     render() {
-        debugger
         const { 
             processForm,
             ownProps,
