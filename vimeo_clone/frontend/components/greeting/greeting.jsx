@@ -30,13 +30,7 @@ const Greeting = ({ currentUser, logout, openModal}) => {
             </div>
         </div>
     );
-    // const greetUser = () => (
-    //     <div>
-    //         <HomeNavbarContainer />
-    //     </div>
-    // )
 
-    // return currentUser ? greetUser() : sessionLinks()
     return sessionLinks()
 }
 
