@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({clicked: false})
+        
     }
 
     //The error that it is giving me is that cannot read setState of undefined
