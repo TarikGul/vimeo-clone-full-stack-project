@@ -12,13 +12,10 @@ class SearchBar extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts().then(() => {
-            $('.video-feed-posts').flickity({
-                cellAlign: 'left',
-                groupCells: true,
-                draggable: false
-            });
-        })
+        const { entities } = this.props
+        if (Object.values(entities.posts) <= 1) {
+            this.props.fetchPosts();
+        }
     }
 
     update() {
