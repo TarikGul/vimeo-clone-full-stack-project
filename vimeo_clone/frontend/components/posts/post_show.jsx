@@ -27,7 +27,6 @@ class PostShow extends React.Component {
                             this.props.ownProps.history.push(`/posts/${postId}`)
                         })
     }
-    
 
     render() {
         const { 
