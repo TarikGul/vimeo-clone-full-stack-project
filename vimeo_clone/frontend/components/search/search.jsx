@@ -102,7 +102,7 @@ class SearchBar extends React.Component {
                                 ref={(el) => this.myRef = el}
                                 onKeyDown={this.handleKeyPress}
                                 className="search-bar"
-                                type="type"
+                                type="text"
                                 placeholder="Search videos, people, and more"
                                 onChange={this.update()} />
                         </div>
@@ -114,7 +114,7 @@ class SearchBar extends React.Component {
                                 onKeyDown={this.handleKeyPress}
                                 onKeyPress={this.handleKeyPress}
                                 className="search-bar"
-                                type="type"
+                                type="text"
                                 placeholder="Search videos, people, and more"
                                 onChange={this.update()} />
                             <div className="search-results">

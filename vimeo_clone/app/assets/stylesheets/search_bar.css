@@ -1,5 +1,5 @@
 .search-bar-container-not-home {
-    position: relative;
+    /* position: relative; */
     border: none;
 }
 
@@ -14,6 +14,8 @@
     font-size: 16px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    display: block;
+    text-indent: 10px;
 }
 
 .search-bar::placeholder {
