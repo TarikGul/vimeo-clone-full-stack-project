@@ -60,7 +60,7 @@ class SearchBar extends React.Component {
     }
 
     sort(str) {
-        const { entities } = this.props
+        const { entities, dispatchResults } = this.props
         const posts = Object.values(entities.posts)
         const len = str.length
         let results = []
@@ -72,8 +72,8 @@ class SearchBar extends React.Component {
             if (posts[i].title.slice(0, len) === str) {
                 results.push(posts[i])
             };
-        }
-
+        }   
+        dispatchResults(results)
         this.setState({ result: results })
 
     }
