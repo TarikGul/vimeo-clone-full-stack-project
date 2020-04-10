@@ -39,7 +39,21 @@ post_names = [
   "Like it or not",
   "Montana, and more",
   "Architects",
-  
+  "This is Amazing",
+  "Cards or not",
+  "The Coast is my Heart",
+  "Walking never ends",
+  "Just Live",
+  "Music for the soul",
+  "Recent Discoveries",
+  "Memories",
+  "Sealing The Pain",
+  "Friendships",
+  "School for thought",
+  "Pennies",
+  "Where and how",
+  "Make ammends",
+  "Watch the fallen"
 ]
 
 VideoPlay.destroy_all
@@ -109,7 +123,7 @@ random_user = rand(User.all.length - 10) + 8
 #This is the post sections of the seed file
 (0..12).each do |i|
   Post.create!({ 
-    title: "Post-" + (generate_random_string(7) + generate_random_number(8)), 
+    title: post_names[i], 
     user_id: User.all[rand(User.all.length - 10) + 9].id, 
     password_protected: false,
     description: generate_random_description(60)
@@ -149,7 +163,7 @@ end
 
 (0..12).each do |i|
   post = Post.create!({ 
-    title: "Post-" + (generate_random_string(7) + generate_random_number(8)), 
+    title: post_names[i + 12], 
     user_id: User.first.id + 1, 
     password_protected: false,
     description: generate_random_description(60)
