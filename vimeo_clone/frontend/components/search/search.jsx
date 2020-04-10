@@ -75,7 +75,6 @@ class SearchBar extends React.Component {
         }   
         dispatchResults(results)
         this.setState({ result: results })
-
     }
 
     render() {
