@@ -22,6 +22,12 @@ class SearchBar extends React.Component {
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.setState({ search: '' })
+        }
+    }
+
     update() {
         return (e) => this.setState({ search: e.currentTarget.value })
     }
@@ -72,8 +78,9 @@ class SearchBar extends React.Component {
                                 onChange={this.update()} />
                             <div className="search-results">
                                 {
-                                    sorted.map(post => {
+                                    sorted.map((post, i) => {
                                         return <SearchItem
+                                                    key={`search-item-${i}`}
                                                     history={history} 
                                                     post={post}/>
                                     })

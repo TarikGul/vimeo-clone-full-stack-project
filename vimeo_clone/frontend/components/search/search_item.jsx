@@ -5,8 +5,10 @@ const SearchItem = props => {
     const { post } = props
     return (
         <Link to={`/posts/${post.id}`} className="search-item">
-            <div className="search-post-title">
-                {post.title}
+            <div className="search-item-inner">
+                <div className="search-post-title">
+                    {post.title}
+                </div>
             </div>
         </Link>
     )
