@@ -77,8 +77,6 @@ button {
 }
 
 .feed-container {
-    /* display: flex; */
-    /* flex-direction: row; */
     width: 104%;
     height: 60%;
     padding-left: 20px;
