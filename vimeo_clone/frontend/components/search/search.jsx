@@ -6,7 +6,8 @@ class SearchBar extends React.Component {
         super(props)
 
         this.state = {
-            search: ''
+            result: [],
+            cursor: 0
         }
 
         this.handleKeyPress = this.handleKeyPress.bind(this)
@@ -33,15 +34,30 @@ class SearchBar extends React.Component {
         if (Object.values(this.props.entities.posts).length === 0) {
             return null;
         }
-        return (e) => this.setState({ search: e.currentTarget.value })
+        // return (e) => this.setState({ search: e.currentTarget.value })
+        return (e) => {    
+            this.sort(e.currentTarget.value)
+        }
     }
 
     handleKeyPress(e) {
+        const { cursor, result } = this.state
         if (e.charCode === 13) {
             // This is where you add the search results to the global state
             // Redirect to the search results page,
             // Allow the user to pick which video they want to go to.
             console.log('you pressed enter')
+        } else if (e.keyCode === 38 && cursor > 0) {
+            console.log("hit")
+            this.setState(prevState => ({
+                cursor: prevState.cursor - 1
+            }))
+            console.log(this.cursor)
+        } else if (e.keyCode === 40 && cursor < result.length - 1) {
+            console.log("hit")
+            this.setState(prevState => ({
+                cursor: prevState.cursor + 1
+            }))
         }
     }
 
@@ -49,31 +65,32 @@ class SearchBar extends React.Component {
         const { entities } = this.props
         const posts = Object.values(entities.posts)
         const len = str.length
-        
+        let results = []
         if (posts.length === 0) return; 
-
-        let foundPosts = posts.filter(post => {
-            if(post.title.slice(0, len) ===  str) {
-                return post
+        
+        for(let i = 0; i < posts.length; i++) {
+            if (posts[i].title.slice(0, len) === str) {
+                results.push(posts[i])
             };
-        });
+        }
 
-        return foundPosts
+        this.setState({ result: results })
+
     }
 
     render() {
-        const { search } = this.state;
+        const { cursor, result } = this.state;
         const { history } = this.props;
-        const sorted = this.sort(search)
 
         return (
-            <div>
+            <div className="outer-search-bar-container">
                 {
-                    search.length === 0
+                    result.length === 0
                     ?
                     (
                         <div className="search-bar-container-not-home">
                             <input
+                                onKeyPress={this.handleKeyPress}
                                 className="search-bar"
                                 type="text"
                                 placeholder="Search videos, people, and more"
@@ -83,14 +100,16 @@ class SearchBar extends React.Component {
                         <div className="search-bar-container-not-home">
                             <input
                                 onKeyPress={this.handleKeyPress}
+                                onKeyDown={this.handleKeyPress}
                                 className="search-bar"
                                 type="text"
                                 placeholder="Search videos, people, and more"
                                 onChange={this.update()} />
                             <div className="search-results">
                                 {
-                                    sorted.map((post, i) => {
+                                    result.map((post, i) => {
                                         return <SearchItem
+                                                    classColor={cursor === i ? 'search-post-title active' : 'search-post-title'}
                                                     key={`search-item-${i}`}
                                                     history={history} 
                                                     post={post}/>

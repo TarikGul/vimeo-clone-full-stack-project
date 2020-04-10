@@ -45,13 +45,25 @@
     color: black;
     background-color: white;
     height: 30px;
-    width: 242px; 
+    width: 241px; 
     vertical-align: middle;
     font-size: 14px;
     top:5px;
 }
 
+.active {
+    background-color: blue;
+}
+
 .search-item-inner {
     height: 30px;
-    width: 242px; 
+    width: 241px; 
+}
+
+.active-search {
+    background-color: blue;
+}
+
+.outer-search-bar-container {
+    border:none;
 }
