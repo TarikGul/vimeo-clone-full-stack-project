@@ -4,6 +4,7 @@ import { fetchPosts } from '../../actions/post_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        entities: state.entities,
         posts:  Object.values(state.entities.posts),
         ownProps
     }

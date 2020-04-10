@@ -13,13 +13,21 @@ class Homepage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts().then(() => {
+        if (Object.values(this.props.posts) >= 1) {
             $('.video-feed-posts').flickity({
                 cellAlign: 'left',
                 groupCells: true,
                 draggable: false
             });
-        })
+        } else {
+            this.props.fetchPosts().then(() => {
+                $('.video-feed-posts').flickity({
+                    cellAlign: 'left',
+                    groupCells: true,
+                    draggable: false
+                });
+            });
+        }; 
     }
 
 
