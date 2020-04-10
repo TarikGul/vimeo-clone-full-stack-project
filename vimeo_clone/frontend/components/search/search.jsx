@@ -45,12 +45,14 @@ class SearchBar extends React.Component {
         const { cursor, result, search } = this.state
         const { history, ui } = this.props
         if (e.charCode === 13) {
-            //Empty the value of the input
-            this.myRef.value = ''
+            if (cursor !== -1) {
+                //Empty the value of the input
+                this.myRef.value = ''
 
-            let postId = ui.search.results[cursor].id
-
-            history.push(`/posts/${postId}`)
+                let postId = ui.search.results[cursor].id
+    
+                history.push(`/posts/${postId}`)
+            }
         } else if (e.keyCode === 38 && cursor > 0) {
             this.setState(prevState => ({
                 cursor: prevState.cursor - 1
@@ -75,7 +77,7 @@ class SearchBar extends React.Component {
         if (posts.length === 0) return results; 
 
         for(let i = 0; i < posts.length; i++) {
-            if (posts[i].title.slice(0, len) === str) {
+            if (posts[i].title.slice(0, len).toLowerCase() === str.toLowerCase()) {
                 results.push(posts[i])
             };
         }   
