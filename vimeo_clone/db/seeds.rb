@@ -53,7 +53,8 @@ post_names = [
   "Pennies",
   "Where and how",
   "Make ammends",
-  "Watch the fallen"
+  "Watch the fallen",
+  "Sand is all I need"
 ]
 
 VideoPlay.destroy_all
