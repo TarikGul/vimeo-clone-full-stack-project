@@ -5,9 +5,10 @@ import { dispatchResults } from '../../actions/search_actions';
 import SearchBar from './search';
 
 const msp = state => {
-    const { entities } = state
+    const { entities, ui } = state
     return {
-        entities
+        entities,
+        ui
     };
 };
 

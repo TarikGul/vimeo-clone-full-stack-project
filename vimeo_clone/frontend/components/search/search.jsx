@@ -4,7 +4,7 @@ import SearchItem from './search_item';
 class SearchBar extends React.Component {
     constructor(props) {
         super(props)
-
+        this.myRef = React.createRef();
         this.state = {
             search: '',
             result: [],
@@ -18,6 +18,7 @@ class SearchBar extends React.Component {
 
     componentDidMount() {
         const { entities, location } = this.props
+        this.update();
         if (location.pathname === '/home') {
             return;
         } else if (Object.values(entities.posts).length <= 1) {
@@ -42,11 +43,14 @@ class SearchBar extends React.Component {
 
     handleKeyPress(e) {
         const { cursor, result } = this.state
+        const { history, ui } = this.props
         if (e.charCode === 13) {
-            // This is where you add the search results to the global state
-            // Redirect to the search results page,
-            // Allow the user to pick which video they want to go to.
-            console.log('you pressed enter')
+            //Empty the value of the input
+            this.myRef.value = ''
+
+            let postId = ui.search.results[cursor].id
+
+            history.push(`/posts/${postId}`)
         } else if (e.keyCode === 38 && cursor > 0) {
             this.setState(prevState => ({
                 cursor: prevState.cursor - 1
@@ -89,18 +93,22 @@ class SearchBar extends React.Component {
                     (
                         <div className="search-bar-container-not-home">
                             <input
+                                ref={(el) => this.myRef = el}
                                 onKeyDown={this.handleKeyPress}
                                 className="search-bar"
-                                type="text"
+                                type="type"
                                 placeholder="Search videos, people, and more"
                                 onChange={this.update()} />
                         </div>
                     ) : (
                         <div className="search-bar-container-not-home">
                             <input
+                                ref={(el) => this.myRef = el}
+                                onClick={this.handleClick}
                                 onKeyDown={this.handleKeyPress}
+                                onKeyPress={this.handleKeyPress}
                                 className="search-bar"
-                                type="text"
+                                type="type"
                                 placeholder="Search videos, people, and more"
                                 onChange={this.update()} />
                             <div className="search-results">

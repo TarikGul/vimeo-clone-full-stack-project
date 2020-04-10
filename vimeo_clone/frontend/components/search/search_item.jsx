@@ -8,7 +8,9 @@ const SearchItem = props => {
         <Link to={`/posts/${post.id}`} className="search-item">
             <div className="search-item-inner">
                 <div className={props.classColor}>
-                    {post.title}
+                    <div className="search-title">
+                        {post.title}
+                    </div>
                 </div>
             </div>
         </Link>
