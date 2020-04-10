@@ -6,8 +6,9 @@ class SearchBar extends React.Component {
         super(props)
 
         this.state = {
+            search: '',
             result: [],
-            cursor: 0
+            cursor: -1
         }
 
         this.handleKeyPress = this.handleKeyPress.bind(this)
@@ -34,7 +35,6 @@ class SearchBar extends React.Component {
         if (Object.values(this.props.entities.posts).length === 0) {
             return null;
         }
-        // return (e) => this.setState({ search: e.currentTarget.value })
         return (e) => {    
             this.sort(e.currentTarget.value)
         }
@@ -48,13 +48,11 @@ class SearchBar extends React.Component {
             // Allow the user to pick which video they want to go to.
             console.log('you pressed enter')
         } else if (e.keyCode === 38 && cursor > 0) {
-            console.log("hit")
             this.setState(prevState => ({
                 cursor: prevState.cursor - 1
             }))
             console.log(this.cursor)
         } else if (e.keyCode === 40 && cursor < result.length - 1) {
-            console.log("hit")
             this.setState(prevState => ({
                 cursor: prevState.cursor + 1
             }))
@@ -66,8 +64,10 @@ class SearchBar extends React.Component {
         const posts = Object.values(entities.posts)
         const len = str.length
         let results = []
-        if (posts.length === 0) return; 
-        
+        if (len === 0) return results;
+
+        if (posts.length === 0) return results; 
+
         for(let i = 0; i < posts.length; i++) {
             if (posts[i].title.slice(0, len) === str) {
                 results.push(posts[i])
@@ -90,7 +90,7 @@ class SearchBar extends React.Component {
                     (
                         <div className="search-bar-container-not-home">
                             <input
-                                onKeyPress={this.handleKeyPress}
+                                onKeyDown={this.handleKeyPress}
                                 className="search-bar"
                                 type="text"
                                 placeholder="Search videos, people, and more"
@@ -99,7 +99,6 @@ class SearchBar extends React.Component {
                     ) : (
                         <div className="search-bar-container-not-home">
                             <input
-                                onKeyPress={this.handleKeyPress}
                                 onKeyDown={this.handleKeyPress}
                                 className="search-bar"
                                 type="text"
