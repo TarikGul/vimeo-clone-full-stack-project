@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchItem from './search_item';
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class SearchBar extends React.Component {
         }
 
         this.update = this.update.bind(this)
+        this.sort = this.sort.bind(this)
     }
 
     componentDidMount() {
@@ -26,18 +28,60 @@ class SearchBar extends React.Component {
 
     sort(str) {
         const { entities } = this.props
-        const foundPosts = [];
+        const posts = Object.values(entities.posts)
+        const len = str.length
+        
+        if (posts.length === 0) return; 
 
+        let foundPosts = posts.filter(post => {
+            if(post.title.slice(0, len) ===  str) {
+                return post
+            };
+        });
+        console.log(foundPosts)
+        return foundPosts
     }
 
     render() {
+        const { search } = this.state;
+        const { history } = this.props;
+        const len = search.length;
+        const sorted = this.sort(search)
+        if (sorted !== undefined && sorted.length > 0) {
+            console.log("the dolhpin has landed", sorted)
+        }
         return (
-            <div className="search-bar-container-not-home">
-                <input 
-                    className="search-bar" 
-                    type="text" 
-                    placeholder="Search videos, people, and more"
-                    onChange={this.update()}/>
+            <div>
+                {
+                    search.length === 0
+                    ?
+                    (
+                        <div className="search-bar-container-not-home">
+                            <input
+                                className="search-bar"
+                                type="text"
+                                placeholder="Search videos, people, and more"
+                                onChange={this.update()} />
+                        </div>
+                    ) : (
+                        <div className="search-bar-container-not-home">
+                            <input
+                                className="search-bar"
+                                type="text"
+                                placeholder="Search videos, people, and more"
+                                onChange={this.update()} />
+                            <div className="search-results">
+                                {
+                                    sorted.map(post => {
+                                        return <SearchItem
+                                                    history={history} 
+                                                    post={post}/>
+                                    })
+                                }
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         )
     }
