@@ -47,6 +47,7 @@ class SearchBar extends React.Component {
         if (e.charCode === 13) {
             if (cursor !== -1) {
                 //Empty the value of the input
+                this.setState({ result: [], search: '', cursor: -1 })
                 this.myRef.value = ''
 
                 let postId = ui.search.results[cursor].id
