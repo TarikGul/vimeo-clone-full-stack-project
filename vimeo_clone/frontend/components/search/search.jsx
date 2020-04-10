@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
         const { entities, location } = this.props
         if (location.pathname === '/home') {
             return;
-        } else if (Object.values(entities.posts) <= 1) {
+        } else if (Object.values(entities.posts).length <= 1) {
             this.props.fetchPosts();
         }
     }

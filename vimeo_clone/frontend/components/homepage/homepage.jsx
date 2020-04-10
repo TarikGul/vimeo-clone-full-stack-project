@@ -13,7 +13,7 @@ class Homepage extends React.Component {
     }
 
     componentDidMount() {
-        if (Object.values(this.props.posts) >= 1) {
+        if (Object.values(this.props.posts).length >= 1) {
             $('.video-feed-posts').flickity({
                 cellAlign: 'left',
                 groupCells: true,
