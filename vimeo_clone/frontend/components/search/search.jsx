@@ -9,6 +9,7 @@ class SearchBar extends React.Component {
             search: ''
         }
 
+        this.handleKeyPress = this.handleKeyPress.bind(this)
         this.update = this.update.bind(this)
         this.sort = this.sort.bind(this)
     }
@@ -29,7 +30,19 @@ class SearchBar extends React.Component {
     }
 
     update() {
+        if (Object.values(this.props.entities.posts).length === 0) {
+            return null;
+        }
         return (e) => this.setState({ search: e.currentTarget.value })
+    }
+
+    handleKeyPress(e) {
+        if (e.charCode === 13) {
+            // This is where you add the search results to the global state
+            // Redirect to the search results page,
+            // Allow the user to pick which video they want to go to.
+            console.log('you pressed enter')
+        }
     }
 
     sort(str) {
@@ -44,18 +57,15 @@ class SearchBar extends React.Component {
                 return post
             };
         });
-        console.log(foundPosts)
+
         return foundPosts
     }
 
     render() {
         const { search } = this.state;
         const { history } = this.props;
-        const len = search.length;
         const sorted = this.sort(search)
-        if (sorted !== undefined && sorted.length > 0) {
-            console.log("the dolhpin has landed", sorted)
-        }
+
         return (
             <div>
                 {
@@ -72,6 +82,7 @@ class SearchBar extends React.Component {
                     ) : (
                         <div className="search-bar-container-not-home">
                             <input
+                                onKeyPress={this.handleKeyPress}
                                 className="search-bar"
                                 type="text"
                                 placeholder="Search videos, people, and more"
