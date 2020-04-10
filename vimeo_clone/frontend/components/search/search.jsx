@@ -55,10 +55,12 @@ class SearchBar extends React.Component {
                 history.push(`/posts/${postId}`)
             }
         } else if (e.keyCode === 38 && cursor >= 0) {
+            e.preventDefault();
             this.setState(prevState => ({
                 cursor: prevState.cursor - 1
             }))
         } else if (e.keyCode === 40 && cursor < result.length - 1) {
+            e.preventDefault();
             this.setState(prevState => ({
                 cursor: prevState.cursor + 1
             }))
