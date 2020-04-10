@@ -42,7 +42,7 @@ class SearchBar extends React.Component {
     }
 
     handleKeyPress(e) {
-        const { cursor, result } = this.state
+        const { cursor, result, search } = this.state
         const { history, ui } = this.props
         if (e.charCode === 13) {
             //Empty the value of the input
@@ -60,6 +60,8 @@ class SearchBar extends React.Component {
             this.setState(prevState => ({
                 cursor: prevState.cursor + 1
             }))
+        } else if (e.keyCode === 8 && search.length === 1) {
+            this.setState({ result: [], search: '' })
         }
     }
 
@@ -78,7 +80,7 @@ class SearchBar extends React.Component {
             };
         }   
         dispatchResults(results)
-        this.setState({ result: results })
+        this.setState({ result: results, search: str })
     }
 
     render() {
