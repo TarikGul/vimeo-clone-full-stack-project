@@ -1,5 +1,6 @@
 import React from 'react';
-import HomeNavbarContainer from '../main_navbar/navbar_container'
+import HomeNavbarContainer from '../main_navbar/navbar_container';
+import ResultItem from './result_item';
 
 class ResultsPage extends React.Component {
     constructor(props) {
@@ -9,12 +10,19 @@ class ResultsPage extends React.Component {
 
 
     render() {
-        const { location, history } = this.props
+        const { location, history, ui } = this.props;
         return (
-            <div className="search-results-container">
+            <div className="search-results-nav--container">
                 <HomeNavbarContainer 
                     history={history}
                     location={location}/>
+                <div className="results-container">
+                    {
+                        ui.search.results.map((post) => {
+                            return
+                        })
+                    }
+                </div>
             </div>
         )
     }

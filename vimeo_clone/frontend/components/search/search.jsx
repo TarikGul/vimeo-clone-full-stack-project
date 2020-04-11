@@ -11,9 +11,9 @@ class SearchBar extends React.Component {
             cursor: -1
         }
 
-        this.handleKeyPress = this.handleKeyPress.bind(this)
-        this.update = this.update.bind(this)
-        this.sort = this.sort.bind(this)
+        this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.update = this.update.bind(this);
+        this.sort = this.sort.bind(this);
     }
 
     componentDidMount() {
@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.location.pathname !== this.props.location.pathname) {
-            this.setState({ search: '' })
+            this.setState({ search: '' });
         }
     }
 
@@ -37,57 +37,57 @@ class SearchBar extends React.Component {
             return null;
         }
         return (e) => {    
-            this.sort(e.currentTarget.value)
+            this.sort(e.currentTarget.value);
         }
     }
 
     handleKeyPress(e) {
-        const { cursor, result, search } = this.state
-        const { history, ui } = this.props
+        const { cursor, result, search } = this.state;
+        const { history, ui } = this.props;
         if (e.charCode === 13) {
             if (cursor !== -1) {
                 //Empty the value of the input
-                this.setState({ result: [], search: '', cursor: -1 })
-                this.myRef.value = ''
+                this.setState({ result: [], search: '', cursor: -1 });
+                this.myRef.value = '';
 
-                let postId = ui.search.results[cursor].id
+                let postId = ui.search.results[cursor].id;
     
-                history.push(`/posts/${postId}`)
+                history.push(`/posts/${postId}`);
             } else if (cursor === -1 && search.length !== 0) {
-                history.push(`/search-results`)
+                history.push(`/search-results`);
             }
         } else if (e.keyCode === 38 && cursor >= 0) {
             e.preventDefault();
             this.setState(prevState => ({
                 cursor: prevState.cursor - 1
-            }))
+            }));
         } else if (e.keyCode === 40 && cursor < result.length - 1) {
             e.preventDefault();
             this.setState(prevState => ({
                 cursor: prevState.cursor + 1
-            }))
+            }));
         } else if (e.keyCode === 8 && search.length === 1) {
-            this.setState({ result: [], search: '' })
+            this.setState({ result: [], search: '' });
         }
-        console.log(cursor)
     }
 
     sort(str) {
-        const { entities, dispatchResults } = this.props
-        const posts = Object.values(entities.posts)
-        const len = str.length
-        let results = []
+        const { entities, dispatchResults } = this.props;
+        const posts = Object.values(entities.posts);
+        const len = str.length;
+        let results = [];
+
         if (len === 0) return results;
 
         if (posts.length === 0) return results; 
 
         for(let i = 0; i < posts.length; i++) {
             if (posts[i].title.slice(0, len).toLowerCase() === str.toLowerCase()) {
-                results.push(posts[i])
+                results.push(posts[i]);
             };
         }   
-        dispatchResults(results)
-        this.setState({ result: results, search: str })
+        dispatchResults(results);
+        this.setState({ result: results, search: str });
     }
 
     render() {
