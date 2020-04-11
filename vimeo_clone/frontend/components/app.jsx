@@ -9,10 +9,12 @@ import HomepageContainer from './homepage/homepage_container';
 import PostShowContainer from './posts/post_show_container';
 import ManageVideosContainer from './manage/videos/manage_videos_container';
 import UploadVideosContainer from './manage/upload/upload_videos_container';
+import ResultsPageContainer from './search/results_container';
 
 const App = () => (
     <div className="main">
         <Modal />
+        <ProtectedRoute  path='/search-results' component={ResultsPageContainer}/>
         <ProtectedRoute path='/manage/upload' component={UploadVideosContainer} />
         <ProtectedRoute path='/manage/videos' component={ManageVideosContainer} />
         <ProtectedRoute path='/posts/:postId' component={PostShowContainer}/>
