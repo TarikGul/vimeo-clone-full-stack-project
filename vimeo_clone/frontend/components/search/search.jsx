@@ -53,6 +53,8 @@ class SearchBar extends React.Component {
                 let postId = ui.search.results[cursor].id
     
                 history.push(`/posts/${postId}`)
+            } else if (cursor === -1 && search.length !== 0) {
+                history.push(`/search-results`)
             }
         } else if (e.keyCode === 38 && cursor >= 0) {
             e.preventDefault();
@@ -67,6 +69,7 @@ class SearchBar extends React.Component {
         } else if (e.keyCode === 8 && search.length === 1) {
             this.setState({ result: [], search: '' })
         }
+        console.log(cursor)
     }
 
     sort(str) {
