@@ -54,7 +54,7 @@ class SearchBar extends React.Component {
     
                 history.push(`/posts/${postId}`);
             } else if (cursor === -1 && search.length !== 0) {
-                history.push(`/search-results`);
+                history.push(`/search?q=${this.state.search.split(' ').join('+')}`);
             }
         } else if (e.keyCode === 38 && cursor >= 0) {
             e.preventDefault();

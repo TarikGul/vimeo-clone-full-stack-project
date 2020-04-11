@@ -1,6 +1,6 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
-import { Route, Redirect, HashRouter, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
 import SplashContainer from './splash/splash_container';
@@ -14,7 +14,7 @@ import ResultsPageContainer from './search/results_container';
 const App = () => (
     <div className="main">
         <Modal />
-        <ProtectedRoute  path='/search-results' component={ResultsPageContainer}/>
+        <ProtectedRoute path='/search' component={ResultsPageContainer}/>
         <ProtectedRoute path='/manage/upload' component={UploadVideosContainer} />
         <ProtectedRoute path='/manage/videos' component={ManageVideosContainer} />
         <ProtectedRoute path='/posts/:postId' component={PostShowContainer}/>
