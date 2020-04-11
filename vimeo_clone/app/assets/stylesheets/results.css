@@ -46,5 +46,6 @@
 }
 
 .result-box-bottom {
-    display: ;
+    display: flex;
+    flex-direction: column;
 }
