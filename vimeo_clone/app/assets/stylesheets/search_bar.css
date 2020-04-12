@@ -11,16 +11,16 @@
     border: 0.5px solid rgb(218, 218, 218);
     border-left: 0.5px solid rgb(218, 218, 218);
     box-shadow: none;
-    font-size: 16px;
+    font-size: 14px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     display: block;
-    text-indent: 10px;
+    text-indent: 15px;
 }
 
 .search-bar::placeholder {
     font-size: 14px;
-    padding-left: 5px;
+    /* padding-left: 5px; */
     color: rgb(197, 197, 197);
 }
 
@@ -60,7 +60,7 @@
 }
 
 .search-title {
-    padding-left: 5px;
+    padding-left: 1px;
 }
 
 .active {

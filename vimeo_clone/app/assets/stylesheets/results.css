@@ -14,7 +14,7 @@
 .inner-results-container {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 60%;
     height: 100%;
     padding: 30px;
 }
@@ -22,6 +22,7 @@
 .results-items-all {
     display: flex;
     flex-direction: row;
+    /* justify-content: space-evenly; */
     flex-wrap: wrap;
     align-content: flex-start;
     width: 100%;
