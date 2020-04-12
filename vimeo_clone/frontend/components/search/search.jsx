@@ -1,5 +1,8 @@
+const queryString = require('query-string');
+
 import React from 'react'
 import SearchItem from './search_item';
+import { dispatchResults } from '../../actions/search_actions';
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -27,9 +30,13 @@ class SearchBar extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
+        const values = queryString.parse(this.props.location.search)
+        const prevValues = queryString.parse(prevProps.location.search)
         if (prevProps.location.pathname !== this.props.location.pathname) {
             this.setState({ search: '' });
-        }
+        } else if (values.q !== prevValues.q) {
+            this.setState({ search: '' });
+        };
     }
 
     update() {
@@ -46,14 +53,15 @@ class SearchBar extends React.Component {
         const { history, ui } = this.props;
         if (e.charCode === 13) {
             if (cursor !== -1) {
-                //Empty the value of the input
+                //Reset values
                 this.setState({ result: [], search: '', cursor: -1 });
                 this.myRef.value = '';
 
+                //Push to the page of the post
                 let postId = ui.search.results[cursor].id;
-    
                 history.push(`/posts/${postId}`);
             } else if (cursor === -1 && search.length !== 0) {
+                this.setState({ result: [], search: '', cursor: -1 });
                 history.push(`/search?q=${this.state.search.split(' ').join('+')}`);
             }
         } else if (e.keyCode === 38 && cursor >= 0) {
@@ -72,7 +80,7 @@ class SearchBar extends React.Component {
     }
 
     sort(str) {
-        const { entities, dispatchResults } = this.props;
+        const { entities, dispatchResults, location } = this.props;
         const posts = Object.values(entities.posts);
         const len = str.length;
         let results = [];
@@ -85,10 +93,13 @@ class SearchBar extends React.Component {
             if (posts[i].title.slice(0, len).toLowerCase() === str.toLowerCase()) {
                 results.push(posts[i]);
             };
-        }   
-        dispatchResults(results);
+        }
+        
         this.setState({ result: results, search: str });
+        dispatchResults(results);
     }
+
+    
 
     render() {
         const { cursor, result } = this.state;
