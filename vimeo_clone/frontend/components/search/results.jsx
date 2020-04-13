@@ -6,7 +6,6 @@ class ResultsPage extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = this.props
     }
 
     // If Url the results are empty we will check the url and re search for the items so that we can push them to the page.
@@ -26,17 +25,16 @@ class ResultsPage extends React.Component {
                                 {`${ui.search.results.length} results`}
                             </div>
                         </div>
-
-                            <div className="results-items-all">
-                                {
-                                    ui.search.results.map((post, i) => {
-                                        return <ResultItem 
-                                                    history={history}
-                                                    key={`result-${i}`}
-                                                    post={post}/>
-                                    })
-                                }
-                            </div>
+                        <div className="results-items-all">
+                            {
+                                ui.search.results.map((post, i) => {
+                                    return <ResultItem 
+                                                history={history}
+                                                key={`result-${i}`}
+                                                post={post}/>
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
