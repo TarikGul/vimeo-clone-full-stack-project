@@ -32,7 +32,7 @@ class SidebarButtonBox extends React.Component {
                         </div>
                         <div className="new-video-button-name">
                             New Video
-                                </div>
+                        </div>
                     </button>
                 </div>
                 <div className="navigation-links">
