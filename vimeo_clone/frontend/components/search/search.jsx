@@ -112,32 +112,32 @@ class SearchBar extends React.Component {
         const { history } = this.props;
 
         return (
-            <div className="outer-search-bar-container">
+            <div className='outer-search-bar-container'>
                 {
                     result.length === 0
                     ?
                     (
-                        <div className="search-bar-container-not-home">
+                        <div className='search-bar-container-not-home'>
                             <input
                                 ref={(el) => this.myRef = el}
                                 onKeyDown={this.handleKeyPress}
-                                className="search-bar"
-                                type="text"
-                                placeholder="Search videos, people, and more"
+                                className='search-bar'
+                                type='text'
+                                placeholder='Search videos, people, and more'
                                 onChange={this.update()} />
                         </div>
                     ) : (
-                        <div className="search-bar-container-not-home">
+                        <div className='search-bar-container-not-home'>
                             <input
                                 ref={(el) => this.myRef = el}
                                 onClick={this.handleClick}
                                 onKeyDown={this.handleKeyPress}
                                 onKeyPress={this.handleKeyPress}
-                                className="search-bar"
-                                type="text"
-                                placeholder="Search videos, people, and more"
+                                className='search-bar'
+                                type='text'
+                                placeholder='Search videos, people, and more'
                                 onChange={this.update()} />
-                            <div className="search-results">
+                            <div className='search-results'>
                                 {
                                     result.map((post, i) => {
                                         return <SearchItem
