@@ -12,7 +12,7 @@ class Carousel extends React.Component {
     render() {
 
         return (
-            <div className="carousel">
+            <div className='carousel'>
                 <PostIndexContainer ownProps={this.props.ownProps}/>
             </div>
         )
