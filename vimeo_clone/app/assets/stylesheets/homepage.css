@@ -125,8 +125,25 @@ button {
     -o-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
 }
 
-.post-video:hover {
-    background-image: linear-gradient(
+.feed-thumbnail {
+  width: 100%;
+  height:150px;
+}
+
+.opacity {
+    opacity: 0.66;
+}
+
+
+.side-navbar-container-left {
+    position: fixed;
+    z-index:8;
+    margin-right: 30px;
+    height: 100%;
+}
+
+.active-post-item {
+        background-image: linear-gradient(
   hsl(0, 0%, 0%) 0%,
   hsla(0, 0%, 0%, 0.938) 19%,
   hsla(0, 0%, 0%, 0.841) 34%,
@@ -141,22 +158,6 @@ button {
   hsla(0, 0%, 0%, 0.002) 98.2%,
   hsla(0, 0%, 0%, 0) 100%
     );
-}
-
-.feed-thumbnail {
-  width: 100%;
-  height:150px;
-  
-}
-
-.feed-thumbnail:hover {
-    opacity: 0.66;
-}
-.side-navbar-container-left {
-    position: fixed;
-    z-index:8;
-    margin-right: 30px;
-    height: 100%;
 }
 
 .carousel {
