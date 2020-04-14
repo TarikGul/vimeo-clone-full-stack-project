@@ -61,7 +61,10 @@ class SearchBar extends React.Component {
                 let postId = ui.search.results[cursor].id;
                 history.push(`/posts/${postId}`);
             } else if (cursor === -1 && search.length !== 0) {
+                //Reset values
                 this.setState({ result: [], search: '', cursor: -1 });
+                
+                //Push to new URL for search
                 history.push(`/search?q=${this.state.search.split(' ').join('+')}`);
             }
         } else if (e.keyCode === 38 && cursor >= 0) {
@@ -75,6 +78,8 @@ class SearchBar extends React.Component {
                 cursor: prevState.cursor + 1
             }));
         } else if (e.keyCode === 8 && search.length === 1) {
+            // If there is one letter left in the input process the backspace,
+            // and reset the values in the state
             this.setState({ result: [], search: '' });
         }
     }
