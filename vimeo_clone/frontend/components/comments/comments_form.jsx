@@ -42,23 +42,23 @@ class CommentForm extends React.Component {
     render() {
         return (
             <div className="">
-                <div className="add-a-new-comment">Add a new comment</div>
+                <div className='add-a-new-comment'>Add a new comment</div>
                 <form onSubmit={this.submitEvent} >
                     <label>
                         <textarea
                             onClick={this.handleClick}
-                            className="comment-textarea" 
+                            className='comment-textarea' 
                             placeholder='Add a comment'
                             value={this.state.body}
                             onChange={this.update()}
-                            type="body"/>
+                            type='body'/>
                     </label>
                     {
                         this.state.clicked 
                         ?
-                        (<div className="button-comment-container">
-                            <button className="button-comment" type='submit'>Submit</button>
-                            <div className="play-nice-comment">
+                        (<div className='button-comment-container'>
+                            <button className='button-comment' type='submit'>Submit</button>
+                            <div className='play-nice-comment'>
                                 Remember to be cool and play nice
                             </div>
                         </div>

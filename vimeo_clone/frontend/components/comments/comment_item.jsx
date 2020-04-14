@@ -16,32 +16,32 @@ class CommentItem extends React.Component {
         const date = new Date(this.props.comment.created_at)
     
         return (
-            <div className="comment-container">
+            <div className='comment-container'>
                 <div className='comment-author-date-container'>
-                    <div className="space-container"></div>
+                    <div className='space-container'></div>
                     {
                         this.props.comment.user
                         ?
                         (
-                            <div className="comment-author">
+                            <div className='comment-author'>
                                 {_.capitalize(this.props.comment.user.username)}
                             </div>
                         ) : (
-                            <div className="comment-author">
+                            <div className='comment-author'>
                                 {_.capitalize(this.props.currentUser.username)}
                             </div>
                         )
                     }
                     
-                    <div className="comment-date">
+                    <div className='comment-date'>
                         {timeSince(date)}
                     </div>
                 </div>
                 <div className='profile-body-container'>
-                    <div className="user-picture-comments">
-                        <img className="profile-icon-img" src="/profile_icon.png" alt=""/>
+                    <div className='user-picture-comments'>
+                        <img className='profile-icon-img' src='/profile_icon.png'/>
                     </div>
-                    <div className="comment-body">
+                    <div className='comment-body'>
                         {this.props.comment.body}
                     </div>
                 </div>
