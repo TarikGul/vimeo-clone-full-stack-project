@@ -18,18 +18,18 @@ class ResultsPage extends React.Component {
             return null
         };
         return (
-            <div className="search-results-nav-container">
+            <div className='search-results-nav-container'>
                 <HomeNavbarContainer 
                     history={history}
                     location={location}/>
-                <div className="results-container">
-                    <div className="inner-results-container">
-                        <div className="match-count-container">
-                            <div className="match-count">
+                <div className='results-container'>
+                    <div className='inner-results-container'>
+                        <div className='match-count-container'>
+                            <div className='match-count'>
                                 {`${ui.search.results.length} results`}
                             </div>
                         </div>
-                        <div className="results-items-all">
+                        <div className='results-items-all'>
                             {
                                 ui.search.results.map((post, i) => {
                                     return <ResultItem 
