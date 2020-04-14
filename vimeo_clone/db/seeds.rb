@@ -123,12 +123,19 @@ random_user = rand(User.all.length - 10) + 8
 
 #This is the post sections of the seed file
 (0..12).each do |i|
-  Post.create!({ 
+  x = i % 4
+  movie = FFMPEG::Movie.new("/Users/tarik/Desktop/videos/#{mp4_file[x]}")
+
+  post = Post.create!({ 
     title: post_names[i], 
     user_id: User.all[rand(User.all.length - 10) + 9].id, 
     password_protected: false,
-    description: generate_random_description(60)
+    description: generate_random_description(60),
+    duration: movie.duration
   })
+
+  post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[x]}")), filename: mp4_file[x])
+  post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "#{thumbnails[x]}")), filename: thumbnails[x])
 end
 
 random_post = rand(Post.all.length - 10) + 8
@@ -152,22 +159,24 @@ end
 
 
 
-counter = 0
-Post.all.each do |post|
-  counter = 0 if counter == 4
-  puts counter
+# counter = 0
+# Post.all.each do |post|
+#   counter = 0 if counter == 4
+#   puts counter
 
-  post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[counter]}")), filename: mp4_file[counter])
-  post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "#{thumbnails[counter]}")), filename: thumbnails[counter])
-  counter += 1 
-end
+#   post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[counter]}")), filename: mp4_file[counter])
+#   post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "#{thumbnails[counter]}")), filename: thumbnails[counter])
+#   counter += 1 
+# end
 
 (0..12).each do |i|
+  movie = FFMPEG::Movie.new("/Users/tarik/Desktop/videos/final_video.mp4")
   post = Post.create!({ 
     title: post_names[i + 12], 
     user_id: User.first.id + 1, 
     password_protected: false,
-    description: generate_random_description(60)
+    description: generate_random_description(60),
+    duration: movie.duration
    })
   post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4')), filename: 'final_video.mp4')
   post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "thumbnail.png")), filename: 'thumbnail.png')
@@ -251,3 +260,11 @@ end
 #     post_id: Post.last.id - 2, 
 #     body: "Comment -" + generate_random_string(5) + generate_random_number(60)
 # })
+
+# def get_movie_duration video_file
+#   ffmpeg_output = `/usr/local/bin/ffmpeg -i "#{video_file}" 2>&1`
+#   /duration: ([0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{2})/i.match(ffmpeg_output) { |m| return m[1] }
+#   return "FFMPEG ERROR"
+# end
+
+#ActiveStorage::Analyzer::VideoAnalyzer.new(a.blob).metadata[:duration]

@@ -54,7 +54,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-
+  gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
 end
 
 group :test do
