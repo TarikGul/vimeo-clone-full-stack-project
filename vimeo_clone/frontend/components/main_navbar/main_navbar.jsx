@@ -37,13 +37,15 @@ class HomeNavbar extends React.Component {
     }
     
     render() {
+        const { ownProps } = this.props;
+
         return (
         <div className='navbar-container-1'>
-            <div className="navbar-top-rainbow"></div>
+            <div className='navbar-top-rainbow'></div>
             <div className='navbar-container-2'>
 
                 <div className='navbar-container-sub'>
-                    <div className="navbar-container-left">
+                    <div className='navbar-container-left'>
                         <div className='vimeo-logo-button'>
                                 <img onClick={this.reRoute}className='logo-img' src='/bimeoJP.png' />
                         </div>
@@ -54,18 +56,18 @@ class HomeNavbar extends React.Component {
 
                         </div>
                     </div>
-                    <div className="navbar-container-right">
-                        <div className="search-bar">
+                    <div className='navbar-container-right'>
+                        <div className='search-bar'>
                             <SearchBarContainer />
                         </div>
                         <div>
                             <button className='home-navbar-logout' onClick={this.handleProcess}> Logout </button>
                         </div>
-                        <div className="user-dropdown">
+                        <div className='user-dropdown'>
                             <UserDropdown processForm={this.props.processForm}/>
                         </div>
-                        <div className="upload-video-dropdown">
-                            <Dropdown />
+                        <div className='upload-video-dropdown'>
+                            <Dropdown ownProps={ownProps}/>
                         </div>
                     </div>
                 </div>

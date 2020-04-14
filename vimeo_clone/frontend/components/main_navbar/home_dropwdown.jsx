@@ -8,6 +8,7 @@ class DropdownNav extends React.Component {
             showDropdown: false
         }
 
+        this.reRoute = this.reRoute.bind(this)
         this.showDropdown = this.showDropdown.bind(this)
         this.closeDropdown = this.closeDropdown.bind(this)
     }
@@ -20,6 +21,12 @@ class DropdownNav extends React.Component {
 
     closeDropdown() {
         this.setState({ showDropdown: false })
+    }
+
+    reRoute() {
+        const { ownProps }= this.props;
+
+        ownProps.history.push('/manage/upload');
     }
 
 
@@ -47,9 +54,10 @@ class DropdownNav extends React.Component {
                 {
                     this.state.showDropdown
                         ? (
-                            <div className="drop-down-container-1" onMouseLeave={this.closeDropdown} >
-                                <button onClick={() => openModal('login')} className='nav-dropdown-btn'>Upload</button>
-                                <button onClick={() => openModal('login')} className='nav-dropdown-btn'>Create New Video</button>
+                            <div className='drop-down-container-1' onMouseLeave={this.closeDropdown} >
+                                <button
+                                    onClick={this.reRoute}
+                                    className='nav-dropdown-btn'>Upload</button>
                             </div>
                         ) : (
                             null
@@ -59,5 +67,5 @@ class DropdownNav extends React.Component {
         )
     }
 }
-//&#65291
+
 export default DropdownNav

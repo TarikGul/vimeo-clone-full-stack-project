@@ -47,6 +47,7 @@
 .button-container-1 {
     display: flex;
     justify-content: space-evenly;
+    cursor: pointer;
 }
 
 .new-video-dropdown-1:hover {
@@ -55,5 +56,9 @@
 
 .nav-dropdown-btn-1:hover {
     background-color:rgb(231, 231, 231);
+}
+
+.nav-dropdown-btn {
+    cursor: pointer;
 }
 
