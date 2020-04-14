@@ -200,3 +200,14 @@ button {
     font-size: 14px;
     font-weight: 500;
 }
+
+.post-index-item-username {
+    color: #1a2e3b;
+    font-size: 12px;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.post-index-item-username:hover {
+    color: #00adef;
+}
