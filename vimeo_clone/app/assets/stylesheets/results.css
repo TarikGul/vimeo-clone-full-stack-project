@@ -50,3 +50,28 @@
     display: flex;
     flex-direction: column;
 }
+
+.plays-user-result-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.plays-user-result-box > div {
+    padding-right: 10px;
+}  
+
+.result-bottom-user {
+    font-size: 12px;
+    color: #8a9599;
+    border-right: 0.5px rgb(192, 192, 192);
+}
+
+.result-bottom-plays {
+    font-size: 12px;
+    color: #8a9599;
+}
+
+.result-bottom-title {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}

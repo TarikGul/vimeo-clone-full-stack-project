@@ -13,6 +13,10 @@ class ResultsPage extends React.Component {
     render() {
         const { location, history, ui } = this.props;
         
+        if (ui.search.results === undefined) {
+            history.push('/home');
+            return null
+        };
         return (
             <div className="search-results-nav-container">
                 <HomeNavbarContainer 
