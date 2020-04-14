@@ -2,7 +2,6 @@ const queryString = require('query-string');
 
 import React from 'react'
 import SearchItem from './search_item';
-import { dispatchResults } from '../../actions/search_actions';
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -68,11 +67,13 @@ class SearchBar extends React.Component {
                 history.push(`/search?q=${this.state.search.split(' ').join('+')}`);
             }
         } else if (e.keyCode === 38 && cursor >= 0) {
+            //Move cursor down in the outputs
             e.preventDefault();
             this.setState(prevState => ({
                 cursor: prevState.cursor - 1
             }));
         } else if (e.keyCode === 40 && cursor < result.length - 1) {
+            //Move cursor up the outputs
             e.preventDefault();
             this.setState(prevState => ({
                 cursor: prevState.cursor + 1
@@ -140,7 +141,11 @@ class SearchBar extends React.Component {
                                 {
                                     result.map((post, i) => {
                                         return <SearchItem
-                                                    classColor={cursor === i ? 'search-post-title active' : 'search-post-title'}
+                                                    classColor={cursor === i 
+                                                        ? 
+                                                        'search-post-title active' 
+                                                        : 
+                                                        'search-post-title'}
                                                     key={`search-item-${i}`}
                                                     history={history} 
                                                     post={post}/>
