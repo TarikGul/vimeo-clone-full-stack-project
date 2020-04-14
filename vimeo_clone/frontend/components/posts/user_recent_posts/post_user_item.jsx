@@ -1,7 +1,7 @@
 import React from 'react';
 import { timeSince } from '../../../util/date_api_util';
 import useHover from '../../../hooks/use_hover';
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const PostUserItem = props => {
     const [hoverRef, isHovered] = useHover();
