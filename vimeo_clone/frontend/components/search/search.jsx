@@ -86,7 +86,7 @@ class SearchBar extends React.Component {
     }
 
     sort(str) {
-        const { entities, dispatchResults, location } = this.props;
+        const { entities, dispatchResults } = this.props;
         const posts = Object.values(entities.posts);
         const len = str.length;
         let results = [];
