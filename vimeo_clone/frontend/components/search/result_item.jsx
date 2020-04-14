@@ -13,8 +13,13 @@ const ResultItem = props => {
                 <div className="result-bottom-title">
                     {props.post.title}  
                 </div>
-                <div className="result-bottom-plays">
-                    {props.post.plays}
+                <div className="plays-user-result-box">
+                    <div className="result-bottom-user">
+                        {props.post.uploader.username}
+                    </div>
+                    <div className="result-bottom-plays">
+                        {props.post.plays}
+                    </div>
                 </div>
             </div>
         </div>
