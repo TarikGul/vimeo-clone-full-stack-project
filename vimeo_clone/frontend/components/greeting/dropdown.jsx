@@ -47,7 +47,7 @@ class DropdownNav extends React.Component {
                 {
                     this.state.showDropdown
                     ? (
-                            <div className="drop-down-container" onMouseLeave={this.closeDropdown} >
+                            <div className='drop-down-container' onMouseLeave={this.closeDropdown} >
                             <button onClick={ () => openModal('login')} className='nav-dropdown-btn'>Upload</button>
                             <button onClick={ () => openModal('login')} className='nav-dropdown-btn'>Create New Video</button>
                         </div>
