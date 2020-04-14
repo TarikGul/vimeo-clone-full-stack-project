@@ -34,6 +34,7 @@
     flex-direction: column;
     width: 340px;
     height: 228px;
+    padding-bottom: 10px;
 }
 
 .search-thumbnail {
@@ -63,15 +64,22 @@
 .result-bottom-user {
     font-size: 12px;
     color: #8a9599;
-    border-right: 0.5px rgb(192, 192, 192);
 }
 
 .result-bottom-plays {
     font-size: 12px;
     color: #8a9599;
+    border-left: 10.5px rgb(112, 65, 65);
 }
 
 .result-bottom-title {
     padding-top: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #3a5161;
+    font-weight: 600;
+}
+
+.result-bottom-title:hover {
+    color: #141c21;
 }
