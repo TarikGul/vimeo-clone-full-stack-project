@@ -5,7 +5,15 @@ class SidebarButtonBox extends React.Component {
     constructor(props) {
         super(props)
 
+        this.reRoute = this.reRoute.bind(this)
     }
+
+    reRoute() {
+        const { ownProps } = this.props;
+
+        ownProps.history.push('/manage/upload')
+    }
+
     render() {
         const routes = [
             "/home",
@@ -26,7 +34,9 @@ class SidebarButtonBox extends React.Component {
         return (
             <div className="side-navbar-container-left">
                 <div className='new-video-button-container'>
-                    <button className='new-video-button'>
+                    <button
+                        onClick={this.reRoute} 
+                        className='new-video-button'>
                         <div className='unicode-sidebar-new-video-button'>
                             {'\u002B'}
                         </div>
