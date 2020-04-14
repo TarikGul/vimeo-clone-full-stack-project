@@ -14,7 +14,7 @@ class ToggleButton extends React.Component {
                     <span className="slider round"></span>
                 </label>
                 <div className="autoplay-toggle">
-                    Autuplay next video
+                    Autoplay next video
                 </div>
             </div>
 
