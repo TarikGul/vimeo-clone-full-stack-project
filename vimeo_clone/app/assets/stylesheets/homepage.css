@@ -221,6 +221,8 @@ button {
     right: 7%;
     bottom: 100px;
     border-radius: 2px;
+    text-align: center;
+    line-height: 25px;
 }
 
 .post-duration {
