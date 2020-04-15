@@ -79,7 +79,8 @@
     border: none;
     border: 1px solid rgb(241, 241, 241);
     border-radius: 5px;
-    cursor: pointer;
+    cursor: text;
+    text-indent: 10px;
 }
 
 .input-wrapper {
@@ -178,7 +179,5 @@
 .join-input::placeholder {
     transform: translateY(1px);
     color: rgb(212, 212, 212);
-    font-size: 16px;
-    padding-left: 15px;
     font-weight: 300;
 }
