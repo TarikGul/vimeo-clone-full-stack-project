@@ -9,7 +9,6 @@ class Api::CommentsController < ApplicationController
       @comment = comment.find(params[:id])
     end
 
-    #This logic might need to be =revisited myight be a bug during testing
     def create
 
       @comment = Comment.new(comment_params)

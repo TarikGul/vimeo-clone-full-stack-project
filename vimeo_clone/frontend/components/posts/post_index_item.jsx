@@ -60,6 +60,9 @@ class PostIndexItem extends React.Component {
                                             {`${this.props.post.plays} views`}
                                         </div>
                                     </div>
+                                    <div className="post-index-item-username">
+                                        {this.props.post.uploader.username}
+                                    </div>
                                 </div>
                             
                         ) : (
@@ -82,6 +85,9 @@ class PostIndexItem extends React.Component {
                                         <div className="show-post-views">
                                             {`${this.props.post.plays} views`}
                                         </div>
+                                    </div>
+                                    <div className="post-index-item-username">
+                                        {this.props.post.uploader.username}
                                     </div>
                                 </div>
                         )

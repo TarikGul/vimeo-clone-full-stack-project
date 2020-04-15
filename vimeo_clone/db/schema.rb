@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_185430) do
   create_table "posts", force: :cascade do |t|
     t.string "title", null: false
     t.integer "user_id", null: false
+    t.bigint "duration", null: false
     t.boolean "password_protected", null: false
     t.string "password_digest"
     t.text "description", null: false
