@@ -107,7 +107,7 @@ button {
     cursor: pointer;
     padding-top: 10px;
     padding-bottom: 20px;
-    /* position: relative; */
+    position: relative;
     width: 260px;
     height: 260px;
     border: 1px solid rgb(243, 242, 242);
@@ -210,4 +210,20 @@ button {
 
 .post-index-item-username:hover {
     color: #00adef;
+}
+
+.post-duration-container {
+    position: absolute;
+    width: 54px;
+    height: 24px;
+    background-color:#1a2e3b;
+    opacity: 85%;
+    right: 7%;
+    bottom: 100px;
+    border-radius: 2px;
+}
+
+.post-duration {
+    color: white;
+    font-size: 12px;
 }

@@ -52,6 +52,11 @@ class PostIndexItem extends React.Component {
                                     <div className="post-video active-post-item">
                                         <img className="feed-thumbnail opacity" src={this.props.post.thumbnailUrl} />
                                     </div>
+                                    <div className="post-duration-container">
+                                        <div className="post-duration">
+                                            {this.props.post.duration}
+                                        </div>
+                                    </div>
                                     <div className="show-post-title-and-views-box">
                                         <div className="show-post-title-page">
                                             {this.props.post.title}
@@ -77,6 +82,11 @@ class PostIndexItem extends React.Component {
                                     </div>
                                     <div className="post-video">
                                         <img className="feed-thumbnail" src={this.props.post.thumbnailUrl} />
+                                    </div>
+                                    <div className="post-duration-container">
+                                        <div className="post-duration">
+                                            {this.props.post.duration}
+                                        </div>
                                     </div>
                                     <div className="show-post-title-and-views-box">
                                         <div className="show-post-title-page">
