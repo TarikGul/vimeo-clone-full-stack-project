@@ -15,10 +15,12 @@ class PostForm extends React.Component {
             thumbnailUrl: null,
             videoUrl: null,
             passwordProtected: false,
-            loading: false
+            loading: false,
+            duration: null
         }
 
         this.update = this.update.bind(this)
+        this.handleDuration = this.handleDuration.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
     }
@@ -33,9 +35,22 @@ class PostForm extends React.Component {
             const fileReader = new FileReader();
             fileReader.onloadend = () => {
                 if (field === 'thumbnail') {
-                    this.setState({ thumbnailFile: file, thumbnailUrl: fileReader.result});
+                    this.setState({ 
+                        thumbnailFile: file, 
+                        thumbnailUrl: fileReader.result
+                    });
                 } else {
-                    this.setState({ videoFile: file, videoUrl: fileReader.result});
+                    let data = this.handleDuration(file)
+
+                    // Wait for handleDuration to have the duration set into data
+                    // without the set timeout youll get undefined for duration
+                    setTimeout(() => {
+                        this.setState({ 
+                            videoFile: file, 
+                            videoUrl: fileReader.result, 
+                            duration: data.duration 
+                        });
+                    }, 500)
                 }
             };
             if (file) {
@@ -43,15 +58,31 @@ class PostForm extends React.Component {
             }
         }
     }
+
+    handleDuration(file) {
+        window.URL = window.URL || window.webkitURL;
+        let data = {};
+        let video = document.createElement('video');
+        video.preload = 'metadata';
+
+        video.onloadedmetadata = function () {
+            window.URL.revokeObjectURL(video.src);
+            let duration = video.duration;
+            data['duration'] = duration;
+        }
+        video.src = URL.createObjectURL(file);
+        return data
+    }
     
 
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('post[title]', this.state.title)
-        formData.append('post[description]', this.state.description)
-        formData.append('post[user_id]', this.state.userId)
-        formData.append('post[password_protected]', this.state.passwordProtected)
+        formData.append('post[title]', this.state.title);
+        formData.append('post[description]', this.state.description);
+        formData.append('post[user_id]', this.state.userId);
+        formData.append('post[password_protected]', this.state.passwordProtected);
+        formData.append('post[duration]', this.state.duration);
         if (this.state.videoFile) {
             formData.append('post[video]', this.state.videoFile)
         }
@@ -68,6 +99,7 @@ class PostForm extends React.Component {
     
     render() {
         const { thumbnailUrl, videoUrl, loading } = this.state
+        console.log('this is the state',this.state)
         return (
             <div className="upload-form-container">
                 <div className="upload-form-inner-container">
