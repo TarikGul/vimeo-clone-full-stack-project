@@ -1,4 +1,5 @@
 import React from 'react';
+import { durationCalc } from '../../util/duration_util'
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -54,7 +55,7 @@ class PostIndexItem extends React.Component {
                                     </div>
                                     <div className="post-duration-container">
                                         <div className="post-duration">
-                                            {this.props.post.duration}
+                                            {durationCalc(this.props.post.duration)}
                                         </div>
                                     </div>
                                     <div className="show-post-title-and-views-box">
@@ -85,7 +86,7 @@ class PostIndexItem extends React.Component {
                                     </div>
                                     <div className="post-duration-container">
                                         <div className="post-duration">
-                                            {this.props.post.duration}
+                                            {durationCalc(this.props.post.duration)}
                                         </div>
                                     </div>
                                     <div className="show-post-title-and-views-box">
