@@ -3,6 +3,7 @@ json.post do
   json.videoUrl url_for(@post.video)
   json.thumbnailUrl url_for(@post.thumbnail)
   json.description @post.description
+  json.duration post.duration
   json.uploader @post.user
   json.uploaderPosts do 
     @post.user.posts.each do |post|

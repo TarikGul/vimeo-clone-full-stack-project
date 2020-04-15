@@ -136,6 +136,7 @@ random_user = rand(User.all.length - 10) + 8
 
   post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[x]}")), filename: mp4_file[x])
   post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "#{thumbnails[x]}")), filename: thumbnails[x])
+  puts "#{i}/26"
 end
 
 random_post = rand(Post.all.length - 10) + 8

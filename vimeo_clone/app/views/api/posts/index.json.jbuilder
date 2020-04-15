@@ -4,6 +4,7 @@
         json.plays post.plays.length
         json.title post.title
         json.description post.description
+        json.duration post.duration
         json.videoUrl url_for(post.video)
         json.thumbnailUrl url_for(post.thumbnail)
         json.uploader post.user
