@@ -96,14 +96,14 @@
 
 .recent-thumbnail {
     width: 100%;
-    height: auto;
+    height: 145px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
 
 .recent-thumbnail-hovered {
     width: 100%;
-    height: auto; 
+    height: 145px;
     opacity: 0.76;
 }
 
