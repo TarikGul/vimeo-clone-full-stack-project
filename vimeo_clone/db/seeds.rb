@@ -124,7 +124,7 @@ random_user = rand(User.all.length - 10) + 8
 #This is the post sections of the seed file
 (0..12).each do |i|
   x = i % 4
-  movie = FFMPEG::Movie.new(File.open(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[x]}")))
+  movie = FFMPEG::Movie.new(File.read(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[x]}")))
 
   post = Post.create!({ 
     title: post_names[i], 
@@ -171,7 +171,7 @@ end
 # end
 
 (0..12).each do |i|
-  movie = FFMPEG::Movie.new(File.open(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4')))
+  movie = FFMPEG::Movie.new(File.read(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4')))
   post = Post.create!({ 
     title: post_names[i + 12], 
     user_id: User.first.id + 1, 
