@@ -58,13 +58,13 @@
 .login-input {
     width: 350px;
     height: 45px;
-    font-size: 25px;
+    font-size: 17px;
     outline: none;
     border: none;
     border: 0.5px solid rgb(223, 223, 223);
     border-radius: 3px;
-    cursor: pointer;
-    /* border-style: solid; */
+    cursor: text;
+    text-indent: 10px;
 }
 
 .login-input:focus {
@@ -97,6 +97,7 @@
 .modal-button {
     box-sizing: border-box;
     text-align: center;
+    cursor: pointer;
     border: none;
     border: 1px solid rgb(238, 238, 238);
     width: 360px;
@@ -160,6 +161,7 @@
     border-radius: 3px;
     color: white;
     font-weight: 500;
+    cursor: pointer;
 }
 .space-between-demo-login {
     text-align: center;
@@ -171,7 +173,6 @@
 .login-input::placeholder {
   color: rgb(212, 212, 212);
   font-size: 16px;
-  padding-left: 15px;
   transform: translateY(-3px);
   font-weight: 300;
 }
