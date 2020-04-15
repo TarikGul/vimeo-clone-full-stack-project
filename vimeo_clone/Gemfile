@@ -32,7 +32,9 @@ gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
-gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
+group :production do 
+  gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
+end
 
 
 # Use Capistrano for deployment
