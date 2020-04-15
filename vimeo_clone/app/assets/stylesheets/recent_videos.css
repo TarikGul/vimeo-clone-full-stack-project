@@ -90,6 +90,7 @@
 .recent-post-box {
     display: flex;
     flex-direction: column;
+    position: relative;
     height: 100%;
     width: 100%;
 }
@@ -147,4 +148,22 @@
     color: #8498a4;
     font-size: 14px;
     padding-left: 10px;
+}
+
+.recent-post-duration-container {
+    position: absolute;
+    width: 54px;
+    height: 24px;
+    background-color:#1a2e3b;
+    opacity: 85%;
+    right: 7%;
+    top: 110px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.recent-post-duration {
+    color: white;
+    font-size: 12px;
 }
