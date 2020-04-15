@@ -126,7 +126,7 @@ random_user = rand(User.all.length - 10) + 8
   x = i % 4
   # movie = FFMPEG::Movie.new(File.read(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[x]}")))
   # movie = FFMPEG::Movie.new(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[x]}"))
-  movie = FFMPEG::Movie.new("../lib/seeds/additional_videos/#{mp4_file[x]}")
+  movie = FFMPEG::Movie.new("/Users/tarik/Desktop/videos/#{mp4_file[x]}")
   post = Post.create!({ 
     title: post_names[i], 
     user_id: User.all[rand(User.all.length - 10) + 9].id, 
@@ -174,7 +174,7 @@ end
 (0..12).each do |i|
   # movie = FFMPEG::Movie.new(File.read(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4')))
   # movie = FFMPEG::Movie.new(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4'))
-  movie = FFMPEG::Movie.new("../lib/seeds/additional_videos/final_video.mp4")
+  movie = FFMPEG::Movie.new("/Users/tarik/Desktop/videos/final_video.mp4")
   post = Post.create!({ 
     title: post_names[i + 12], 
     user_id: User.first.id + 1, 
