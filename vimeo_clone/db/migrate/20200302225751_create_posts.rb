@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.integer :user_id, null: false
       t.bigint :duration, null: false
+      t.bigint :bytes, null: false
       t.boolean :password_protected, null: false
       t.string :password_digest 
       t.text :description, null: false
