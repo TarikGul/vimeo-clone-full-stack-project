@@ -1,5 +1,6 @@
 import React from 'react';
-import PreviewPost from './preview'
+import PreviewPost from './preview';
+import { fileSize } from '../../../util/duration_util';
 
 
 class PostForm extends React.Component {
@@ -16,7 +17,8 @@ class PostForm extends React.Component {
             videoUrl: null,
             passwordProtected: false,
             loading: false,
-            duration: null
+            duration: null,
+            alertFileSize: false,
         }
 
         this.update = this.update.bind(this)
@@ -33,32 +35,36 @@ class PostForm extends React.Component {
         return (e) => {
             const file = e.currentTarget.files[0];
             const fileReader = new FileReader();
-            
-            fileReader.onloadend = () => {
-                if (field === 'thumbnail') {
-                    this.setState({ 
-                        thumbnailFile: file, 
-                        thumbnailUrl: fileReader.result
-                    });
-                } else {
-                    let data = this.handleDuration(file)
-
-                    // Wait for handleDuration to have the duration set into data
-                    // without the set timeout youll get undefined for duration
-                    setTimeout(() => {
+            const size = fileSize(file.size)
+            if (size > 50) {
+                this.setState({ alertFileSize: true });
+            } else {
+                fileReader.onloadend = () => {
+                    if (field === 'thumbnail') {
                         this.setState({ 
-                            videoFile: file, 
-                            videoUrl: fileReader.result, 
-                            duration: data.duration 
+                            thumbnailFile: file, 
+                            thumbnailUrl: fileReader.result
                         });
-                    }, 500)
-                }
+                    } else {
+                        let data = this.handleDuration(file)
+
+                        // Wait for handleDuration to have the duration set into data
+                        // without the set timeout youll get undefined for duration
+                        setTimeout(() => {
+                            this.setState({ 
+                                videoFile: file, 
+                                videoUrl: fileReader.result, 
+                                duration: data.duration 
+                            });
+                        }, 500)
+                    }
+                };
+                if (file) {
+                    fileReader.readAsDataURL(file);
+                };
             };
-            if (file) {
-                fileReader.readAsDataURL(file);
-            }
-        }
-    }
+        };
+    };
 
     handleDuration(file) {
         window.URL = window.URL || window.webkitURL;
@@ -99,7 +105,7 @@ class PostForm extends React.Component {
 
     
     render() {
-        const { thumbnailUrl, videoUrl, loading } = this.state
+        const { thumbnailUrl, videoUrl, loading, alertFileSize } = this.state
         console.log('this is the state',this.state)
         return (
             <div className="upload-form-container">
@@ -124,6 +130,16 @@ class PostForm extends React.Component {
                                         Upload any video that is an <br />
                                         .mp4
                                     </div>
+                                    {
+                                        alertFileSize ?
+                                        (
+                                            <div className="alert-filesize">
+                                                Your file is above the limit, please choose a smaller file
+                                            </div>
+                                        ) : (
+                                            null
+                                        )
+                                    }
                                     <button className="upload-button">
                                         <img className="cloud-i" src="/cloud-upload.svg" width="18" height="18" />
                                         {/* Change this to a loading bar */}
