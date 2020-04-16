@@ -33,6 +33,7 @@ class PostForm extends React.Component {
         return (e) => {
             const file = e.currentTarget.files[0];
             const fileReader = new FileReader();
+            
             fileReader.onloadend = () => {
                 if (field === 'thumbnail') {
                     this.setState({ 

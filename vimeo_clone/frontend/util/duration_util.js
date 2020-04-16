@@ -14,3 +14,7 @@ export const durationCalc = (secs) => {
 
     return `${minutes}:${seconds}`
 }
+
+export const fileSize = bytes => {
+    return Math.round((bytes / 1024 / 1024) * 100) / 100
+}
