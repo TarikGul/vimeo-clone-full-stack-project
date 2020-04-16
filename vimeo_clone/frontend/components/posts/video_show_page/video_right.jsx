@@ -52,6 +52,8 @@ class VideoRight extends React.Component {
 
         //This is to map out the uploads of the users current show page so that 
         //they can see all the related videos on the side bar.
+        // Ordered posts make sure that the first posts is the post that you 
+        // are currently on
         const keys = Object.keys(uploaderState);
         const collectionOfPosts = keys.map(key => uploaderState[key]);
         const orderedPosts = this.sortVideos(collectionOfPosts)
