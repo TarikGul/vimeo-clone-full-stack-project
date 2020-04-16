@@ -106,6 +106,11 @@ def generate_random_description(n)
   return description.join(' ')
 end
 
+MEGABYTES = 1024.0 * 1024.0
+def bytes_to_megabytes (bytes)
+    bytes / MEGABYTES
+end
+
 # This is the user sections of the seed file
 
 User.create({ username: 'bot-life', email: 'bot-bimeo@gmail.com', password: 'password'})
@@ -123,6 +128,10 @@ random_user = rand(User.all.length - 10) + 8
 
 #This is the post sections of the seed file
 (0..12).each do |i|
+  # File size for posts
+  size = File.size("/Users/tarik/Desktop/videos/#{mp4_file[x]}")
+  bytes = bytes_to_megabytes(size).to_f.round
+  # Making sure files are looped through
   x = i % 4
   # movie = FFMPEG::Movie.new(File.read(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[x]}")))
   # movie = FFMPEG::Movie.new(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[x]}"))
@@ -132,7 +141,8 @@ random_user = rand(User.all.length - 10) + 8
     user_id: User.all[rand(User.all.length - 10) + 9].id, 
     password_protected: false,
     description: generate_random_description(60),
-    duration: movie.duration
+    duration: movie.duration,
+    bytes: bytes
   })
 
   post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', "#{mp4_file[x]}")), filename: mp4_file[x])
@@ -172,6 +182,9 @@ end
 # end
 
 (0..12).each do |i|
+  # File size for posts 
+  size = File.size("/Users/tarik/Desktop/videos/final_video.mp4")
+  bytes = bytes_to_megabytes(size).to_f.round
   # movie = FFMPEG::Movie.new(File.read(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4')))
   # movie = FFMPEG::Movie.new(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4'))
   movie = FFMPEG::Movie.new("/Users/tarik/Desktop/videos/final_video.mp4")
@@ -180,7 +193,8 @@ end
     user_id: User.first.id + 1, 
     password_protected: false,
     description: generate_random_description(60),
-    duration: movie.duration
+    duration: movie.duration,
+    bytes: bytes
    })
   post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4')), filename: 'final_video.mp4')
   post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "thumbnail.png")), filename: 'thumbnail.png')
