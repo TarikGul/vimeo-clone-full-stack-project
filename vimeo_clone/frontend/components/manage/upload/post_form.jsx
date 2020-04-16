@@ -37,6 +37,7 @@ class PostForm extends React.Component {
             const file = e.currentTarget.files[0];
             const fileReader = new FileReader();
             const size = fileSize(file.size)
+            // Make sure file size being uploaded is less than 50MB
             if (size > 50) {
                 this.setState({ alertFileSize: true });
             } else {
