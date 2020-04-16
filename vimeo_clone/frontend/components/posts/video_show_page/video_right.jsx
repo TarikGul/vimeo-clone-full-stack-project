@@ -22,7 +22,22 @@ class VideoRight extends React.Component {
         this.setState(prevState => ({
             index: prevState.index + 5,
             postId: this.props.postId
-        }))
+        }));
+    };
+
+    sortVideos(posts) {
+        const { match } = this.props;
+        let newOrder = [];
+        let curPost = [];
+        
+        for(let i = 0; i < posts.length; i++) {
+            if (posts[i].id.toString() === match.params.postId) {
+                curPost.push(posts[i])
+            } else {
+                newOrder.push(posts[i])
+            };
+        };
+        return curPost.concat(newOrder)
     }
 
     render() {
@@ -39,7 +54,8 @@ class VideoRight extends React.Component {
         //they can see all the related videos on the side bar.
         const keys = Object.keys(uploaderState);
         const collectionOfPosts = keys.map(key => uploaderState[key]);
-        const uploaderSliceOfState = collectionOfPosts.slice(0, this.state.index);
+        const orderedPosts = this.sortVideos(collectionOfPosts)
+        const uploaderSliceOfState = orderedPosts.slice(0, this.state.index);
         
         return (
             <div className="video-right-top-container">
