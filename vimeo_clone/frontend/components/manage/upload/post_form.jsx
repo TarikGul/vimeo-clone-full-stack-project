@@ -18,6 +18,7 @@ class PostForm extends React.Component {
             passwordProtected: false,
             loading: false,
             duration: null,
+            fileSize: null,
             alertFileSize: false,
         }
 
@@ -56,6 +57,7 @@ class PostForm extends React.Component {
                                 videoFile: file, 
                                 videoUrl: fileReader.result, 
                                 duration: data.duration,
+                                fileSize: size,
                                 alertFileSize: false 
                             });
                         }, 500)
@@ -92,6 +94,7 @@ class PostForm extends React.Component {
         formData.append('post[user_id]', this.state.userId);
         formData.append('post[password_protected]', this.state.passwordProtected);
         formData.append('post[duration]', this.state.duration);
+        formData.append('post[bytes]', this.state.fileSize)
         if (this.state.videoFile) {
             formData.append('post[video]', this.state.videoFile)
         }
