@@ -198,6 +198,7 @@ end
    })
   post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_videos', 'final_video.mp4')), filename: 'final_video.mp4')
   post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'additional_photos', "thumbnail.png")), filename: 'thumbnail.png')
+  puts "#{i + 13}/26"
 end
 
 # This is the like section of the seeding data
