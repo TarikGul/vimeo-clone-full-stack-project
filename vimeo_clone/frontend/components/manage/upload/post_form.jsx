@@ -43,7 +43,8 @@ class PostForm extends React.Component {
                     if (field === 'thumbnail') {
                         this.setState({ 
                             thumbnailFile: file, 
-                            thumbnailUrl: fileReader.result
+                            thumbnailUrl: fileReader.result,
+                            alertFileSize: false
                         });
                     } else {
                         let data = this.handleDuration(file)
@@ -54,7 +55,8 @@ class PostForm extends React.Component {
                             this.setState({ 
                                 videoFile: file, 
                                 videoUrl: fileReader.result, 
-                                duration: data.duration 
+                                duration: data.duration,
+                                alertFileSize: false 
                             });
                         }, 500)
                     }
@@ -134,7 +136,8 @@ class PostForm extends React.Component {
                                         alertFileSize ?
                                         (
                                             <div className="alert-filesize">
-                                                Your file is above the limit, please choose a smaller file
+                                                Your file is above the 50MB upload limit, <br/> 
+                                                please choose a smaller file.
                                             </div>
                                         ) : (
                                             null
