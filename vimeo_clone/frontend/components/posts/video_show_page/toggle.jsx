@@ -7,13 +7,6 @@ class ToggleButton extends React.Component {
         this.state = {
             clicked: false
         }
-
-        this.consoleResult = this.consoleResult.bind(this)
-    }
-
-    consoleResult(e) {
-        e.preventDefault();
-        this.setState(prevState => { clicked: !prevState })
     }
 
     render() {

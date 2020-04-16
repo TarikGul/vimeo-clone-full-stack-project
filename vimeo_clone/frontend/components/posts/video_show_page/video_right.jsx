@@ -1,6 +1,6 @@
-import React from 'react'
-import VideoShowItem from './video_show_item'
-import ToggleButton from './toggle'
+import React from 'react';
+import VideoShowItem from './video_show_item';
+import ToggleButton from './toggle';
 
 class VideoRight extends React.Component {
     constructor(props) {
@@ -58,7 +58,6 @@ class VideoRight extends React.Component {
         const collectionOfPosts = keys.map(key => uploaderState[key]);
         const orderedPosts = this.sortVideos(collectionOfPosts)
         const uploaderSliceOfState = orderedPosts.slice(0, this.state.index);
-        
         return (
             <div className="video-right-top-container">
                 <div className="video-right-inner-container">
