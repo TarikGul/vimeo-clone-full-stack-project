@@ -18,7 +18,7 @@ class ToggleButton extends React.Component {
 
     render() {
         return (
-            <div className="toggle-autplay-container" onClick={this.consoleResult}>
+            <div className="toggle-autplay-container" >
                 <label className="switch">
                     <input type="checkbox" />
                     <span className="slider round"></span>

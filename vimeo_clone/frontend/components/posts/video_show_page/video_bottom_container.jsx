@@ -26,8 +26,7 @@ class VideoBottomContainer extends React.Component {
                 <VideoRightContainer
                     clickHandler={clickHandler}
                     ownProps={ownProps} 
-                    postId={postId}
-                    entities={entities}/>
+                    postId={postId}/>
             </div>
         )
     }
