@@ -12,7 +12,7 @@
 }
 
 .splash-container {
-    background-image: linear-gradient(#fbf2f6, white);
+    background-image: linear-gradient(#fbf2f6 0%, white 25%);
     /* position: absolute; */
     padding-top: 90px;
 }
@@ -115,7 +115,7 @@
 .image-2-left-column {
     width: 50% ;
     padding-top: 130px;
-    padding-left: 140px;
+    padding-left: 300px;
 }
 
 .image-3-left-column {
