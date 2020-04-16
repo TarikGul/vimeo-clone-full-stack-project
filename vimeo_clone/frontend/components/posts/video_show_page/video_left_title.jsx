@@ -26,7 +26,6 @@ const Title = props => {
     if (prop.uploader === undefined) {
         return null
     }
-    console.log("this is the title container", props)
     return (
         <div className='video-title-container'>
             <div className='post-title'>

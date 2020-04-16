@@ -13,7 +13,6 @@ const api = {
 const logUploadedFile = (num, color = 'green') => {
     const msg = `%cUploaded ${num} files.`
     const style = `color:${color};font-weight:bold;`
-    console.log(msg, style)
 }
 
 // Constants
