@@ -21,8 +21,8 @@ class VideoShowItem extends React.Component {
             return null
         }
         return (
-        <div onClick={this.props.clickHandler(post.id)}>
-            <div className="user-posts-sidebar-container" >
+        // <div onClick={this.props.clickHandler(post.id)}>
+            <div className="user-posts-sidebar-container" onClick={this.props.clickHandler(post.id)}>
                 <div className="thumbnail-container">
                     <img 
                         className="user-posts-show-page-thumbnail"
@@ -37,7 +37,7 @@ class VideoShowItem extends React.Component {
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
         )
     }
 }

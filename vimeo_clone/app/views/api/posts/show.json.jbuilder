@@ -4,6 +4,7 @@ json.post do
   json.thumbnailUrl url_for(@post.thumbnail)
   json.description @post.description
   json.duration @post.duration
+  json.bytes @post.bytes
   json.uploader @post.user
   json.uploaderPosts do 
     @post.user.posts.each do |post|

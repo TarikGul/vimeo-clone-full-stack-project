@@ -16,6 +16,7 @@ class Post < ApplicationRecord
     validates :title, presence: true
     validates :description, presence: true
     validates :duration, presence: true
+    validates :bytes, presence: true
 
     belongs_to :user, 
         foreign_key: :user_id,

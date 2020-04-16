@@ -336,6 +336,11 @@
   transform: translateY(50px);
 }
 
+.alert-filesize {
+  text-align: center;
+  color: rgb(240, 108, 108);
+}
+
 /* .post-form-container {
   padding: 8px;
   width: 100%;

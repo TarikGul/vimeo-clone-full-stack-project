@@ -8,9 +8,7 @@ class TopContainer extends React.Component {
 
     render() {
         const { userId, entities } = this.props
-        // Sanity check to make sure that the prop is passed down before we 
-        // render the page
-        console.log(this.props)
+
         if (userId === null) {
             return null
         } else if (entities.users[userId].user_posts === undefined){
