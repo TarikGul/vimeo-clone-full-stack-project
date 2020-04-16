@@ -23,7 +23,18 @@ class UserRecentPosts extends React.Component {
                 userPosts.push(posts[k]);
             }
         });
-        return this.sortByDate(userPosts);
+        let sorted = this.sortByDate(userPosts);
+        return this.reversePosts(sorted);
+    }
+
+    reversePosts(arr) {
+        let reversedArr = [];
+
+        for(let i = arr.length - 1; i >= 0; i--) {
+            reversedArr.push(arr[i]);
+        };
+
+        return reversedArr;
     }
 
     render() {
