@@ -7,8 +7,10 @@ import { deletePost } from '../../../actions/post_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
+    const { session, entities } = state;
     return {
-        state,
+        sessionId: session.id,
+        entities,
         ownProps
     }
 }

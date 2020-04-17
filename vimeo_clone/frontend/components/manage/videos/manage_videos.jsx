@@ -10,25 +10,35 @@ class ManageVideos extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.state.session.id)
+        const { sessionId, entities } = this.props
+        this.props.fetchUser(sessionId)
     }
 
     // Need a conditional that states if the current user has no videos then 
     // The upload video splash for this link needs to show up otherwise 
     // The users videos show up and they can edit or delete them. 
     render() {
+        const { 
+            sessionId, 
+            entities,
+            processForm,
+            ownProps,
+            deletePost,
+            fetchUser 
+        } = this.props
+        
         return (
             <div className="manage-videos-container">
                 <HomeNavbar 
-                    processForm={this.props.processForm}
-                    ownProps={this.props.ownProps}/>
-                <SidebarButtonBox ownProps={this.props.ownProps}/>
+                    processForm={processForm}
+                    ownProps={ownProps}/>
+                <SidebarButtonBox ownProps={ownProps}/>
                 <VideoContentContainer
-                    deletePost={this.props.deletePost}
-                    fetchUser={this.props.fetchUser}
-                    userId={this.props.state.session.id} 
-                    entities={this.props.state.entities}
-                    ownProps={this.props.ownProps} />/>
+                    deletePost={deletePost}
+                    fetchUser={fetchUser}
+                    userId={sessionId} 
+                    entities={entities}
+                    ownProps={ownProps} />/>
             </div>
         )
     }
