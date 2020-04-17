@@ -4,7 +4,7 @@ import LoadingProcessFile from '../../loading/loading_process_file';
 
 
 const PreviewPost = props => {
-    const { update, videoUrl, thumbnailUrl, loading } = props
+    const { update, videoUrl, thumbnailUrl, loading, errors, renderErrors } = props
     return (
         <div className="preview-container">
             <div className="inner-sidebar-preview">
@@ -54,8 +54,13 @@ const PreviewPost = props => {
                     {
                         loading 
                         ?
-                        (
-                            <LoadingProcessFile />
+                        (         
+                            errors.posts.statusText === "Unprocessable Entity" ?
+                            (
+                                renderErrors(errors)
+                            ) : (
+                                <LoadingProcessFile />
+                            )
                         ) : (
                             <div className="upload-form-button">
                                 <button

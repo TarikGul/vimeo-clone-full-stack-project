@@ -22,10 +22,11 @@ class PostForm extends React.Component {
             alertFileSize: false,
         }
 
-        this.update = this.update.bind(this)
-        this.handleDuration = this.handleDuration.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleFile = this.handleFile.bind(this)
+        this.update = this.update.bind(this);
+        this.handleDuration = this.handleDuration.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field) {
@@ -109,11 +110,18 @@ class PostForm extends React.Component {
         });
     }
 
+    renderErrors(errors) {
+        return (
+            <div className="post-error-message">
+                {`${errors.posts.statusText}, Please try again later.`}
+            </div>
+        )
+    }
+
     
     render() {
         const { errors } = this.props
         const { thumbnailUrl, videoUrl, loading, alertFileSize } = this.state
-        console.log("errors", errors)
         return (
             <div className="upload-form-container">
                 <div className="upload-form-inner-container">
@@ -127,7 +135,9 @@ class PostForm extends React.Component {
                                     loading={loading}
                                     thumbnailUrl={thumbnailUrl}
                                     videoUrl={videoUrl}
-                                    update={this.update} />
+                                    update={this.update}
+                                    errors={errors}
+                                    renderErrors={this.renderErrors} />
                             </div>
                             ) : (
                             <div className="info-and-upload-container"> 
