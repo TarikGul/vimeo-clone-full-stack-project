@@ -99,7 +99,7 @@ durations = [
 
 user_names = [
   "guest",
-  "Bimeo Bot"
+  "Bimeo Bot",
   "Louis Coppa",
   "The Team",
   "Creative Concept",
