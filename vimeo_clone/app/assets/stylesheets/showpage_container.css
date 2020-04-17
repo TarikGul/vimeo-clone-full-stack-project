@@ -444,15 +444,15 @@
 .linear-gradient-comments {
     position: absolute;
     width: 100%;
-    height: 70px;
-    background: linear-gradient(to top, white, transparent 90%);
-    top:186px;
+    height: 110px;
+    background: linear-gradient(to top, white, transparent 100%);
+    top:147px;
 }
 
 
 .read-more-absolute {
     position: absolute;
-    top: 226px;
+    top: 235px;
     margin-left: 10px;
     cursor: pointer;
     font-size: 14px;
