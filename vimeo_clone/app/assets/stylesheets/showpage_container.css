@@ -123,7 +123,10 @@
 }
 
 .video-left-info-container {
-    height: 256px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: 256px;
     overflow: hidden;
     border-bottom: 1px solid rgb(206, 205, 205);
 }
@@ -334,11 +337,6 @@
 .toggle-autplay-container {
     display: flex;
     padding-bottom: 25px;
-}
-
-.video-left-info-container {
-    display: flex;
-    flex-direction: column;
 }
 
 .inner-info-top-container {
