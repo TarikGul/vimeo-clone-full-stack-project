@@ -8,7 +8,6 @@ file_name = [
   "beach",
   "bees",
   "blue-flame",
-  "buildings",
   "cali-ocean",
   "coffee-book",
   "coffee-breakfast",
@@ -29,21 +28,17 @@ file_name = [
   "solar-panels",
   "spine",
   "starry-night",
-  "sun-flower",
-  "surfing",
   "tahiti",
   "tour-city",
   "travel",
   "turkey",
   "video",
-  "winter"
 ];
 
 post_names = [
   "Beach",
   "Bees",
   "Blue Flame",
-  "Buildings",
   "Cali Ocean",
   "Coffee Book",
   "Coffee Breakfast",
@@ -64,21 +59,17 @@ post_names = [
   "Solar Panels",
   "Spine",
   "Starry Night",
-  "Sun Flower",
-  "Surfing",
   "Tahiti",
   "Tour City",
   "Travel",
   "Turkey",
   "Shores In The Distance",
-  "Winter"
 ];
 
 durations = [
   12,
   15,
   14,
-  13,
   9,
   10,
   8,
@@ -99,14 +90,11 @@ durations = [
   10,
   18,
   4,
-  11,
-  8,
   5,
   7,
   8,
   11,
   15,
-  15
 ];
 
 user_names = [
