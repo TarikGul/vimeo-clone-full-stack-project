@@ -13,7 +13,8 @@ class Homepage extends React.Component {
     }
 
     componentDidMount() {
-        if (Object.values(this.props.posts).length >= 1) {
+        const { posts, sessionId, entities } = this.props;
+        if (Object.values(posts).length >= 1) {
             $('.video-feed-posts').flickity({
                 cellAlign: 'left',
                 groupCells: true,
@@ -28,6 +29,9 @@ class Homepage extends React.Component {
                 });
             });
         }; 
+        if (entities.users[sessionId].user_posts === undefined) {
+            this.props.fetchUser(sessionId)
+        }
     };
 
 

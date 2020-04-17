@@ -29,6 +29,13 @@ class PostForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
+    componentDidMount() {
+        const { sessionId, users } = this.props
+        if (users[sessionId].user_posts === undefined) {
+            this.props.fetchUser(sessionId);
+        };
+    };
+
     update(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value })
     }

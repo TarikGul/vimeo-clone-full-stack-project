@@ -1,37 +1,53 @@
 import React from 'react';
 
-const totalBytes = posts => {
-    let totalMegabytes = 0;
-    const maxYearlyStorage = 500;
-    const postsValues = Object.values(posts);
+class AvailableStorage extends React.Component{
+    constructor(props) {
 
-    for (let i = 0; i < postsValues.length; i++) {
-        totalMegabytes += postsValues[i].bytes
+        super(props)
     }
 
+    // componenDidUpdate() {
+    //     const { entities, sessionId } = this.props;
+    //     if (entities.users[sessionId].user_posts === undefined) {
+    //         this.fetchUser(sessionId)
+    //     };
+    //     console.log("the dolphin has landed")
+    // };
 
-    return Math.floor((totalMegabytes / maxYearlyStorage) * 100)
-}
+    totalBytes(posts) {
+        let totalMegabytes = 0;
+        const maxYearlyStorage = 500;
+        const postsValues = Object.values(posts);
 
-const AvailableStorage = (props) => {
-    const {entities, sessionId} = props
-    if (entities.users[sessionId].user_posts === undefined) {
-        return null
+        for (let i = 0; i < postsValues.length; i++) {
+            totalMegabytes += postsValues[i].bytes
+        }
+
+
+        return Math.floor((totalMegabytes / maxYearlyStorage) * 100)
     }
-    const userTotalBytes = totalBytes(entities.users[sessionId].user_posts)
 
-    return (
-        <div className="available-storage-container">
-            <div className="progress">
-                <div className="progress-done" style={{
-                    opacity: 1,
-                    width: `${userTotalBytes}%`
-                }}>
-                    {}
+    render() {
+        const { entities, sessionId, fetchUser } = this.props
+        if (entities.users[sessionId].user_posts === undefined) {
+            return null
+        }
+
+        const userTotalBytes = this.totalBytes(entities.users[sessionId].user_posts)
+
+        return (
+            <div className="available-storage-container">
+                <div className="progress">
+                    <div className="progress-done" style={{
+                        opacity: 1,
+                        width: `${userTotalBytes}%`
+                    }}>
+                        {}
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default AvailableStorage;
