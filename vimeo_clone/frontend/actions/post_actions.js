@@ -5,13 +5,6 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 
-
-//-----------------------------------
-// I need to also hadd receive comment, and create comment so that
-// so that my frontend can send the data to the backend
-// Will also need to do the same for videos
-//-----------------------------------
-
 const receivePosts = posts => {
     return {
         type: RECEIVE_ALL_POSTS,
