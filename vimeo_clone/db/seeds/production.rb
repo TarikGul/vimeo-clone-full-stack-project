@@ -439,7 +439,7 @@ random_user = rand(User.all.length - 10) + 8
 (0...file_name.length).each do |i|
   
   # File size for posts
-  size = File.size("/Users/tarik/Desktop/bimeo-production-seeds/#{file_name[i]}.mp4")
+  size = File.size(Rails.root.join('lib', 'seeds', 'production_videos', "#{file_name[i]}.mp4"))
   bytes = bytes_to_megabytes(size).to_f.round
 
   post = Post.create!({ 
