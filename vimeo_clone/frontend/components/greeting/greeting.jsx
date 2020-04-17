@@ -20,7 +20,7 @@ const Greeting = ({ currentUser, logout, openModal}) => {
                         </div>
                         &nbsp;&nbsp;
                         <div className="login-container">
-                            <button className='login success' onClick={() => openModal('login')}>Login</button>
+                            <button className='login success' onClick={() => openModal('login')}>Log in</button>
                         </div>
                     </div>
                     <div className="nav-button-list-right">

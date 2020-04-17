@@ -99,7 +99,7 @@ class LoginForm extends React.Component {
                     </button>
                     <div className="navigate-to-other-method">
                         <div className="dont-have-an-account">
-                            Dont have an account?
+                            Don't have an account?
                         </div>
                         <div className="signup-link-bottom">
                             {this.props.otherForm}
