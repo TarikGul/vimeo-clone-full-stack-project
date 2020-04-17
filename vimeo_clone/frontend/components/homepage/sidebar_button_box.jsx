@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import SidebarButton from './sidebar_button'
 import AvailableStorageContainer from './available_storage_container';
 
