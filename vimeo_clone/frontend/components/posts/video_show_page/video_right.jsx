@@ -44,12 +44,14 @@ class VideoRight extends React.Component {
         const { postId, entities } = this.props;
         const userId = Object.keys(entities.users)[0];
         const uploaderState = entities.posts[postId].uploaderPosts;
-        
         //Conditional to check if the props has been full updated or not
         if (uploaderState === undefined) {
             return null
         };
 
+        // This is the posters username
+        const uploaderUsername = entities.posts[postId].uploader.username
+        
         //This is to map out the uploads of the users current show page so that 
         //they can see all the related videos on the side bar.
         // Ordered posts make sure that the first posts is the post that you 
@@ -73,7 +75,8 @@ class VideoRight extends React.Component {
                                     ownProps={this.props.ownProps}
                                     key={`post-show-${i}`}
                                     user={entities.users[userId]}
-                                    post={post}/>
+                                    post={post}
+                                    username={uploaderUsername}/>
                             })
                         }
                     </div>

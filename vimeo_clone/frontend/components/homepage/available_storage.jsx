@@ -6,14 +6,6 @@ class AvailableStorage extends React.Component{
         super(props)
     }
 
-    // componenDidUpdate() {
-    //     const { entities, sessionId } = this.props;
-    //     if (entities.users[sessionId].user_posts === undefined) {
-    //         this.fetchUser(sessionId)
-    //     };
-    //     console.log("the dolphin has landed")
-    // };
-
     totalBytes(posts) {
         let totalMegabytes = 0;
         const maxYearlyStorage = 500;
@@ -21,8 +13,6 @@ class AvailableStorage extends React.Component{
 
         for (let i = 0; i < postsValues.length; i++) {
             totalMegabytes = totalMegabytes + postsValues[i].bytes
-            console.log("post bytes", postsValues[i].bytes)
-            console.log('accumluated bytes', totalMegabytes)
         }
 
         let percentage = Math.floor((totalMegabytes / maxYearlyStorage) * 100)

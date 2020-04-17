@@ -16,7 +16,7 @@ class VideoShowItem extends React.Component {
     }  
     
     render() {
-        const { post, user } = this.props
+        const { post, user, username } = this.props
         if(user === undefined) {
             return null
         }
@@ -33,7 +33,7 @@ class VideoShowItem extends React.Component {
                         {parseStringTitle(post.title)}
                     </div>
                     <div className="video-right-username-container">
-                        {user.username}
+                        {username}
                     </div>
                 </div>
             </div>

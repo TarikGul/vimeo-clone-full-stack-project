@@ -38,7 +38,6 @@ class VideoLeftInfo extends React.Component {
             }
             return comments
         }
-        console.log(height)
         const commentKeys = Object.keys(this.props.entities.comments)
         const commentsLength = retreiveComments(commentKeys, this.props.entities.comments).length
         return (
