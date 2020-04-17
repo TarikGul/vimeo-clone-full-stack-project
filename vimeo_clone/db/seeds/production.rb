@@ -522,7 +522,7 @@ end
 
 #This is the comments sections of the seeds file
 
-(0...32).each do |i|
+(0...Post.all.length - 1).each do |i|
   Comment.create({
     user_id: User.first.id + 1, 
     parent_comment_id: nil, 
