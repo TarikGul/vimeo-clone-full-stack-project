@@ -20,11 +20,16 @@ class AvailableStorage extends React.Component{
         const postsValues = Object.values(posts);
 
         for (let i = 0; i < postsValues.length; i++) {
-            totalMegabytes += postsValues[i].bytes
+            totalMegabytes = totalMegabytes + postsValues[i].bytes
+            console.log("post bytes", postsValues[i].bytes)
+            console.log('accumluated bytes', totalMegabytes)
         }
 
-
-        return Math.floor((totalMegabytes / maxYearlyStorage) * 100)
+        let percentage = Math.floor((totalMegabytes / maxYearlyStorage) * 100)
+        return { 
+            totalMegabytes,
+            percentage
+        }
     }
 
     render() {
@@ -36,8 +41,8 @@ class AvailableStorage extends React.Component{
         const userTotalBytes = this.totalBytes(entities.users[sessionId].user_posts)
         let textBytes;
 
-        if(userTotalBytes !== 0) {
-            textBytes = `${userTotalBytes}MB`
+        if(userTotalBytes.totalMegabytes !== 0) {
+            textBytes = `${userTotalBytes.totalMegabytes}MB`
         } else {
             textBytes = '0'
         }
@@ -48,7 +53,7 @@ class AvailableStorage extends React.Component{
                     <div className="progress">
                         <div className="progress-done" style={{
                             opacity: 1,
-                            width: `${userTotalBytes}%`
+                            width: `${userTotalBytes.percentage}%`
                         }}>
                             {}
                         </div>
