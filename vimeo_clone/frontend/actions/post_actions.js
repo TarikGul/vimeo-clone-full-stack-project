@@ -2,7 +2,8 @@ import * as APIUTIL from '../util/post_api_util'
 
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
-export const REMOVE_POST = 'REMOVE_POST'
+export const REMOVE_POST = 'REMOVE_POST';
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
 //-----------------------------------
@@ -32,6 +33,13 @@ const removePost = postId => {
     }
 }
 
+const receiveErrors = err => {
+    return {
+        type: RECEIVE_ERRORS,
+        err
+    }
+}
+
 
 // We are going to add more to this such as likes, plays and comments
 // I need to set up receive likes and plays still and add them to a single
@@ -52,5 +60,6 @@ export const deletePost = postId => dispatch => {
 
 export const createPost = formData => dispatch => {
     return APIUTIL.createPost(formData)
-        .then(createdPost => dispatch(receivePost(createdPost)))
+        .then(createdPost => dispatch(receivePost(createdPost)),
+            err => dispatch(receiveErrors(err)))      
 }
