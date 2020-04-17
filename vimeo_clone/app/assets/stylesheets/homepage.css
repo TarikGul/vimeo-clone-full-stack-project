@@ -6,12 +6,17 @@
 
 .side-navbar-container-left {
     width: 224px;
-    height: 773px;
-    padding-top: 65px;
+    height: 300px;
+    /* margin-top: 65px; */
     background-color: #f6f7f8;
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: space-between;
+}
+
+.side-navbar-container-left-inner {
+    margin-top: 65px;
 }
 
 .new-video-button-container {
@@ -228,4 +233,22 @@ button {
 .post-duration {
     color: white;
     font-size: 12px;
+}
+
+.github-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.github-box-inner {
+    width: 190px;
+    height: 140px;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(158, 158, 158, 0.6);
+    -moz-box-shadow: 0 0 8px rgba(155, 155, 155, 0.6);
+    -webkit-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
+    -o-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
 }

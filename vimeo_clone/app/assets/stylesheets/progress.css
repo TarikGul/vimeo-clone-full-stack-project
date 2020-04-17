@@ -1,7 +1,10 @@
+
+
 .available-storage-container {
 	width:100%;
 	display: flex;
 	justify-content: center;
+	margin-bottom: 20px;
 }
 
 .available-storage-container-inner {
@@ -16,6 +19,7 @@
 	margin: 15px 0;
 	height: 4px;
 	width: 176px;
+	overflow: hidden;
 }
 
 .progress-done {

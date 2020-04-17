@@ -38,31 +38,38 @@ class SidebarButtonBox extends React.Component {
         const counter = [0, 1, 2];
         return (
             <div className="side-navbar-container-left">
-                <div className='new-video-button-container'>
-                    <button
-                        onClick={this.reRoute} 
-                        className='new-video-button'>
-                        <div className='unicode-sidebar-new-video-button'>
-                            {'\u002B'}
+                <div className="side-navbar-container-left-inner">
+                    <div className='new-video-button-container'>
+                        <button
+                            onClick={this.reRoute} 
+                            className='new-video-button'>
+                            <div className='unicode-sidebar-new-video-button'>
+                                {'\u002B'}
+                            </div>
+                            <div className="new-video-button-name">
+                                New Video
+                            </div>
+                        </button>
+                    </div>
+                    <div className="navigation-links">
+                        <div className="homepage-sidebar-container">
+                            {
+                                counter.map(i => {
+                                    return <SidebarButton
+                                        key={`sidebar-button-${i}`}
+                                        ownProps={this.props.ownProps}
+                                        imgUrl={images[i]}
+                                        buttonName={name[i]}
+                                        route={routes[i]}
+                                    />
+                                })
+                            }
                         </div>
-                        <div className="new-video-button-name">
-                            New Video
+                    </div>
+                    <div className="github-box">
+                        <div className="github-box-inner">
+                            
                         </div>
-                    </button>
-                </div>
-                <div className="navigation-links">
-                    <div className="homepage-sidebar-container">
-                        {
-                            counter.map(i => {
-                                return <SidebarButton
-                                    key={`sidebar-button-${i}`}
-                                    ownProps={this.props.ownProps}
-                                    imgUrl={images[i]}
-                                    buttonName={name[i]}
-                                    route={routes[i]}
-                                />
-                            })
-                        }
                     </div>
                 </div>
                 <AvailableStorageContainer />
