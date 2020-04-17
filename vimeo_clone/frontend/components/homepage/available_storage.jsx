@@ -28,13 +28,20 @@ class AvailableStorage extends React.Component{
     }
 
     render() {
-        const { entities, sessionId, fetchUser } = this.props
+        const { entities, sessionId} = this.props
         if (entities.users[sessionId].user_posts === undefined) {
             return null
         }
 
         const userTotalBytes = this.totalBytes(entities.users[sessionId].user_posts)
+        let textBytes;
 
+        if(userTotalBytes !== 0) {
+            textBytes = `${userTotalBytes}MB`
+        } else {
+            textBytes = '0'
+        }
+        
         return (
             <div className="available-storage-container">
                 <div className="progress">
@@ -43,6 +50,22 @@ class AvailableStorage extends React.Component{
                         width: `${userTotalBytes}%`
                     }}>
                         {}
+                    </div>
+                </div>
+                <div className="yearly-limit">
+                    <div className="yearly-weekly">
+                        Yearly
+                    </div>
+                    <div className="total-limit-spaced">
+                        {`${textBytes} of 500MB`}
+                    </div>
+                </div>
+                <div className="total-limit">
+                    <div className="yearly-weekly">
+                        Weekly
+                    </div>
+                    <div className="total-limit-spaced">
+                        {`${textBytes} of 1GB`}
                     </div>
                 </div>
             </div>
