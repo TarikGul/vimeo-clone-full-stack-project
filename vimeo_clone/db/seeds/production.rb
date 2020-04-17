@@ -546,6 +546,6 @@ end
 
 (0..13).each do |i|
   (0..67).each do |j|
-    VideoPlay.create({ user_id: User.all[rand(18) + 1].id, post_id: Post.all[rand(19) + 1].id })
+    VideoPlay.create({ user_id: User.all[i].id, post_id: Post.all[i].id })
   end
 end
