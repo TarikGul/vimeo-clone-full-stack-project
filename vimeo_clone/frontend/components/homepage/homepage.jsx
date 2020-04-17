@@ -28,7 +28,7 @@ class Homepage extends React.Component {
                 });
             });
         }; 
-    }
+    };
 
 
     render() {
@@ -54,8 +54,8 @@ class Homepage extends React.Component {
         }
         else if (this.posts === undefined) {
             return null
-        }
-    }
+        };
+    };
 }
 
 export default Homepage;

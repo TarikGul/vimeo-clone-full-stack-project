@@ -1,11 +1,16 @@
 import React from 'react'
 import SidebarButton from './sidebar_button'
+import AvailableStorageContainer from './available_storage_container';
 
 class SidebarButtonBox extends React.Component {
     constructor(props) {
         super(props)
 
         this.reRoute = this.reRoute.bind(this)
+    }
+
+    componenDidMount() {
+        
     }
 
     reRoute() {
@@ -60,9 +65,7 @@ class SidebarButtonBox extends React.Component {
                         }
                     </div>
                 </div>
-                <div className="available-storage">
-
-                </div>
+                <AvailableStorageContainer />
             </div>
         )
     }
