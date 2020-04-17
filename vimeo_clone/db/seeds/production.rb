@@ -447,7 +447,7 @@ random_user = rand(User.all.length - 10) + 8
     user_id: User.all[rand(User.all.length - 1)].id, 
     password_protected: false,
     description: description[i],
-    duration: duration[i],
+    duration: durations[i],
     bytes: bytes
   })
 
