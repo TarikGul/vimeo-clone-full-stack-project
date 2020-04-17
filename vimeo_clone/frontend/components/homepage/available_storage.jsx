@@ -50,7 +50,7 @@ class AvailableStorage extends React.Component{
                     </div>
                     <div className="yearly-limit">
                         <div className="yearly-total">
-                            Yearly
+                            Monthly
                         </div>
                         <div className="total-limit-spaced">
                             {`${textBytes} of 500MB`}
