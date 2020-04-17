@@ -2,56 +2,77 @@
 # rails db:seed RAILS_ENV=production 
 
 
-#File that the seed videos will come from
-mp4_file = [
-  'beach.mp4',
-  'buildings.mp4',
-  'final_video.mp4',
-  'trees.mp4'
-]
+#File names
 
-#file that the seed thumbnails will come from
-thumbnails = [
-  'beach.png',
-  'buildings.png',
-  'thumbnail.png',
-  'trees.png'
-]
+file_name = [
+  "beach",
+  "bees",
+  "blue-flame",
+  "buildings",
+  "cali-ocean",
+  "coffee-book",
+  "coffee-breakfast",
+  "cowboy-camping",
+  "family-waterfall",
+  "historic-beach",
+  "home",
+  "icecream",
+  "italy",
+  "keyboard",
+  "mountains",
+  "night-life",
+  "palm-trees",
+  "pasta",
+  "people-waiting",
+  "pizza",
+  "santa",
+  "solar-panels",
+  "spine",
+  "starry-night",
+  "sun-flower",
+  "surfing",
+  "tahiti",
+  "tour-city",
+  "travel",
+  "turkey",
+  "video",
+  "winter"
+];
 
 post_names = [
-  'Watching Sunsets',
-  "Creating a birdhouse",
-  "Imagine a world of Silence",
-  "This is my bestfriend",
-  "I cant sleep, but i can dream",
-  "Maybe, just maybe",
-  "The Experience",
-  "Sky High",
-  "Playing Nice",
-  "Washing Your Hands",
-  "May",
-  "Adventure's On The Ground",
-  "Follow the leader",
-  "Like it or not",
-  "Montana, and more",
-  "Architects",
-  "This is Amazing",
-  "Cards or not",
-  "The Coast is my Heart",
-  "Walking never ends",
-  "Just Live",
-  "Music for the soul",
-  "Recent Discoveries",
-  "Memories",
-  "Sealing The Pain",
-  "Friendships",
-  "School for thought",
-  "Pennies",
-  "Where and how",
-  "Make ammends",
-  "Watch the fallen",
-  "Sand is all I need"
-]
+  "Beach",
+  "Bees",
+  "Blue Flame",
+  "Buildings",
+  "Cali Ocean",
+  "Coffee Book",
+  "Coffee Breakfast",
+  "Cowboy Camping",
+  "Family Waterfall",
+  "Historic Beach",
+  "Home",
+  "Icecream",
+  "Italy",
+  "Keyboard",
+  "Mountains",
+  "Night Life",
+  "Palm Trees",
+  "Pasta",
+  "People Waiting",
+  "Pizza",
+  "Santa",
+  "Solar Panels",
+  "Spine",
+  "Starry Night",
+  "Sun Flower",
+  "Surfing",
+  "Tahiti",
+  "Tour City",
+  "Travel",
+  "Turkey",
+  "Shores In The Distance",
+  "Winter"
+];
 
 VideoPlay.destroy_all
 Follower.destroy_all
