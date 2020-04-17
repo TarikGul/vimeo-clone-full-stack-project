@@ -4,9 +4,10 @@ import { withRouter } from 'react-router-dom';
 import PostForm from './post_form';
 
 const msp = state => {
-    const { session } = state
+    const { session, errors } = state
     return {
-        sessionId: session.id
+        sessionId: session.id,
+        errors
     };
 };
 

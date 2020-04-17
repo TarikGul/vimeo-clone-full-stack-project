@@ -111,7 +111,9 @@ class PostForm extends React.Component {
 
     
     render() {
+        const { errors } = this.props
         const { thumbnailUrl, videoUrl, loading, alertFileSize } = this.state
+        console.log("errors", errors)
         return (
             <div className="upload-form-container">
                 <div className="upload-form-inner-container">
