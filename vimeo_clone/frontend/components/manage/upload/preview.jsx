@@ -38,7 +38,7 @@ const PreviewPost = props => {
                                 placeholder="Tell the story behind your video (It's OK to include links)"
                                 className="description-preview"
                                 onChange={update('description')}
-                                />
+                                required/>
                         </div>
                     </div>
                     <div className="thumbnail-preview-container">
