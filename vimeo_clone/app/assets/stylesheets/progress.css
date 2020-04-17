@@ -1,3 +1,14 @@
+.available-storage-container {
+	width:100%;
+	display: flex;
+	justify-content: center;
+}
+
+.available-storage-container-inner {
+	width: 176px;
+	border-top: 0.5px solid rgb(226, 226, 226);
+}
+
 .progress {
 	background-color: #d8d8d8;
 	border-radius: 20px;
@@ -18,4 +29,25 @@
 	width: 0;
 	opacity: 0;
 	transition: 1s ease 0.3s;
+}
+
+.yearly-total {
+	font-size: 12px;
+	color: #1a2e3b;
+}
+
+.total-limit-spaced {
+	font-size: 12px;
+	color: #1a2e3b;
+}
+
+.yearly-limit {
+	display: flex;
+	justify-content: space-between;
+}
+
+.total-limit {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 7px;
 }

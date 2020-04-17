@@ -44,28 +44,30 @@ class AvailableStorage extends React.Component{
         
         return (
             <div className="available-storage-container">
-                <div className="progress">
-                    <div className="progress-done" style={{
-                        opacity: 1,
-                        width: `${userTotalBytes}%`
-                    }}>
-                        {}
+                <div className="available-storage-container-inner">
+                    <div className="progress">
+                        <div className="progress-done" style={{
+                            opacity: 1,
+                            width: `${userTotalBytes}%`
+                        }}>
+                            {}
+                        </div>
                     </div>
-                </div>
-                <div className="yearly-limit">
-                    <div className="yearly-weekly">
-                        Yearly
+                    <div className="yearly-limit">
+                        <div className="yearly-total">
+                            Yearly
+                        </div>
+                        <div className="total-limit-spaced">
+                            {`${textBytes} of 500MB`}
+                        </div>
                     </div>
-                    <div className="total-limit-spaced">
-                        {`${textBytes} of 500MB`}
-                    </div>
-                </div>
-                <div className="total-limit">
-                    <div className="yearly-weekly">
-                        Weekly
-                    </div>
-                    <div className="total-limit-spaced">
-                        {`${textBytes} of 1GB`}
+                    <div className="total-limit">
+                        <div className="yearly-total">
+                            Total limit
+                        </div>
+                        <div className="total-limit-spaced">
+                            {`${textBytes} of 1GB`}
+                        </div>
                     </div>
                 </div>
             </div>
