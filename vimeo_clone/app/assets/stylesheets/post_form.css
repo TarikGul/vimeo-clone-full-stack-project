@@ -341,6 +341,13 @@
   color: rgb(240, 108, 108);
 }
 
+.post-error-message {
+  line-height: 20px;
+  text-align: center;
+  color: rgb(240, 108, 108);
+  padding-top: 30px;
+}
+
 /* .post-form-container {
   padding: 8px;
   width: 100%;

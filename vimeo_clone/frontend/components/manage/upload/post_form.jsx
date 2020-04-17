@@ -113,7 +113,8 @@ class PostForm extends React.Component {
     renderErrors(errors) {
         return (
             <div className="post-error-message">
-                {`${errors.posts.statusText}, Please try again later.`}
+                {`${errors.posts.statusText}`} <br/>
+                {`Please try again later.`}
             </div>
         )
     }
