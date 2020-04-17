@@ -1,3 +1,7 @@
+# command to call seed file
+# rails db:seed RAILS_ENV=production 
+
+
 #File that the seed videos will come from
 mp4_file = [
   'beach.mp4',
