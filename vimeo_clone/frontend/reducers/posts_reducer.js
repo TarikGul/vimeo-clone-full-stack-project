@@ -1,5 +1,10 @@
-import { RECEIVE_POST, RECEIVE_ALL_POSTS, REMOVE_POST } from '../actions/post_actions'
+import { 
+    RECEIVE_POST,
+    RECEIVE_ALL_POSTS, 
+    REMOVE_POST, 
+} from '../actions/post_actions'
 import { CREATE_PLAY } from '../actions/play_actions'
+
 
 const postsReducer = (state = {}, action) => {
     Object.freeze(state);
