@@ -11,7 +11,9 @@ class ManageVideos extends React.Component {
 
     componentDidMount() {
         const { sessionId, entities } = this.props
-        this.props.fetchUser(sessionId)
+        if (entities.users[sessionId].user_posts === undefined) {
+            this.props.fetchUser(sessionId)
+        }
     }
 
     // Need a conditional that states if the current user has no videos then 
@@ -26,7 +28,7 @@ class ManageVideos extends React.Component {
             deletePost,
             fetchUser 
         } = this.props
-        
+
         return (
             <div className="manage-videos-container">
                 <HomeNavbar 
