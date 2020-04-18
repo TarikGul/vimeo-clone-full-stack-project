@@ -35,7 +35,7 @@ class Footer extends React.Component {
                         </ul>
                     </div>
                     <div className='footer-right-container'>
-                        
+                        Thank you, and have a beautiful day!
                     </div>
                 </div>
                 <div className='footer-bottom-container'>
