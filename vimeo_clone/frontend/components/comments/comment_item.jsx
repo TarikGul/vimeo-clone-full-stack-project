@@ -1,6 +1,6 @@
-import React from 'react'
-import { timeSince } from '../../util/date_api_util'
-import _ from 'lodash'
+import React from 'react';
+import { timeSince } from '../../util/date_api_util';
+import _ from 'lodash';
 
 class CommentItem extends React.Component {
     constructor(props) {

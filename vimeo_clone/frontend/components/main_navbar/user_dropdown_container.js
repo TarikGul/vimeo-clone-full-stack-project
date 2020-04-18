@@ -4,8 +4,10 @@ import { logout } from '../../actions/session_actions'
 import UserDropdown from './user_dropdown';
 
 const msp = state => {
+    const { entities, session } = state;
     return {
-
+        sessionId: session.id,
+        entities
     };
 };
 

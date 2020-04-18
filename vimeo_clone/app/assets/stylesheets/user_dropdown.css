@@ -1,0 +1,98 @@
+.user-dropdown-container {
+    position: relative;
+}
+
+.user-dropdown {
+    width:40px;
+    height: 40px;
+    background-color: rgb(97, 128, 170);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.avatar-dropdown {
+    font-size: 24px;
+    color: #eef1f2;
+}
+
+.user-dropdown-menu {
+    cursor: auto;
+    position: absolute;
+    width: 265px;
+    height: 200px;
+    right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(158, 158, 158, 0.6);
+    -moz-box-shadow: 0 0 8px rgba(155, 155, 155, 0.6);
+    -webkit-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
+    -o-box-shadow: 0 0 8px rgba(156, 156, 156, 0.6);
+    transition: 0.2s;
+    background-color: white;
+    transition: 1s;
+}
+
+.user-dropdown-menu-container {
+    width: 100%;
+    height: 100%;
+    text-align: start;
+}
+
+.user-dropdown-username-container {
+    font-size: 14px;
+    color: #1a2e3b;
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.user-dropdown-username {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.user-drop-down-logout {
+    cursor: pointer;
+}
+
+.user-drop-down-logout:hover {
+    background-color: #e6eaec;
+}
+
+.user-dropdown-manage-videos {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.user-dropdown-manage-video {
+    margin-top: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-dropdown-manage-video:hover {
+    background-color: #f1f1f1;
+}
+
+.user-dropdown-upload-videos {
+    margin-bottom: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-dropdown-upload-videos:hover {
+    background-color: #efeff0;
+}
+
+.user-drop-down-logout-text {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.user-dropdown-manage-video-text {
+    margin-left: 10px;
+}
+
+.user-dropdown-upload-video-text {
+    margin-left: 10px;
+}

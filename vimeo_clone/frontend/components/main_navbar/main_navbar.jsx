@@ -1,5 +1,5 @@
 import React from 'react';
-import UserDropdown from './user_dropdown'
+import UserDropdownContainer from './user_dropdown_container'
 import SearchBarContainer from '../search/search_container'
 import Dropdown from './home_dropwdown'
 
@@ -60,11 +60,11 @@ class HomeNavbar extends React.Component {
                         <div className='search-bar'>
                             <SearchBarContainer />
                         </div>
-                        <div>
+                        {/* <div>
                             <button className='home-navbar-logout' onClick={this.handleProcess}> Logout </button>
-                        </div>
+                        </div> */}
                         <div className='user-dropdown'>
-                            <UserDropdown processForm={this.props.processForm}/>
+                            <UserDropdownContainer />
                         </div>
                         <div className='upload-video-dropdown'>
                             <Dropdown ownProps={ownProps}/>
