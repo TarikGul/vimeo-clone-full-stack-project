@@ -11,8 +11,13 @@ const parseDate = (date) => {
 
 const parseName = name => {
     let splitName = name.split('')
+    let newName;
 
-    let newName = splitName.slice(0, 6).concat(['...'])
+    if(name.length > 13) {
+        newName = splitName.slice(0, 13).concat(['...'])
+    } else {
+        return splitName.join('')
+    }
     return newName.join('')
 }
 
