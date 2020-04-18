@@ -1,7 +1,6 @@
+import { connect } from 'react-redux'
 import { logout } from '../../actions/session_actions'
 import HomeNavbar from './main_navbar'
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => {
     return {
