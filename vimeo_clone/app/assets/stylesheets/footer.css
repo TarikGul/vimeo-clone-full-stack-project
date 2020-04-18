@@ -22,9 +22,31 @@
     color: white;
 }
 
+.list-container-footer {
+    width: 150px;
+    height: 100px;
+}
+
+.list-container-footer > li {
+    position: relative;
+    width: 100%;
+    height: 50%
+}
+
 .github-link {
+    position: absolute;
     text-decoration: none;
     color: white;
+    padding-left: 15px;
+    bottom: 27px;
+}
+
+.linkedin-link {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    padding-left: 15px;
+    bottom: 27px;
 }
 
 .atag {
@@ -39,4 +61,20 @@
 .list-container-footer > li {
     padding-left: 20px;
     padding-top: 10px;
+}
+
+.github-footer {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 6px;
+}
+
+.linked-in-footer {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 5px;
 }
