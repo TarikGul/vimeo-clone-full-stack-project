@@ -15,8 +15,8 @@
     flex-direction: column;
     padding-top: 5px;
     right: 20px;
-    box-shadow: 0px 5px 7px gray, 
-        -5px 2px 5px gray, 5px 2px 5px gray;
+    box-shadow: 0px 5px 7px rgb(226, 226, 226), 
+        -5px 2px 5px rgb(226, 226, 226), 5px 2px 5px rgb(226, 226, 226);
     background-color: white;
 }
 
