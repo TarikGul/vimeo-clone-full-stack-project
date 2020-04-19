@@ -1,6 +1,7 @@
 const queryString = require('query-string');
 
-import React from 'react'
+import React from 'react';
+import ReactGA from 'react-ga';
 import SearchItem from './search_item';
 
 class SearchBar extends React.Component {

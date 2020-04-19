@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import Carousel from './carousel/carousel';
 import SidebarButtonBox from './sidebar_button_box';
 import UserRecentPostsContainer from '../posts/user_recent_posts/user_recent_posts_container';
@@ -13,6 +14,10 @@ class Homepage extends React.Component {
     }
 
     componentDidMount() {
+        if (window.location.hostname !== 'localhost') {
+            ReactGA.initialize('UA-162754702-1');
+            ReactGA.pageview('/home');
+        }
         const { posts, sessionId, entities } = this.props;
         if (Object.values(posts).length >= 1) {
             $('.video-feed-posts').flickity({
