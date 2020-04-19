@@ -13,7 +13,7 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        if (window.location !== 'localhost') {
+        if (window.location.hostname !== 'localhost') {
             ReactGA.initialize('UA-162754702-1');
             ReactGA.pageview('/posts');
         }

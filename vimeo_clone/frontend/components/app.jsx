@@ -12,7 +12,7 @@ import ManageVideosContainer from './manage/videos/manage_videos_container';
 import UploadVideosContainer from './manage/upload/upload_videos_container';
 import ResultsPageContainer from './search/results_container';
 
-if (window.location !== 'localhost') {
+if (window.location.hostname !== 'localhost') {
     ReactGA.initialize('UA-162754702-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
 }

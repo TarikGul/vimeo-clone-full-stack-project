@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga';
 import HomeNavbar from '../../main_navbar/main_navbar'
 import SidebarButtonBox from '../../homepage/sidebar_button_box'
 import VideoContentContainer from './video_content_container'
@@ -10,6 +11,10 @@ class ManageVideos extends React.Component {
     }
 
     componentDidMount() {
+        // if (window.location !== 'localhost') {
+            ReactGA.initialize('UA-162754702-1');
+            ReactGA.pageview('/manage/videos');
+        // }
         const { sessionId, entities } = this.props
         if (entities.users[sessionId].user_posts === undefined) {
             this.props.fetchUser(sessionId)
