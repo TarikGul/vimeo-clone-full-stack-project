@@ -1,7 +1,7 @@
 import React from 'react';
 import PreviewPost from './preview';
-import { fileSize } from '../../../util/duration_util';
 import ReactGA from 'react-ga';
+import { fileSize } from '../../../util/duration_util';
 
 
 class PostForm extends React.Component {
@@ -31,10 +31,10 @@ class PostForm extends React.Component {
     }
 
     componentDidMount() {
-        // if (window.location !== 'localhost') {
+        if (window.location !== 'localhost') {
             ReactGA.initialize('UA-162754702-1');
             ReactGA.pageview('/manage/upload');
-        // }
+        }
         const { sessionId, users } = this.props
         if (users[sessionId].user_posts === undefined) {
             this.props.fetchUser(sessionId);
