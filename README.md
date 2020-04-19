@@ -62,9 +62,8 @@ gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
 4. ```rails db:create```
 5. ```rails db:migrate```
 6. ```rails db:seed RAILS_ENV=development```
+7. ```npm start // initializing webpack```
 
-If you would like to get webpack running
-7. ```npm start```
 
 
 
