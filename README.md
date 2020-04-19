@@ -65,5 +65,22 @@ gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
 7. ```npm start // initializing webpack```
 
 
+## Background
+
+![videos](vimeo_clone/public/bimeo-carousel-giphy.gif "Videos")
 
 
+###### [Jump to Technologies](#technologies)
+
+## Technologies
+
+* Front-end:
+  * React
+  * Redux
+  * Ajax
+* Back-end
+  * RubyOnRails
+  * PostgreSQL
+  * BCrypt
+* Cloud:
+  * Heroku
