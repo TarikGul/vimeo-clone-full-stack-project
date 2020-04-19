@@ -1,7 +1,6 @@
 const queryString = require('query-string');
 
 import React from 'react';
-import ReactGA from 'react-ga';
 import SearchItem from './search_item';
 
 class SearchBar extends React.Component {
@@ -20,11 +19,6 @@ class SearchBar extends React.Component {
     }
 
     componentDidMount() {
-        if (window.location.hostname !== 'localhost') {
-            ReactGA.initialize('UA-162754702-1');
-            ReactGA.pageview('/search' + this.props.location.search);
-        }
-
         const { entities, location } = this.props
         this.update();
         if (location.pathname === '/home') {

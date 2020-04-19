@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import HomeNavbarContainer from '../main_navbar/navbar_container';
 import ResultItem from './result_item';
 
@@ -6,6 +7,13 @@ class ResultsPage extends React.Component {
     constructor(props) {
         super(props)
 
+    }
+
+    componentDidMount() {
+        if (window.location.hostname !== 'localhost') {
+            ReactGA.initialize('UA-162754702-1');
+            ReactGA.pageview('/search' + this.props.location.search);
+        }
     }
 
     // If Url the results are empty we will check the url and re search for the items so that we can push them to the page.
