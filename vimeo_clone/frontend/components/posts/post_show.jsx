@@ -1,8 +1,9 @@
-import React from 'react'
-import HomeNavbar from '../main_navbar/main_navbar'
-import VideoPage from './video_show_page/video_page'
-import { scrollToTop } from '../../util/window_util'
-import Footer from '../footer/footer'
+import React from 'react';
+import ReactGA from 'react-ga';
+import HomeNavbar from '../main_navbar/main_navbar';
+import VideoPage from './video_show_page/video_page';
+import { scrollToTop } from '../../util/window_util';
+import Footer from '../footer/footer';
 
 class PostShow extends React.Component {
     constructor(props) {
@@ -12,21 +13,25 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPost(this.props.postId)
+        if (window.location !== 'localhost') {
+            ReactGA.initialize('UA-162754702-1');
+            ReactGA.pageview('/posts');
+        }
+        this.props.fetchPost(this.props.postId);
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.ownProps.location.pathname !== this.props.ownProps.location.pathname) {
             scrollToTop();
-        }
-    }
+        };
+    };
 
     clickHandler(postId) {
        return () => this.props.fetchPost(postId)
                         .then(() => {
                             this.props.ownProps.history.push(`/posts/${postId}`)
-                        })
-    }
+                        });
+    };
 
     render() {
         const { 
@@ -35,12 +40,12 @@ class PostShow extends React.Component {
             session,
             state,
             postId
-        } = this.props
+        } = this.props;
         
         if (this.props.postId === undefined) {
-            return null
+            return null;
         } else if (this.props.state.entities.posts[this.props.postId] === undefined) {
-            return null
+            return null;
         }
         return (
             <div className="showpage-container">
