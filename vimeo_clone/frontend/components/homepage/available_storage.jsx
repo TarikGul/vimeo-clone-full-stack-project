@@ -2,8 +2,8 @@ import React from 'react';
 
 class AvailableStorage extends React.Component{
     constructor(props) {
-
         super(props)
+
     }
 
     totalBytes(posts) {
@@ -13,29 +13,34 @@ class AvailableStorage extends React.Component{
 
         for (let i = 0; i < postsValues.length; i++) {
             totalMegabytes = totalMegabytes + postsValues[i].bytes
-        }
+        };
 
-        let percentage = Math.floor((totalMegabytes / maxYearlyStorage) * 100)
+        let percentage = Math.floor((totalMegabytes / maxYearlyStorage) * 100);
         return { 
             totalMegabytes,
             percentage
-        }
-    }
+        };
+    };
 
     render() {
-        const { entities, sessionId} = this.props
+        const { entities, sessionId } = this.props;
+
+        let userTotalBytes;
+        let textBytes; 
         if (entities.users[sessionId].user_posts === undefined) {
-            return null
-        }
-
-        const userTotalBytes = this.totalBytes(entities.users[sessionId].user_posts)
-        let textBytes;
-
-        if(userTotalBytes.totalMegabytes !== 0) {
-            textBytes = `${userTotalBytes.totalMegabytes}MB`
+            userTotalBytes = {
+                percentage: 0,
+                totalMegabytes: 0
+            };
+            textBytes = `0MB`;
         } else {
-            textBytes = '0'
-        }
+            userTotalBytes = this.totalBytes(entities.users[sessionId].user_posts);
+            if (userTotalBytes.totalMegabytes !== 0) {
+                textBytes = `${userTotalBytes.totalMegabytes}MB`;
+            } else {
+                textBytes = '0';
+            };
+        };
         
         return (
             <div className="available-storage-container">
