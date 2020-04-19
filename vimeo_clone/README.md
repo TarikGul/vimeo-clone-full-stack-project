@@ -1,24 +1,86 @@
-# README
+![logo](vimeo_clone/public/bimeoJP.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###### [Live Site](https://bimeo.herokuapp.com/#/)
 
-Things you may want to cover:
+## Table of Contents
 
-* Ruby version
+* [Setup](#setup)
+* [Background](#background)
+* [Technologies](#technologies)
+* [Features](#features)
+* [Code Snippets](#code-snippets)
 
-* System dependencies
+## Setup
 
-* Configuration
+###### [Jump to Background](#background)
 
-* Database creation
+### Enviornment/Setup 
 
-* Database initialization
+#### Notable dependencies and technologies
 
-* How to run the test suite
+##### Database
+```PostgreSQL 12```
 
-* Services (job queues, cache servers, search engines, etc.)
+##### Ruby/Rails
+```ruby --version => ruby 2.5.1p57```
+<br/>
+```rails -v => Rails 5.2.4.1```
+<br/>
 
-* Deployment instructions
+##### Node
+```node -v => v10.13.0```
 
-* ...
+##### React/Rails
+```react: ^16.13.0```
+<br/>
+```react-router-dom: ^5.1.2```
+<br/>
+```redux: ^4.0.5```
+<br/>
+```webpack: ^4.42.0```
+<br/>
+```webpack-cli: ^3.3.11```
+<br/>
+```@babel/core: ^7.8.6```
+
+
+Gems
+
+```
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'pry-rails'
+gem 'annotate'
+gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
+```
+
+### Cloning Instructions
+
+1. cd into Rails root directory
+2. ```bundle install```
+3. ```npm install```
+4. ```rails db:create```
+5. ```rails db:migrate```
+6. ```rails db:seed RAILS_ENV=development```
+7. ```npm start // initializing webpack```
+
+
+## Background
+
+![videos](public/bimeo-carousel-giphy.gif "Videos")
+
+
+###### [Jump to Technologies](#technologies)
+
+## Technologies
+
+* Front-end:
+  * React
+  * Redux
+  * Ajax
+* Back-end
+  * RubyOnRails
+  * PostgreSQL
+  * BCrypt
+* Cloud:
+  * Heroku
