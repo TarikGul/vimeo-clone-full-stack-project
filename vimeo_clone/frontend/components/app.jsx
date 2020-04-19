@@ -1,8 +1,9 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import ReactGA from 'react-ga';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
+import GreetingContainer from './greeting/greeting_container';
 import SplashContainer from './splash/splash_container';
 import HomeNavbarContainer from './main_navbar/navbar_container';
 import HomepageContainer from './homepage/homepage_container';
@@ -10,6 +11,11 @@ import PostShowContainer from './posts/post_show_container';
 import ManageVideosContainer from './manage/videos/manage_videos_container';
 import UploadVideosContainer from './manage/upload/upload_videos_container';
 import ResultsPageContainer from './search/results_container';
+
+if (window.location !== 'localhost') {
+    ReactGA.initialize('UA-162754702-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+}
 
 const App = () => (
     <div className="main">
