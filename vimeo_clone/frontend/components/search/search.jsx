@@ -19,6 +19,11 @@ class SearchBar extends React.Component {
     }
 
     componentDidMount() {
+        if (window.location.hostname !== 'localhost') {
+            ReactGA.initialize('UA-162754702-1');
+            ReactGA.pageview('/search' + this.props.location.search);
+        }
+
         const { entities, location } = this.props
         this.update();
         if (location.pathname === '/home') {
