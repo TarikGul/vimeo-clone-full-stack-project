@@ -67,6 +67,7 @@ gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
 
 ## Background
 
+![videos](vimeo_clone/public/bime0-carousel-giphy.gif "Videos")
 
 
 ###### [Jump to Technologies](#technologies)
