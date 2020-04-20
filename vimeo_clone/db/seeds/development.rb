@@ -687,7 +687,7 @@ end
 (0...user_names.length).each do |i| 
   User.create({ 
     username: user_names[i], 
-    email: user_names[i].split(' ').join(' ') + "@gmail.com",
+    email: user_names[i].split(' ').join('-') + "@gmail.com",
     password: '0987654321'
   })
 end
@@ -713,6 +713,7 @@ random_user = rand(User.all.length - 10) + 8
 
   post.video.attach(io: File.open(Rails.root.join('lib', 'seeds', 'production_videos', "#{file_name[i]}.mp4")), filename: "#{file_name[i]}.mp4")
   post.thumbnail.attach(io: File.open(Rails.root.join('lib', 'seeds', 'production_thumbnails', "#{file_name[i]}.png")), filename: "#{file_name[i]}.png")
+  puts "#{i}/#{file_name.length}"
 end
 
 random_post = rand(Post.all.length - 10) + 8
