@@ -1,4 +1,4 @@
-![logo](vimeo_clone/public/bimeoJP.png)
+![logo](/public/bimeoJP.png)
 
 ###### [Live Site](https://bimeo.herokuapp.com/#/)
 
