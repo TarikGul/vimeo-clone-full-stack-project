@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga';
 import PostInfoRow from './post_info_row'
 import DeleteButton from './delete_button'
 
@@ -20,6 +21,13 @@ class BottomContainer extends React.Component {
         this.deleteClick = this.deleteClick.bind(this)
     }
 
+    componentDidMount() {
+        if (window.location.hostname !== 'localhost') {
+            ReactGA.initialize('UA-162754702-1');
+            ReactGA.pageview('/manage/videos');
+        }
+    }
+
     allPosts(posts) {
         const ids = []
         for(let i = 0; i < posts.length; i++) {
@@ -39,6 +47,12 @@ class BottomContainer extends React.Component {
 
     deleteClick(e) {
         window.alert('Because this is a clone, delete is disabled. Check out the repo for delete functionality')
+        // Event("DELETE", "Delete button clicked", "DELETE_PAGE");
+        ReactGA.event({
+            category: "DELETE",
+            action: "Delete button clicked",
+            label: "DELETE_PAGE"
+        });
         // const { entities, userId } = this.props;
         // let nodes = [];
         // let checks = document.getElementsByClassName('checkbox-manage-videos');
