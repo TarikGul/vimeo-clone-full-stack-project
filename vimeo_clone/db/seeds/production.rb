@@ -1,6 +1,19 @@
 # command to call seed file
 # rails db:seed RAILS_ENV=production 
 
+def generate_random_number(n)
+  sampleSymbols = ['!', '@', '#', '$', '%', '&', '?', '*']
+  sample = ''
+
+  (0..n).each do |i|
+    sample += rand(10).to_s
+  end
+
+  (0..(rand(n)+1)/2).each do |i|
+    sample[rand(n) - 1] = sampleSymbols.sample()
+  end
+  sample
+end
 
 #File names
 
@@ -424,11 +437,16 @@ def bytes_to_megabytes (bytes)
 end
 
 # This is the user sections of the seed file
-(0...user_names.length).each do |i| 
+User.create({ 
+    username: guest, 
+    email: "guest@gmail.com",
+    password: 'password'
+  })
+(1...user_names.length).each do |i| 
   User.create({ 
     username: user_names[i], 
     email: user_names[i].split(' ').join('-') + "@gmail.com",
-    password: 'password'
+    password: generate_random_number(12)
   })
 end
 
