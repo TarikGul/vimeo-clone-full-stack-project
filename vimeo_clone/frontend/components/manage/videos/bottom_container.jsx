@@ -38,34 +38,35 @@ class BottomContainer extends React.Component {
     };
 
     deleteClick(e) {
-        const { entities, userId } = this.props;
-        let nodes = [];
-        let checks = document.getElementsByClassName('checkbox-manage-videos');
-        let values = Object.values(entities.users[userId].user_posts);
+        window.alert('Because this is a clone, delete is disabled. Check out the repo for delete functionality')
+        // const { entities, userId } = this.props;
+        // let nodes = [];
+        // let checks = document.getElementsByClassName('checkbox-manage-videos');
+        // let values = Object.values(entities.users[userId].user_posts);
 
 
-        for(let i = 1; i < checks.length; i++) {
-            if(checks[i].checked) {
-                let index = i;
-                nodes.push(index);
-            }
-        }
+        // for(let i = 1; i < checks.length; i++) {
+        //     if(checks[i].checked) {
+        //         let index = i;
+        //         nodes.push(index);
+        //     }
+        // }
 
-        for(let i = 0; i < nodes.length; i++) {
-            let index = parseInt(nodes[i]) - 1
-            let node = values[index].id
-            this.props.deletePost(node)
-                .then(() => {
-                    this.props.fetchUser(this.props.userId)
-                })
-                .then(() => {
-                    this.uncheck()
-                })
-        }
-        this.setState({ 
-            clicked: false,
-            oneClicked: false
-         })
+        // for(let i = 0; i < nodes.length; i++) {
+        //     let index = parseInt(nodes[i]) - 1
+        //     let node = values[index].id
+        //     this.props.deletePost(node)
+        //         .then(() => {
+        //             this.props.fetchUser(this.props.userId)
+        //         })
+        //         .then(() => {
+        //             this.uncheck()
+        //         })
+        // }
+        // this.setState({ 
+        //     clicked: false,
+        //     oneClicked: false
+        //  })
     }
 
     handleClickOne(e){

@@ -27,9 +27,9 @@ class Api::PostsController < ApplicationController
 
     def destroy
       @post = Post.find(params[:id])
-      if @post.destroy
-        render json: :success
-      end
+      # if @post.destroy
+      #   render json: :success
+      # end
     end
 
 
