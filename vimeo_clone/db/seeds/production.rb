@@ -438,7 +438,7 @@ end
 
 # This is the user sections of the seed file
 User.create({ 
-    username: guest, 
+    username: 'guest', 
     email: "guest@gmail.com",
     password: 'password'
   })
