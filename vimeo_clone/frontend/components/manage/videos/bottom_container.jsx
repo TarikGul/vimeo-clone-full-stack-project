@@ -46,13 +46,13 @@ class BottomContainer extends React.Component {
     };
 
     deleteClick(e) {
-        window.alert('Because this is a clone, delete is disabled. Check out the repo for delete functionality')
         // Event("DELETE", "Delete button clicked", "DELETE_PAGE");
         ReactGA.event({
             category: "DELETE",
             action: "Delete button clicked",
             label: "DELETE_PAGE"
         });
+        window.alert('Because this is a clone, delete is disabled. Check out the repo for delete functionality')
         // const { entities, userId } = this.props;
         // let nodes = [];
         // let checks = document.getElementsByClassName('checkbox-manage-videos');
