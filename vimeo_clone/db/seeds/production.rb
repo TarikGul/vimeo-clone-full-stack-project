@@ -461,15 +461,15 @@ random_post = rand(Post.all.length - 10) + 8
 
 # ----------------Follower.create({ user_id: User.all[random_user].id, follower_id: User.all[random_user].id })
 
-(4..10).each do |i|
-  leaderUser = User.all[i]
-  Follower.create({ user_id: leaderUser.id, follower_id: User.all[2].id })
-end
+# (4..10).each do |i|
+#   leaderUser = User.all[i]
+#   Follower.create({ user_id: leaderUser.id, follower_id: User.all[2].id })
+# end
 
-(7..15).each do |i|
-  leaderUser = User.all[i]
-  Follower.create({ user_id: leaderUser.id, follower_id: User.all[3].id })
-end
+# (7..15).each do |i|
+#   leaderUser = User.all[i]
+#   Follower.create({ user_id: leaderUser.id, follower_id: User.all[3].id })
+# end
 
 # Attaches a video url to a post. This is how we would open a file and attach 
 # It to the state of an object on the backend
