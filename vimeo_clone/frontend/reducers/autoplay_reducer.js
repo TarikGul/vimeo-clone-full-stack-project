@@ -11,4 +11,4 @@ const autoplayReducer = (state = {}, action) => {
     }
 }
 
-export const autoplayReducer;
+export default autoplayReducer;
