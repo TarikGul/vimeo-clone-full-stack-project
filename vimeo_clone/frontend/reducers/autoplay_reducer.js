@@ -8,7 +8,7 @@ const autoplayReducer = (state = false, action) => {
             nextState = !state;
             return nextState;
         default: 
-            return nextState = false;
+            return nextState;
     };
 };
 
