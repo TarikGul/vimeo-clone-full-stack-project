@@ -1,8 +1,7 @@
 import { TOGGLE_AUTOPLAY } from '../actions/toggle';
 
 const autoplayReducer = (state = false, action) => {
-    Object.freeze(state);
-    let nextState = Object.assign(state);
+    let nextState = state;
     switch(action.type) {
         case TOGGLE_AUTOPLAY:
             nextState = !state;
