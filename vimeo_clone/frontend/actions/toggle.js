@@ -7,5 +7,5 @@ const toggleAutoplay = () => {
 };
 
 export const dispatchToggle = () => dispatch => {
-    dispatch(toggleAutoplay())
+    dispatch(toggleAutoplay());
 };
