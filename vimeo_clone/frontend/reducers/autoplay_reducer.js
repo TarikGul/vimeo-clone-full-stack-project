@@ -5,9 +5,10 @@ const autoplayReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch(action.type) {
         case TOGGLE_AUTOPLAY:
-            nextState['toggle'] = true
+            nextState['toggle'] = true;
+            return nextState;
         default: 
-            return nextState['toggle'] = true;
+            return nextState['toggle'] = false;
     }
 }
 
