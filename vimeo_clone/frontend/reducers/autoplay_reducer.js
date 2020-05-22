@@ -7,7 +7,7 @@ const autoplayReducer = (state = {}, action) => {
         case TOGGLE_AUTOPLAY:
             nextState['toggle'] = true
         default: 
-            return nextState;
+            return nextState['toggle'] = true;
     }
 }
 
