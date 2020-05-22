@@ -11,14 +11,13 @@ class ToggleButton extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(e) {
-        e.preventDefault();
-
-        console.log('the autoplay was clicked');
+    handleChange() {
+        const { dispatchToggle } = this.props;
+        dispatchToggle();
     }
 
     render() {
-        const { ui } = this.props
+        const { ui } = this.props;
         return (
             <div className="toggle-autplay-container" >
                 <label className="switch">
