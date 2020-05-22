@@ -4,10 +4,11 @@ import VideoViewport from './video_viewport'
 import { withRouter } from 'react-router-dom'
 
 const msp = state => {
-    const { session, entities } = state
+    const { session, entities, ui } = state
     return {
         sessionId: session.id,
-        entities
+        entities,
+        ui
     }
 }
 
