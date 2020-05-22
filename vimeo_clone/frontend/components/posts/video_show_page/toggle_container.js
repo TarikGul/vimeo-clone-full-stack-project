@@ -5,8 +5,9 @@ import { dispatchToggle } from '../../../actions/toggle';
 import ToggleButton from './toggle';
 
 const msp = state => {
+    const { ui } = state;
     return {
-        
+        ui
     };
 };
 
