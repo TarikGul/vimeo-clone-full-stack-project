@@ -13,7 +13,7 @@ const VideoViewport = props => {
             <ReactPlayer 
                 width='100%'
                 height='110%'
-                className="video-player"
+                className='video-player'
                 url={props.videoUrl} 
                 onEnded={() => onEnded(parseInt(match.params.postId), sessionId)}
                 controls/>
