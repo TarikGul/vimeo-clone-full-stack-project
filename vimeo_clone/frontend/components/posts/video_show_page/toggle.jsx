@@ -21,7 +21,7 @@ class ToggleButton extends React.Component {
         return (
             <div className="toggle-autplay-container" >
                 <label className="switch">
-                    <input type="checkbox" checked={} onChange={this.handleChange}/>
+                    <input type="checkbox" checked={true} onChange={this.handleChange}/>
                     <span className="slider round"></span>
                 </label>
                 <div className="autoplay-toggle">
