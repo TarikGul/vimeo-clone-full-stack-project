@@ -8,7 +8,7 @@ const VideoViewport = props => {
     const onEnded = (postId, sessionId) => {
         createPlay({ post_id: postId, user_id: sessionId })
         if (ui.autoplay === true) {
-            
+
         }
     }
     return (
@@ -19,6 +19,7 @@ const VideoViewport = props => {
                 className='video-player'
                 url={props.videoUrl} 
                 onEnded={() => onEnded(parseInt(match.params.postId), sessionId)}
+                playing={ui.autoplay}
                 controls/>
         </div>
     ) 
