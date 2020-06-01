@@ -98,8 +98,8 @@
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
-    cursor: pointer;
-    top:-3px;
+  cursor: pointer;
+  top:-3px;
 }
 
 .preview-message {
@@ -346,6 +346,14 @@
   text-align: center;
   color: rgb(240, 108, 108);
   padding-top: 30px;
+}
+
+.upload-button-text {
+  padding-top: 10px;
+}
+
+.cloud-i {
+  padding-top: 10px;
 }
 
 /* .post-form-container {
