@@ -46,6 +46,7 @@
     display: flex;
     padding-left: 30px;
     text-decoration: none;
+    padding-top: 13px;
 }
 
 .clicked-sidebar {
