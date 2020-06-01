@@ -64,6 +64,11 @@
 .follow-i {
     transform: translateY(1px);
     padding-right: 5px;
+    padding-top: 4px;
+}
+
+.follow-button-text {
+    padding-top: 4px;
 }
 
 .following-button {
