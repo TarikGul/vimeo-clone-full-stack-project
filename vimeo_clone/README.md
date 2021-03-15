@@ -1,6 +1,6 @@
 ![logo](public/bimeoJP.png)
 
-###### [Live Site](https://bimeo.herokuapp.com/#/)
+###### [Live Site](https://bimeo.herokuapp.com/#/) Currently Down. I dont want to pay for the AWS storage or Heroku Dynos anymore.
 
 ## Table of Contents
 
