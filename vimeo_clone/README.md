@@ -16,34 +16,6 @@
 
 ### Enviornment/Setup 
 
-#### Notable dependencies and technologies
-
-##### Database
-```PostgreSQL 12```
-
-##### Ruby/Rails
-```ruby --version => ruby 2.5.1p57```
-<br/>
-```rails -v => Rails 5.2.4.1```
-<br/>
-
-##### Node
-```node -v => v10.13.0```
-
-##### React/Rails
-```react: ^16.13.0```
-<br/>
-```react-router-dom: ^5.1.2```
-<br/>
-```redux: ^4.0.5```
-<br/>
-```webpack: ^4.42.0```
-<br/>
-```webpack-cli: ^3.3.11```
-<br/>
-```@babel/core: ^7.8.6```
-
-
 Gems
 
 ```
